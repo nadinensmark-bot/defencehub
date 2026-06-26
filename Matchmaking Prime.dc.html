@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+@keyframes dhpulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes dhfade{from{opacity:0}to{opacity:1}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">Matchmaking · výroba &amp; dodavatelský řetězec</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--blue);display:inline-block;animation:dhpulse 2.4s infinite"></span>STARTUP ↔ PRIME</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="Defence Hub.dc.html#kdo" style="color:var(--navy);text-decoration:none">Rozcestník</a>
+        <a href="Matchmaking Prime.dc.html" style="color:var(--blue);text-decoration:none;font-weight:600">Matchmaking Prime</a>
+        <a href="Matchmaking Investor.dc.html" style="color:var(--navy);text-decoration:none">Matchmaking Investor</a>
+        <a href="Defence Hub.dc.html#databaze" style="color:var(--navy);text-decoration:none">Databáze řešení</a>
+      </div>
+      <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">+ Zapsat profil</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="background:radial-gradient(120% 130% at 80% 6%,#1B2D5E 0%,#0E1B3C 50%,#0B1530 100%);color:#fff">
+    <div style="display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:72px 32px 60px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#7FA6F0;display:flex;align-items:center;gap:12px;font-weight:700"><span style="width:26px;height:1px;background:#7FA6F0"></span>Matchmaking platforma</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,5vw,62px);line-height:1.03;letter-spacing:-.025em;margin:20px 0 0;max-width:18ch">Startup&nbsp;↔&nbsp;Prime: propojení <span style="color:#8CAA72">řešení</span> a&nbsp;<span style="color:#6E9bE8">výrobních kapacit</span></h1>
+        <p style="font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:#C4CFE8;max-width:60ch;margin:22px 0 0">Databáze poptávek a&nbsp;nabídek napříč obranným a&nbsp;dual-use dodavatelským řetězcem. Nabízíte hotové řešení k&nbsp;integraci, hledáte výrobní kapacity, nebo naopak volnou linku nabízíte? Najděte protistranu — Defence Hub vás propojí.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">01</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Zapište profil</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Co nabízíte nebo co hledáte — řešení, výrobu, dodavatele.</p></div></div>
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">02</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Filtrujte protistrany</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Podle role, sektoru, certifikací a&nbsp;TRL.</p></div></div>
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">03</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Propojíme vás</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Defence Hub zprostředkuje úvodní jednání. Zdarma.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DATABAZE -->
+  <section style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:56px 32px 90px">
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <sc-for list="{{ roleChips }}" as="r" hint-placeholder-count="5">
+          <div onClick="{{ r.pick }}" style="{{ r.chipStyle }}">{{ r.label }}<span style="opacity:.6;font-weight:400">&nbsp;{{ r.n }}</span></div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px">
+        <div style="position:relative;flex:1;min-width:220px">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">⌕</span>
+          <input value="{{ search }}" onInput="{{ onSearch }}" placeholder="Hledat firmu, technologii, komponentu…" style="width:100%;border:1px solid var(--line);background:var(--mist);border-radius:10px;padding:12px 14px 12px 36px;font-size:14.5px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);outline:none">
+        </div>
+        <select value="{{ sector }}" onChange="{{ onSector }}" style="border:1px solid var(--line);background:var(--mist);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:200px;cursor:pointer">
+          <option value="all">Všechny sektory</option>
+          <sc-for list="{{ sectorOptions }}" as="s" hint-placeholder-count="6"><option value="{{ s }}">{{ s }}</option></sc-for>
+        </select>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);padding:0 6px;white-space:nowrap">{{ count }} / {{ total }}</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ cards }}" as="c" hint-placeholder-count="8">
+          <div onClick="{{ c.open }}" style="background:#fff;border:1px solid var(--line);border-left:4px solid {{ c.color }};border-radius:14px;padding:24px;cursor:pointer;display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s,border-color .16s" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(19,35,78,.34)">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+              <span style="{{ c.badge }}">{{ c.role }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 8px;border-radius:8px;white-space:nowrap">{{ c.metaChip }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;margin:16px 0 4px;line-height:1.15">{{ c.name }}</h3>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.02em;margin-bottom:12px">{{ c.sector }}</div>
+            <p style="color:#41506e;font-size:13.5px;line-height:1.5;margin:0 0 18px;flex:1">{{ c.oneLiner }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--line)">
+              <span style="font-size:12.5px;color:var(--muted)">{{ c.location }}</span>
+              <span style="font-size:13px;font-weight:600;color:var(--blue)">Detail →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:54px;color:var(--muted);font-size:15px">Žádný profil neodpovídá filtru. <span onClick="{{ resetFilters }}" style="color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline">Zrušit filtry</span></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:76px 32px;text-align:center">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);letter-spacing:-.02em;margin:0 auto;max-width:24ch;line-height:1.12">Nabízíte řešení, kapacity — nebo je hledáte?</h2>
+      <p style="color:#B6C2DE;font-size:16px;max-width:52ch;margin:18px auto 0;line-height:1.6">Zapište svůj profil do matchmaking platformy. Defence Hub CzechInvest vás propojí s&nbsp;relevantní protistranou v&nbsp;obranném a&nbsp;dual-use dodavatelském řetězci.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:#3E72E0">+ Zapsat profil</a>
+        <a href="Matchmaking Investor.dc.html" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">Matchmaking Investor →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:48px 32px 38px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center">
+      <a href="Defence Hub.dc.html" style="text-decoration:none"><img src="assets/logo-cobrand-white.png" alt="Defence Hub CzechInvest" style="height:38px;display:block"></a>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <a href="Defence Hub.dc.html#kdo" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Rozcestník</a>
+        <a href="Matchmaking Investor.dc.html" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Matchmaking Investor</a>
+        <span style="color:#5E6E92">© 2026 DEFENCE HUB CZECHINVEST</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(8,15,34,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stop }}" style="background:#fff;width:100%;max-width:680px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(8,15,34,.7)">
+        <div style="background:linear-gradient(150deg,#13234E,#0E1B3C);color:#fff;padding:30px 32px;position:relative">
+          <div onClick="{{ closeModal }}" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.2)">✕</div>
+          <span style="{{ sel.badge }}">{{ sel.role }}</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;margin:16px 0 6px;letter-spacing:-.01em">{{ sel.name }}</h3>
+          <p style="color:#B6C2DE;font-size:15px;margin:0;line-height:1.5">{{ sel.oneLiner }}</p>
+        </div>
+        <div style="padding:28px 32px">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px">
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase">Typ</div><div style="font-weight:600;font-size:14px;color:var(--navy);margin-top:6px;line-height:1.25">{{ sel.kindLabel }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase">Sektor</div><div style="font-weight:600;font-size:14px;color:var(--navy);margin-top:6px;line-height:1.25">{{ sel.sector }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase">TRL</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-top:3px">{{ sel.trlLabel }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase">Lokalita</div><div style="font-weight:600;font-size:14px;color:var(--navy);margin-top:6px;line-height:1.25">{{ sel.location }}</div></div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px">
+            <div style="background:var(--blueSoft);border-radius:12px;padding:16px 18px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:6px">Nabízí</div>
+              <p style="font-size:13.5px;color:#26345a;margin:0;line-height:1.5">{{ sel.offers }}</p>
+            </div>
+            <div style="background:var(--greenSoft);border-radius:12px;padding:16px 18px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--greenDeep);margin-bottom:6px">Hledá</div>
+              <p style="font-size:13.5px;color:#2f4022;margin:0;line-height:1.5">{{ sel.seeks }}</p>
+            </div>
+          </div>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Medailonek</div>
+          <p style="font-size:14.5px;line-height:1.65;color:#33405e;margin:0 0 18px">{{ sel.desc }}</p>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">Certifikace &amp; kapacita</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+            <sc-for list="{{ sel.certs }}" as="t" hint-placeholder-count="3"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--mist);border:1px solid var(--line);color:var(--navy);padding:6px 10px;border-radius:8px">{{ t }}</span></sc-for>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line)">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Kontaktní osoba</div>
+              <div style="font-weight:600;font-size:15px;color:var(--navy)">{{ sel.contactName }}</div>
+              <div style="font-size:13px;color:var(--muted)">{{ sel.contactRole }}</div>
+            </div>
+            <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">Propojit přes Defence Hub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = { search:'', role:'all', sector:'all', selected:null };
+    this.addUrl = 'https://forms.office.com/e/FscmUKHp3c';
+    this.roleColors = {
+      'Nabízí řešení':'#2B5CC4',
+      'Nabízí výrobní kapacity':'#1C2F63',
+      'Hledá výrobní kapacity':'#6E9152',
+      'Hledá dodavatele / technologii':'#3E7CA8'
+    };
+    this.kindLabels = {
+      'Nabízí řešení':'Nabídka řešení',
+      'Nabízí výrobní kapacity':'Nabídka výroby',
+      'Hledá výrobní kapacity':'Poptávka výroby',
+      'Hledá dodavatele / technologii':'Poptávka dodávky'
+    };
+    this.companies = [
+      {name:'Helios Optronics', role:'Nabízí řešení', sector:'Senzory · EO/IR', trl:7, location:'Brno, CZ',
+        oneLiner:'Modul nočního a termálního vidění připravený k integraci do platforem a zbraňových systémů.',
+        offers:'Kompaktní EO/IR senzorický modul (LWIR + low-light), SWaP optimalizovaný, s otevřeným API pro integraci.',
+        seeks:'Systémového integrátora / prime, který modul zasadí do UGV, UAV nebo vozidlové platformy.',
+        certs:['TRL 7','ISO 9001','ITAR-free komponenty'],
+        desc:'Helios Optronics vyvíjí optroniku pro náročné podmínky. Modul je validovaný v polních testech, má nízkou spotřebu a hmotnost a je navržen pro snadnou integraci třetí stranou.',
+        contactName:'Ing. Petr Malý', contactRole:'CEO & co-founder'},
+      {name:'Trace Composites', role:'Nabízí výrobní kapacity', sector:'Materiály · kompozity', trl:9, location:'Kuřim, CZ',
+        oneLiner:'Sériová výroba uhlíkových a aramidových kompozitních dílů pro obranný průmysl.',
+        offers:'Volná kapacita autoklávové i RTM výroby, prototypy i malé/střední série, balistické panely.',
+        seeks:'Startupy a vývojové firmy potřebující odlehčené kompozitní díly nebo pouzdra.',
+        certs:['AQAP 2110','ISO 9001','EN 9100','NATO CAGE'],
+        desc:'Trace Composites je smluvní výrobce kompozitů s 15 lety zkušeností v leteckém a obranném sektoru. Nabízí kompletní řetězec od návrhu laminace po sériovou výrobu a kontrolu kvality.',
+        contactName:'Jana Konečná', contactRole:'Head of Business Development'},
+      {name:'Ridgeline Robotics', role:'Hledá výrobní kapacity', sector:'Autonomie · UGV', trl:6, location:'Plzeň, CZ',
+        oneLiner:'Hledá výrobního partnera pro sériovou produkci podvozků autonomního pozemního robota.',
+        offers:'Ověřený prototyp UGV pro logistiku poslední míle v terénu; partnerům nabízí dlouhodobý kontrakt.',
+        seeks:'Strojírenskou firmu s kapacitou na svařence, obrábění a montáž 50–200 ks/rok.',
+        certs:['TRL 6','Hledá AQAP partnera'],
+        desc:'Ridgeline Robotics přechází z prototypu do malosériové výroby a hledá českého výrobního partnera, který zvládne podvozek, převodovku a finální montáž v obranné kvalitě.',
+        contactName:'Tomáš Říha', contactRole:'COO'},
+      {name:'Moravia Precision', role:'Nabízí výrobní kapacity', sector:'Strojírenství · CNC', trl:9, location:'Olomouc, CZ',
+        oneLiner:'Přesné CNC obrábění a montáž malých a středních sérií s obrannou certifikací.',
+        offers:'5osé obrábění, kontrola CMM, malé i střední série, kompletace podsestav.',
+        seeks:'Vývojové firmy a startupy hledající spolehlivého dodavatele přesných dílů.',
+        certs:['AQAP 2110','ISO 9001','ISO 14001','NATO CAGE'],
+        desc:'Moravia Precision je rodinný strojírenský podnik dodávající do leteckého a obranného sektoru. Specializuje se na přesné díly z hliníku, titanu a ocelí s krátkými dodacími lhůtami.',
+        contactName:'Ing. Lukáš Beneš', contactRole:'Obchodní ředitel'},
+      {name:'SkyMesh Communications', role:'Nabízí řešení', sector:'Komunikace · odolné sítě', trl:6, location:'Praha, CZ',
+        oneLiner:'Odolné mesh rádio pro provoz v rušeném a GNSS-denied prostředí.',
+        offers:'SDR mesh modul s anti-jam vlastnostmi a low-probability-of-intercept režimem.',
+        seeks:'Prime integrátora pro nasazení do vozidlových a dronových komunikačních uzlů.',
+        certs:['TRL 6','MIL-STD-810 (probíhá)'],
+        desc:'SkyMesh staví softwarově definované rádio pro taktické sítě, které drží spojení i při výpadku infrastruktury. Hledá integrátora pro škálování do sériových platforem.',
+        contactName:'Martin Dvořák', contactRole:'CTO & co-founder'},
+      {name:'ArmaForge', role:'Hledá dodavatele / technologii', sector:'Materiály · balistika', trl:8, location:'Hradec Králové, CZ',
+        oneLiner:'Výrobce ochranných systémů hledá dodavatele pokročilých balistických materiálů.',
+        offers:'Dlouhodobý odběr a společný vývoj nové generace lehkých panelů.',
+        seeks:'Dodavatele UHMWPE / keramických materiálů a technologie pro odlehčení o 20 %.',
+        certs:['AQAP 2110','ISO 9001'],
+        desc:'ArmaForge dodává osobní a vozidlovou ochranu do několika evropských armád. Pro nový produktový segment hledá materiálového partnera s prokazatelnou výkonností.',
+        contactName:'Ing. Eva Horáková', contactRole:'R&D Director'},
+      {name:'Pulsar Power', role:'Nabízí řešení', sector:'Energetika · úložiště', trl:5, location:'Ostrava, CZ',
+        oneLiner:'Modulární bateriové systémy pro mobilní a polní napájení kritických systémů.',
+        offers:'Robustní LFP battery pack s BMS pro provoz v extrémních teplotách.',
+        seeks:'Výrobního partnera pro škálování a integrátora do vozidlových platforem.',
+        certs:['TRL 5','UN 38.3 (probíhá)'],
+        desc:'Pulsar Power vyvíjí odolné energetické moduly pro nezávislé napájení v poli. Hledá zároveň výrobní kapacitu i integrátora pro vstup do sériových projektů.',
+        contactName:'Bc. Jan Pospíšil', contactRole:'CEO'},
+      {name:'Sentinel Sensorics', role:'Hledá dodavatele / technologii', sector:'Senzory · C-UAS', trl:7, location:'Brno, CZ',
+        oneLiner:'Integrátor counter-UAS systému hledá detekční RF a radarový modul.',
+        offers:'Zařazení do uceleného C-UAS produktu a přístup k zákazníkům z řad armády.',
+        seeks:'Dodavatele kompaktního RF detektoru nebo mini-radaru s rozhraním pro fúzi dat.',
+        certs:['TRL 7','AQAP 2110'],
+        desc:'Sentinel Sensorics staví vrstvený systém detekce a neutralizace dronů. Pro doplnění detekční vrstvy hledá technologického dodavatele se zralým hardwarem.',
+        contactName:'Ing. Pavel Novotný', contactRole:'Systems Lead'}
+    ];
+  }
+  componentDidMount(){
+    document.title = 'Matchmaking Prime — Defence Hub CzechInvest';
+    document.documentElement.lang = 'cs';
+  }
+  filtered(){
+    const q = this.state.search.trim().toLowerCase();
+    return this.companies.filter(c=>{
+      if(this.state.role!=='all' && c.role!==this.state.role) return false;
+      if(this.state.sector!=='all' && c.sector!==this.state.sector) return false;
+      if(q){ const hay=(c.name+' '+c.sector+' '+c.oneLiner+' '+c.offers+' '+c.seeks).toLowerCase(); if(!hay.includes(q)) return false; }
+      return true;
+    });
+  }
+  badgeStyle(role){
+    const col = this.roleColors[role]||'#2B5CC4';
+    return 'display:inline-block;font-family:\'IBM Plex Mono\',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:5px 10px;border-radius:20px;background:'+col+'1A;color:'+col+';border:1px solid '+col+'33';
+  }
+  renderVals(){
+    const list = this.filtered();
+    const roleKeys = Object.keys(this.roleColors);
+    const counts = {}; roleKeys.forEach(k=> counts[k]=this.companies.filter(c=>c.role===k).length);
+    const chipBase = 'cursor:pointer;font-family:\'IBM Plex Mono\',monospace;font-size:12px;letter-spacing:.04em;padding:8px 13px;border-radius:9px;border:1px solid var(--line);transition:all .15s;user-select:none;';
+    const mkChip = (val,label,n)=>{
+      const active = this.state.role===val;
+      const col = val==='all' ? '#2B5CC4' : this.roleColors[val];
+      const style = active
+        ? chipBase+'background:'+col+';color:#fff;border-color:'+col+';font-weight:600'
+        : chipBase+'background:#fff;color:var(--navy);font-weight:500';
+      return { label, n: n==null?'':('· '+n), chipStyle: style, pick: ()=>this.setState({role:val}) };
+    };
+    const roleChips = [ mkChip('all','Vše', this.companies.length) ].concat(roleKeys.map(k=>mkChip(k,k,counts[k])));
+    const sectorOptions = [...new Set(this.companies.map(c=>c.sector))].sort();
+    const cards = list.map(c=>({
+      name:c.name, role:c.role, sector:c.sector, oneLiner:c.oneLiner, location:c.location,
+      color: this.roleColors[c.role]||'#2B5CC4',
+      badge: this.badgeStyle(c.role),
+      metaChip: 'TRL '+c.trl,
+      open: ()=>this.setState({selected:c})
+    }));
+    const s = this.state.selected;
+    const sel = s ? {
+      name:s.name, role:s.role, sector:s.sector, oneLiner:s.oneLiner, location:s.location,
+      offers:s.offers, seeks:s.seeks, desc:s.desc, certs:s.certs||[],
+      trlLabel:String(s.trl), kindLabel:this.kindLabels[s.role]||s.role,
+      badge:this.badgeStyle(s.role), contactName:s.contactName, contactRole:s.contactRole
+    } : {};
+    return {
+      addUrl:this.addUrl,
+      search:this.state.search, onSearch:(e)=>this.setState({search:e.target.value}),
+      sector:this.state.sector, onSector:(e)=>this.setState({sector:e.target.value}), sectorOptions,
+      roleChips,
+      count:list.length, total:this.companies.length,
+      cards, isEmpty:list.length===0,
+      resetFilters:()=>this.setState({search:'',role:'all',sector:'all'}),
+      hasSelected:!!s, sel, closeModal:()=>this.setState({selected:null}), stop:(e)=>e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>

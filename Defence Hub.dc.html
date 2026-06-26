@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#0B1530"></rect>
+<g transform="translate(600 300)">
+<path d="M0 -120 L104 -60 L0 0 L-104 -60 Z" fill="#2B5CC4"></path>
+<path d="M-104 -60 L0 0 L0 120 L-104 60 Z" fill="#1C2F63"></path>
+<path d="M104 -60 L0 0 L0 120 L104 60 Z" fill="#8CAA72"></path>
+</g>
+<text x="600" y="540" font-family="Space Grotesk, sans-serif" font-size="56" font-weight="700" fill="#FFFFFF" text-anchor="middle">Defence Hub</text>
+<text x="600" y="600" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="4" fill="#7FA6F0" text-anchor="middle">CZECHINVEST</text>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+@keyframes dhfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes dhpulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes dhfade{from{opacity:0}to{opacity:1}}
+@keyframes dhIntroOut{0%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes dhSun{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}60%{opacity:1}100%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes dhHaze{0%{transform:translateX(-5%)}100%{transform:translateX(8%)}}
+@keyframes dhJet{0%{opacity:0;transform:translate(-60vw,16vh) rotate(-8deg) scale(.3)}9%{opacity:1}100%{opacity:1;transform:translate(66vw,-14vh) rotate(-8deg) scale(1.2)}}
+@keyframes dhBurn{0%,100%{opacity:.6;transform:scaleX(1) scaleY(.92)}50%{opacity:1;transform:scaleX(1.6) scaleY(1.08)}}
+@keyframes dhShock{0%{opacity:0;transform:translate(-50%,-50%) scale(.12)}16%{opacity:.6}100%{opacity:0;transform:translate(-50%,-50%) scale(2.9)}}
+@keyframes dhStreak{0%{opacity:0;transform:translateX(24vw)}12%{opacity:.55}100%{opacity:0;transform:translateX(-130vw)}}
+@keyframes dhFlash{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+@keyframes dhShake{0%,100%{transform:translate(0,0)}20%{transform:translate(5px,-4px)}40%{transform:translate(-5px,4px)}60%{transform:translate(4px,3px)}80%{transform:translate(-3px,-3px)}}
+@keyframes dhTitle{0%{opacity:0;transform:translateY(30px);filter:blur(9px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes dhKick{0%{opacity:0;letter-spacing:.5em;transform:translateY(10px)}100%{opacity:1;letter-spacing:.28em;transform:translateY(0)}}
+@keyframes dhReticle{0%{opacity:0;transform:translate(-50%,-50%) scale(1.7) rotate(-30deg)}100%{opacity:.9;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes dhHud{0%{opacity:0}100%{opacity:.75}}
+@keyframes dhBarT{0%{transform:translateY(-100%)}100%{transform:translateY(0)}}
+@keyframes dhBarB{0%{transform:translateY(100%)}100%{transform:translateY(0)}}
+@keyframes dhSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+<script src="https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- INTRO OVERLAY (cinematic) -->
+  <div id="dh-intro" style="position:fixed;inset:0;z-index:9999;background:#05060E;overflow:hidden;cursor:pointer;animation:dhIntroOut .85s ease forwards 3.25s">
+    <!-- sky -->
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,#05060E 0%,#0A1530 38%,#13285C 70%,#1E3F7A 100%)"></div>
+    <!-- horizon sun bloom -->
+    <div style="position:absolute;left:62%;top:78%;width:120vw;height:120vw;border-radius:50%;background:radial-gradient(circle,rgba(255,233,196,.55) 0%,rgba(127,166,240,.34) 24%,rgba(43,92,196,.18) 42%,rgba(11,21,48,0) 62%);transform:translate(-50%,-50%);animation:dhSun 1.8s ease-out forwards"></div>
+    <!-- haze -->
+    <div style="position:absolute;left:-10%;right:-10%;top:66%;height:32%;background:radial-gradient(60% 100% at 60% 100%,rgba(170,200,255,.18),rgba(11,21,48,0) 70%);filter:blur(8px);animation:dhHaze 7s ease-in-out infinite alternate"></div>
+
+    <!-- shake scene -->
+    <div style="position:absolute;inset:0;animation:dhShake .55s ease 1.1s">
+      <!-- speed streaks -->
+      <div style="position:absolute;top:30%;left:0;width:60vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.7));animation:dhStreak 1.5s ease-in forwards .25s"></div>
+      <div style="position:absolute;top:38%;left:0;width:48vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.5));animation:dhStreak 1.4s ease-in forwards .42s"></div>
+      <div style="position:absolute;top:52%;left:0;width:70vw;height:3px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(140,170,114,.5));animation:dhStreak 1.6s ease-in forwards .15s"></div>
+      <div style="position:absolute;top:61%;left:0;width:42vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.45));animation:dhStreak 1.45s ease-in forwards .55s"></div>
+      <div style="position:absolute;top:46%;left:0;width:55vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.6));animation:dhStreak 1.5s ease-in forwards .33s"></div>
+
+      <!-- shockwave at crossing -->
+      <div style="position:absolute;left:50%;top:46%;width:30vw;height:30vw;border-radius:50%;border:2px solid rgba(200,222,255,.6);transform:translate(-50%,-50%) scale(.12);animation:dhShock 1.2s ease-out forwards 1.0s"></div>
+
+      <!-- jet + contrail + afterburner -->
+      <div style="position:absolute;top:46%;left:0;display:flex;align-items:center;will-change:transform;filter:drop-shadow(0 16px 30px rgba(0,0,0,.55));animation:dhJet 2.5s cubic-bezier(.42,.02,.5,1) forwards .3s">
+        <div style="width:600px;height:7px;border-radius:7px;background:linear-gradient(90deg,rgba(190,212,255,0) 0%,rgba(190,212,255,.25) 55%,rgba(255,255,255,.9) 100%);filter:blur(1px)"></div>
+        <div style="width:84px;height:30px;margin:0 -14px 0 -6px;border-radius:50%;background:radial-gradient(ellipse at 78% 50%,#FFFFFF 0%,#CFE7FF 26%,#7FA6F0 52%,rgba(140,170,114,.5) 70%,rgba(140,170,114,0) 84%);filter:blur(1.5px);animation:dhBurn .26s ease-in-out infinite"></div>
+        <svg width="320" height="134" viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- vertical tail -->
+          <path d="M74 76 L42 24 L98 74 Z" fill="#0A1024"></path>
+          <!-- main swept wing -->
+          <path d="M188 90 L92 146 L150 86 Z" fill="#0A1024"></path>
+          <!-- horizontal stabiliser -->
+          <path d="M96 92 L52 130 L108 88 Z" fill="#0A1024"></path>
+          <!-- fuselage -->
+          <path d="M34 82 L150 72 L300 71 L347 80 L300 89 L150 92 Z" fill="#0A1024"></path>
+          <!-- canopy -->
+          <path d="M250 73 C268 60 296 64 306 76 L250 79 Z" fill="#2B5CC4"></path>
+          <!-- top rim light -->
+          <path d="M40 80 L150 71 L300 70 L345 79" stroke="#90B0F0" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85"></path>
+          <!-- intake shadow -->
+          <path d="M150 86 L232 84 L232 90 L150 90 Z" fill="#05060E" opacity=".5"></path>
+          <!-- nozzle glow -->
+          <ellipse cx="35" cy="82" rx="7" ry="6" fill="#BFE0FF"></ellipse>
+        </svg>
+      </div>
+    </div>
+
+    <!-- HUD layer -->
+    <div style="position:absolute;inset:0;pointer-events:none;opacity:0;animation:dhHud .8s ease forwards 1.5s">
+      <!-- corner brackets -->
+      <div style="position:absolute;left:34px;top:14vh;width:34px;height:34px;border-left:2px solid rgba(143,176,240,.6);border-top:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;right:34px;top:14vh;width:34px;height:34px;border-right:2px solid rgba(143,176,240,.6);border-top:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;left:34px;bottom:14vh;width:34px;height:34px;border-left:2px solid rgba(143,176,240,.6);border-bottom:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;right:34px;bottom:14vh;width:34px;height:34px;border-right:2px solid rgba(143,176,240,.6);border-bottom:2px solid rgba(143,176,240,.6)"></div>
+      <!-- mono labels -->
+      <div style="position:absolute;left:34px;top:calc(14vh + 46px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(190,212,255,.75)">DEFENCE&nbsp;HUB&nbsp;//&nbsp;DIANA&nbsp;NETWORK</div>
+      <div style="position:absolute;left:34px;bottom:calc(14vh + 22px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(140,170,114,.9);display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;background:#8CAA72;display:inline-block;animation:dhpulse 1s infinite"></span>TRACKING&nbsp;TARGET</div>
+      <div style="position:absolute;right:34px;bottom:calc(14vh + 22px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:rgba(190,212,255,.75)">CZ&nbsp;✦&nbsp;EU&nbsp;✦&nbsp;NATO</div>
+    </div>
+
+    <!-- reticle -->
+    <div style="position:absolute;left:50%;top:42%;width:130px;height:130px;transform:translate(-50%,-50%);opacity:0;animation:dhReticle .7s cubic-bezier(.2,.7,.3,1) forwards 1.0s, dhHud .8s ease forwards 1.0s">
+      <div style="position:absolute;inset:0;border:1px solid rgba(143,176,240,.35);border-radius:50%"></div>
+      <div style="position:absolute;inset:18px;border:1px dashed rgba(143,176,240,.5);border-radius:50%;animation:dhSpin 9s linear infinite"></div>
+      <div style="position:absolute;left:50%;top:0;width:1px;height:18px;background:rgba(143,176,240,.7);transform:translateX(-50%)"></div>
+      <div style="position:absolute;left:50%;bottom:0;width:1px;height:18px;background:rgba(143,176,240,.7);transform:translateX(-50%)"></div>
+      <div style="position:absolute;top:50%;left:0;height:1px;width:18px;background:rgba(143,176,240,.7);transform:translateY(-50%)"></div>
+      <div style="position:absolute;top:50%;right:0;height:1px;width:18px;background:rgba(143,176,240,.7);transform:translateY(-50%)"></div>
+    </div>
+
+    <!-- title -->
+    <div style="position:absolute;left:0;right:0;top:60%;text-align:center;padding:0 24px">
+      <div style="opacity:0;animation:dhTitle .9s cubic-bezier(.2,.7,.3,1) forwards 1.75s">
+        <div style="display:inline-flex;align-items:center;gap:16px;justify-content:center">
+          <div style="width:46px;height:46px;position:relative;flex:none">
+            <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+            <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+            <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,5vw,58px);letter-spacing:-.02em;color:#fff;line-height:1">Defence Hub <span style="color:#8CAA72">CzechInvest</span></div>
+        </div>
+      </div>
+      <div style="opacity:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#7FA6F0;margin-top:18px;animation:dhKick .7s ease forwards 2.05s">Vstupní brána do obranných &amp; dual-use inovací</div>
+    </div>
+
+    <!-- letterbox bars -->
+    <div style="position:absolute;left:0;right:0;top:0;height:9vh;background:#05060E;animation:dhBarT .6s cubic-bezier(.6,0,.3,1) forwards"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:9vh;background:#05060E;animation:dhBarB .6s cubic-bezier(.6,0,.3,1) forwards"></div>
+
+    <!-- flashes -->
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 52% 46%,#FFFFFF,rgba(255,255,255,0) 60%);opacity:0;pointer-events:none;animation:dhFlash .7s ease forwards 1.15s"></div>
+    <div style="position:absolute;inset:0;background:#FFFFFF;opacity:0;pointer-events:none;animation:dhFlash .85s ease forwards 2.95s"></div>
+
+    <!-- skip hint -->
+    <div style="position:absolute;right:34px;top:calc(14vh + 46px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(190,212,255,.45);opacity:0;animation:dhHud .8s ease forwards 1.8s">KLIKNUTÍM PŘESKOČIT ›</div>
+  </div>
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">Národní kontaktní bod pro obranné a&nbsp;dual-use inovace</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>PART OF THE DIANA NETWORK</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="#kdo" style="color:var(--navy);text-decoration:none">Rozcestník</a>
+        <a href="#programy" style="color:var(--navy);text-decoration:none">Programy</a>
+        <a href="NATO DIANA.dc.html" style="color:var(--blue);text-decoration:none;font-weight:600">NATO DIANA</a>
+        <a href="Partneři.dc.html" style="color:var(--navy);text-decoration:none">Partneři</a>
+        <a href="Tým.dc.html" style="color:var(--navy);text-decoration:none">Tým</a>
+        <a href="#databaze" style="color:var(--navy);text-decoration:none">Databáze řešení</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em"><span style="color:var(--navy);font-weight:600">CZ</span><span style="opacity:.4"> / </span><a href="Defence Hub EN.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--navy)">EN</a></span>
+        <span onClick="{{ openLeadForm }}" style="background:var(--navy);color:#fff;cursor:pointer;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">Rezervovat konzultaci</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative;background:radial-gradient(120% 130% at 78% 8%,#1B2D5E 0%,#0E1B3C 46%,#0B1530 100%);color:#fff;overflow:hidden">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9"></canvas>
+    <div style="position:absolute;top:88px;right:7%;width:150px;height:150px;z-index:1;animation:dhfloat 7s ease-in-out infinite;filter:drop-shadow(0 26px 40px rgba(0,0,0,.35))">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:absolute;top:250px;right:20%;width:78px;height:78px;z-index:1;animation:dhfloat 9s ease-in-out .8s infinite;filter:drop-shadow(0 16px 26px rgba(0,0,0,.3))">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:104px 32px 92px">
+        <div style="font-family: 'IBM Plex Mono',monospace; font-size: 12.5px; letter-spacing: .26em; text-transform: uppercase; color: #7FA6F0; display: flex; align-items: center; gap: 12px; font-weight: 800"><span style="width:26px;height:1px;background:#7FA6F0"></span>Národní defence &amp; dual-use hub</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.025em;margin:22px 0 0;max-width:15ch">Vstupní brána do světa <span style="color:#8CAA72">obranných</span> a&nbsp;<span style="color:#6E9bE8">dual-use</span> inovací</h1>
+        
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px">
+          <a href="#kdo" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:#3E72E0">Najít svou cestu →</a>
+          <a href="#databaze" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:rgba(255,255,255,.14)">Databáze řešení</a>
+        </div>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#C4CFE8;max-width:62ch;margin:26px 0 0">Propojujeme startupy, výzkum, průmysl a&nbsp;investory s&nbsp;cílem urychlit vznik a&nbsp;nasazení technologií pro obranu, bezpečnost a&nbsp;odolnost. Navigujeme vás k&nbsp;programům jako NATO DIANA, EUDIS, EDF a&nbsp;EIC — a&nbsp;otevíráme dveře do mezinárodního ekosystému.</p><div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.12)">
+          <div style="font-family: 'IBM Plex Mono',monospace; font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: #8CAA72; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; font-weight: 800"><span style="width:22px;height:1px;background:#8CAA72"></span>Naše mise</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px">
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">Budujeme ekosystém</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">Budujeme český defence a&nbsp;dual-use ekosystém a&nbsp;propojujeme jeho hráče — startupy, průmysl, výzkum, investory i&nbsp;armádu.</p></div>
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">Poradenství pro SME &amp; startupy</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">Navigujeme firmy obranným světem — od defence use-case přes programy až po přípravu přihlášek.</p></div>
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">Komunikace s&nbsp;koncovými uživateli</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">Otevíráme dialog mezi inovátory, armádou a&nbsp;end users, aby technologie řešily reálné potřeby.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ROZCESTNIK -->
+  <section id="kdo" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px 40px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,4vw,50px);line-height:1.04;letter-spacing:-.02em;margin:0;max-width:16ch">Rozcestník</h2>
+        <p style="color:var(--muted);font-size:17px;max-width:42ch;margin:0">Vyberte svou roli a&nbsp;my vás nasměrujeme k&nbsp;relevantním příležitostem a&nbsp;druhé úrovni potřeb.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:18px;margin-top:42px">
+
+        <div style="position:relative;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #2B5CC4;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <a href="#databaze" aria-label="Firma (Prime)" style="position:absolute;inset:0;z-index:1;border-radius:16px"></a>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="3" y="14" width="7" height="17" rx="1.5" fill="#2B5CC4"></rect><rect x="13" y="9" width="7" height="22" rx="1.5" fill="#2B5CC4"></rect><rect x="23" y="4" width="7" height="27" rx="1.5" fill="#1C2F63"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">01</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Firma <span style="color:var(--muted);font-weight:500;font-size:15px">(Prime)</span></h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Výroba, supply chain, integrace technologií.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>Mám výrobní kapacity</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>Potřebuju dodavatele</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>Potřebuju technologii</li>
+            <li style="display:flex;gap:8px;align-items:center;position:relative;z-index:2"><span style="color:#2B5CC4">›</span><a href="Matchmaking Prime.dc.html" style="color:#2B5CC4;text-decoration:none;font-weight:600" style-hover="text-decoration:underline">Matchmaking platforma&nbsp;→ <span style="color:var(--muted);font-weight:400">·&nbsp;startup&nbsp;↔&nbsp;prime</span></a></li>
+          </ul>
+        </div>
+
+        <div style="position:relative;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #6E9152;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <a href="NATO DIANA.dc.html" aria-label="Startup" style="position:absolute;inset:0;z-index:1;border-radius:16px"></a>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><polygon points="17,3 31,29 3,29" fill="#6E9152"></polygon><polygon points="17,15 24,29 10,29" fill="#13234E"></polygon></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">02</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Startup</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Dual-use technologie, akcelerace, funding, testování, matchmaking.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>Poradit s&nbsp;defence use-case</li>
+            <li style="display:flex;gap:8px;align-items:center;position:relative;z-index:2"><span style="color:#6E9152">›</span>Potřebuju testovat</li>
+            <li style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;position:relative;z-index:2;padding:2px 0 2px 18px">
+              <a href="https://www.diana.nato.int/resources/site1/general/test%20centres/diana_testcentres_websitelist_v1.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--blueSoft);color:#2B5CC4;text-decoration:none;font-weight:600;font-size:12.5px;padding:6px 11px;border-radius:8px" style-hover="background:#d9e4f8">Test centra NATO DIANA&nbsp;↗</a>
+              <a href="NATO DIANA.dc.html#sit" style="display:inline-flex;align-items:center;gap:6px;background:var(--greenSoft);color:var(--greenDeep);text-decoration:none;font-weight:600;font-size:12.5px;padding:6px 11px;border-radius:8px" style-hover="background:#e2ecd6">Defence Hub Network&nbsp;→</a>
+            </li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>NATO DIANA</li>
+            <li style="display:flex;gap:8px;align-items:center;position:relative;z-index:2"><span style="color:#6E9152">›</span><a href="Matchmaking Prime.dc.html" style="color:inherit;text-decoration:none" style-hover="color:#2B5CC4">Matchmaking: startup&nbsp;→&nbsp;prime <span style="color:var(--muted);font-weight:400">·&nbsp;řešení&nbsp;/&nbsp;výroba</span></a></li>
+            
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>Potřebuju funding</li>
+            <li style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;position:relative;z-index:2;padding:2px 0 2px 18px">
+              <a href="Matchmaking Investor.dc.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--greenSoft);color:var(--greenDeep);text-decoration:none;font-weight:600;font-size:12.5px;padding:6px 11px;border-radius:8px" style-hover="background:#e2ecd6">Platforma startup&nbsp;↔&nbsp;investor&nbsp;→</a>
+              <a href="#programy" style="display:inline-flex;align-items:center;gap:6px;background:var(--blueSoft);color:#2B5CC4;text-decoration:none;font-weight:600;font-size:12.5px;padding:6px 11px;border-radius:8px" style-hover="background:#d9e4f8">Přehled programů&nbsp;→</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#technologie" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #1C2F63;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><polygon points="17,4 30,12 17,20 4,12" fill="#1C2F63"></polygon><polygon points="17,18 27,12.5 27,22 17,28 7,22 7,12.5" fill="#2B5CC4"></polygon></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">03</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Univerzita</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">R&amp;D, spin-offy, transfer technologií.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>Máme R&amp;D</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>Máme / chceme scale-up</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>Databáze řešení</li>
+          </ul>
+        </a>
+
+        <div style="position:relative;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #3E7CA8;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <a href="#databaze" aria-label="Investor" style="position:absolute;inset:0;z-index:1;border-radius:16px"></a>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="4" y="20" width="7" height="11" rx="1.5" fill="#3E7CA8"></rect><rect x="14" y="13" width="7" height="18" rx="1.5" fill="#3E7CA8"></rect><rect x="24" y="6" width="7" height="25" rx="1.5" fill="#8CAA72"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">04</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Investor</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Defence venture příležitosti.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#3E7CA8">›</span>Hledám firmu do portfolia</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#3E7CA8">›</span>Portfolio firma + funding</li>
+            <li style="display:flex;gap:8px;align-items:center;position:relative;z-index:2"><span style="color:#3E7CA8">›</span><a href="Matchmaking Investor.dc.html" style="color:#2B5CC4;text-decoration:none;font-weight:600" style-hover="text-decoration:underline">Matchmaking platforma&nbsp;→ <span style="color:var(--muted);font-weight:400">·&nbsp;startup&nbsp;↔&nbsp;investor</span></a></li>
+          </ul>
+        </div>
+
+        <a href="#programy" style="text-decoration:none;color:inherit;background:var(--ink);border:1px solid var(--ink);border-top:3px solid #8CAA72;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;color:#fff;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(11,21,48,.6)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="4" y="4" width="11" height="11" rx="2" fill="#2B5CC4"></rect><rect x="19" y="4" width="11" height="11" rx="2" fill="#8CAA72"></rect><rect x="4" y="19" width="11" height="11" rx="2" fill="#8CAA72"></rect><rect x="19" y="19" width="11" height="11" rx="2" fill="#2B5CC4"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5E6E92">05</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Programy</h3>
+          <p style="color:#9DABCB;font-size:13.5px;margin:0 0 16px;line-height:1.5">Přehled programů pro defence a&nbsp;dual use innovation.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:1fr 1fr;gap:9px;font-size:13.5px;font-weight:500">
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EDF</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EUDIS</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EIC</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>NATO DIANA</li>
+          </ul>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NASE ROLE -->
+  <section style="background:var(--ink);color:#fff;display:flex;justify-content:center;margin-top:48px">
+    <div style="width:100%;max-width:1280px;padding:70px 32px">
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px;margin-top:34px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">01</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">Identifikujeme příležitosti</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Pomáháme odhalit obranný a&nbsp;dual-use potenciál vašich technologií.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">02</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">Propojujeme partnery</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Startupy, univerzity, průmysl, investory, armádu a&nbsp;koncové uživatele.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">03</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">Pomáháme hledat financování</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Orientace v&nbsp;programech NATO, EU a&nbsp;dalších zdrojích podpory.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">04</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">Pomáháme s&nbsp;validací</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Use-case scénáře, partneři pro testování a&nbsp;ověření v&nbsp;praxi — včetně Brave1.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMY -->
+  <section id="programy" style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:18ch">Programy financování a&nbsp;akcelerace</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Najednou nemusíte číst 20 stran. Ukážeme vám, který program je pro vás relevantní.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:40px">
+
+        <a href="NATO DIANA.dc.html" style="text-decoration:none;background:linear-gradient(160deg,#13234E,#0E1B3C);color:#fff;border-radius:16px;padding:26px;border:1px solid #243a6e;display:flex;flex-direction:column" style-hover="border-color:#2B5CC4">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">NATO DIANA</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:#2B5CC4;color:#fff;padding:5px 9px;border-radius:20px">AKCELERACE</span></div>
+          <p style="color:#AEBBD8;font-size:14px;line-height:1.55;margin:14px 0 16px">Akcelerační program NATO pro nastupující a&nbsp;přelomové technologie (EDTs). Hostujeme NATO DIANA Czechia.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:#D6DEF0">
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Grant €100 000</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Mentoring · testovací centra</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>NATO network</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:#8FB6FF;font-weight:600;font-size:13.5px">Otevřít výzvy 2027 →</span>
+        </a>
+
+        <a href="https://eudis-business-accelerator.eu/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EUDIS</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--greenSoft);color:var(--greenDeep);padding:5px 9px;border-radius:20px">EU · STARTUP</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Pro startupy a&nbsp;malé firmy vstupující do obranného sektoru.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Business accelerator · matchmaking</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Coaching</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Test in Ukraine</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">eudis-business-accelerator.eu ↗</span>
+        </a>
+
+        <a href="https://www.dotaceeu.cz/cs/evropske-fondy-v-cr/unijni-programy-2021_2027/inovace,-site-a-jednotny-trh/evropsky-obranny-fond" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EDF</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU · KONSORCIA</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Největší evropský program financování obranného výzkumu a&nbsp;vývoje.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Výzkum · vývoj</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Collaborative R&amp;D</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Konsorcia napříč EU</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">dotaceeu.cz — EDF ↗</span>
+        </a>
+
+        <a href="https://www.horizontevropa.cz/cs/zpravodaj/inovativni-evropa/evropska-rada-pro-inovace/yiifnews/3768" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EIC</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">DEEP-TECH</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Pro deep-tech firmy s&nbsp;potenciálem globálního růstu.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Grant · equity</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Scale-up podpora</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Pathfinder &amp; Transition</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">horizontevropa.cz — EIC ↗</span>
+        </a>
+
+        <a href="https://defence-industry-space.ec.europa.eu/eu-defence-industry/safe-security-action-europe_en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">SAFE</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU · OBRANA</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Security Action for Europe — nástroj EU pro posílení obranného průmyslu a&nbsp;společné pořizování vojenského materiálu.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Společné nákupy obrany napříč EU</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Posílení průmyslové kapacity</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Propojení s&nbsp;EDF a&nbsp;EDIRPA</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">ec.europa.eu — SAFE ↗</span>
+        </a>
+
+        <a href="https://tacr.gov.cz/program/program-prodef/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">ProDef</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--greenSoft);color:var(--greenDeep);padding:5px 9px;border-radius:20px">ČR · VÝZKUM</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Program TAČR zaměřený na aplikovaný výzkum a&nbsp;vývoj pro potřeby obrany a&nbsp;bezpečnosti ČR.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Národní programme TAČR</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Obranný &amp; bezpečnostní výzkum</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Spolupráce průmyslu a&nbsp;akademie</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">tacr.gov.cz — ProDef ↗</span>
+        </a>
+
+        <a href="https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">Horizon Europe</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU · R&amp;I</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Hlavní rámcový program EU pro výzkum a&nbsp;inovace s&nbsp;relevancí pro dual-use a&nbsp;bezpečnostní technologie.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Pillar II — Globální výzvy</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>EIC Pathfinder &amp; Transition</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Bezpečnostní výzkum (Civil Security)</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">research-and-innovation.ec.europa.eu ↗</span>
+        </a>
+
+        <a href="https://www.consilium.europa.eu/en/policies/defence-industry-programme/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EDIP</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU · PRŮMYSL</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">European Defence Industry Programme — překlenovací nástroj EU pro posílení obranného průmyslu do roku 2027.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Podpora průmyslové výroby a&nbsp;kapacit</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Společné pořizování a&nbsp;standardizace</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Přechod k&nbsp;budoucímu EDF 2028+</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">consilium.europa.eu — EDIP ↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIANA TEASER -->
+  <section style="background:var(--ink);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:0 32px 80px">
+      <a href="NATO DIANA.dc.html" style="text-decoration:none;display:block;background:linear-gradient(120deg,#13234E 0%,#1C2F63 55%,#23407e 100%);border:1px solid #2c477f;border-radius:22px;padding:46px 44px;position:relative;overflow:hidden" style-hover="border-color:#2B5CC4">
+        <div style="position:absolute;right:-30px;top:-30px;width:200px;height:200px;opacity:.16">
+          <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+          <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#fff"></div>
+          <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+        </div>
+        <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px">
+          <div style="max-width:60ch">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#8CAA72;text-transform:uppercase">Aktuální výzva · Cohort 2027</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3vw,38px);color:#fff;margin:12px 0 8px;letter-spacing:-.02em">Přihlášky do NATO DIANA 2027 jsou otevřené</h3>
+            <p style="color:#B6C2DE;font-size:15.5px;margin:0;line-height:1.55">6 nových challenges · €100 000 grant · 200+ testovacích center. Uzávěrka <strong style="color:#fff">3. 7. 2026</strong>.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;color:#fff;line-height:1">{{ cd.days }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">dní do uzávěrky</div></div>
+            <span style="background:#2B5CC4;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:11px">Prozkoumat challenges →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- UKRAJINA -->
+  <section id="ukrajina" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:20ch">Spolupráce s Ukrajinou</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Programy, které propojují evropský a&nbsp;ukrajinský ekosystém — od financování po testování v&nbsp;reálných podmínkách.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:40px">
+        <a href="BraveTech EU.dc.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #2B5CC4;border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(19,35,78,.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">BraveTech EU</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU × UKRAJINA</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Společná iniciativa Evropské komise a&nbsp;Ukrajiny pro obranné inovace. Propojuje Evropský obranný fond (EDF), EUDIS a&nbsp;ukrajinskou platformu BRAVE1.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Až €50 mil. z&nbsp;EU, zrcadleno €50 mil. z&nbsp;Ukrajiny</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Dvě fáze: Seed a&nbsp;Scale Up</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Matchmaking firem EU–Ukrajina, společný vývoj a&nbsp;testování</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">Detail programu →</span>
+        </a>
+
+        <a href="https://brave1.gov.ua/en/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:var(--ink);border:1px solid var(--ink);border-top:3px solid #8CAA72;border-radius:16px;padding:28px;display:flex;flex-direction:column;color:#fff;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(11,21,48,.55)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">Brave1</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:rgba(140,170,114,.18);color:#A9C98C;padding:5px 9px;border-radius:20px">PLATFORMA · UKRAJINA</span></div>
+          <p style="color:#AEBBD8;font-size:14px;line-height:1.55;margin:14px 0 16px">Jedinečný vstupní bod pro spolupráci v&nbsp;ukrajinském defense-tech — firmy, startupy, vláda, obranné síly, investoři, charitativní fondy i&nbsp;média, kteří spojují síly pro vítězství skrze technologie.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:#D6DEF0">
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Soft-landing a&nbsp;přístup k&nbsp;ukrajinským obranným inovacím</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Pitche, hackathony, granty a&nbsp;investice</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Vývoj a&nbsp;testování pokročilých technologií</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:#8FB6FF;font-weight:600;font-size:13.5px">brave1.gov.ua ↗</span>
+        </a>
+
+        <a href="https://investinbravery.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #8CAA72;border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(19,35,78,.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">Invest in Bravery</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--greenSoft);color:var(--greenDeep);padding:5px 9px;border-radius:20px">AKCE · UKRAJINA</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Nezisková organizace podporující integraci Ukrajiny do světové ekonomiky — díky síle její značky a&nbsp;jejích výjimečných lidí.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Pitch Competition pro defensetech a&nbsp;resiliencetech</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Prague Demo Day před 30+ evropskými VC</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Startupy, investoři i&nbsp;sponzoři</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">investinbravery.com ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATABAZE -->
+  <section id="databaze" style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:90px 32px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:20ch">Databáze řešení&nbsp;</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:38ch;margin:0">Filtrujte podle TRL a&nbsp;12 technologických oblastí NATO. Každé řešení má medailonek a&nbsp;kontakt.</p>
+      </div>
+
+      <!-- FILTERS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:36px;padding:16px;background:var(--mist);border:1px solid var(--line);border-radius:14px">
+        <div style="position:relative;flex:1;min-width:220px">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">⌕</span>
+          <input value="{{ search }}" onInput="{{ onSearch }}" placeholder="Hledat firmu, technologii, zemi…" style="width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px 12px 36px;font-size:14.5px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);outline:none">
+        </div>
+        <select value="{{ area }}" onChange="{{ onArea }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:230px;cursor:pointer">
+          <option value="all">Všechny oblasti NATO (12)</option>
+          <sc-for list="{{ areaOptions }}" as="a" hint-placeholder-count="12"><option value="{{ a.value }}">{{ a.label }}</option></sc-for>
+        </select>
+        <select value="{{ trl }}" onChange="{{ onTrl }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);cursor:pointer">
+          <option value="all">Všechny TRL</option>
+          <option value="1-3">TRL 1–3 · výzkum</option>
+          <option value="4-6">TRL 4–6 · vývoj</option>
+          <option value="7-9">TRL 7–9 · nasazení</option>
+        </select>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);padding:0 6px;white-space:nowrap">{{ count }} / {{ total }}</div>
+        <span onClick="{{ exportExcel }}" style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font-weight:600;font-size:13px;padding:10px 14px;border-radius:10px;cursor:pointer;white-space:nowrap" style-hover="border-color:#2B5CC4;color:#2B5CC4"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><path d="M10 3v10M6 9l4 4 4-4M4 15h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Export XLSX</span>
+        <a href="https://forms.office.com/e/FscmUKHp3c" target="_blank" rel="noopener" style="margin-left:auto;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;padding:11px 17px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">+ Přidat své řešení</a>
+      </div>
+
+      <!-- TAG FILTERS -->
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:10px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;white-space:nowrap">Program:</span>
+        <span onClick="{{ onTagAll }}" style="{{ tagAllStyle }}">Vše</span>
+        <span onClick="{{ onTagNato }}" style="{{ tagNatoStyle }}">NATO ALUMNI</span>
+        <span onClick="{{ onTagTech }}" style="{{ tagTechStyle }}">Technology Incubation Alumni</span>
+        <a href="https://forms.office.com/e/FscmUKHp3c" target="_blank" rel="noopener" style="margin-left:auto;font-size:13px;color:var(--blue);text-decoration:none;font-weight:600;white-space:nowrap" style-hover="text-decoration:underline">Jste alumni? Registrujte řešení →</a>
+      </div>
+
+      <!-- GRID -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ companies }}" as="c" hint-placeholder-count="6">
+          <div onClick="{{ c.open }}" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;cursor:pointer;display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s,border-color .16s" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(19,35,78,.34);border-color:#cdd6e6">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+              <span style="{{ c.areaBadge }}">{{ c.areaShort }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 8px;border-radius:8px;white-space:nowrap">{{ c.code }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;margin:18px 0 6px;line-height:1.15">{{ c.name }}</h3>
+            <p style="color:var(--muted);font-size:13.5px;line-height:1.5;margin:0 0 18px;flex:1">{{ c.oneLiner }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:15px;border-top:1px solid var(--line)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#fff;background:#13234E;padding:4px 9px;border-radius:7px">TRL {{ c.trl }}</span>
+                <span style="font-size:12.5px;color:var(--muted)">{{ c.country }}</span>
+              </div>
+              <span style="font-size:13px;font-weight:600;color:var(--blue)">Detail →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:54px;color:var(--muted);font-size:15px">Žádné řešení neodpovídá filtru. <span onClick="{{ resetFilters }}" style="color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline">Zrušit filtry</span></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- DATABAZE TECHNOLOGII -->
+  <section id="technologie" style="background:var(--paper);display:flex;justify-content:center;border-top:3px solid var(--mist)">
+    <div style="width:100%;max-width:1280px;padding:80px 32px">
+
+      <!-- DEMO BANNER -->
+      <div style="background:#FFFAEB;border:1.5px solid #E8C840;border-radius:12px;padding:14px 20px;display:flex;align-items:flex-start;gap:12px;margin-bottom:34px">
+        <span style="font-size:18px;line-height:1.3;flex:none">⚠</span>
+        <div style="font-size:13.5px;line-height:1.6;color:#6B5800"><strong style="color:#4A3E00">DEMO DATA</strong> — záznamy v&nbsp;této sekci jsou <strong>fiktivní ukázkové příklady</strong>. Ilustrují budoucí funkci platformy. Reálná databáze výzkumných technologií bude naplněna po spuštění ve spolupráci s&nbsp;partnerskými univerzitami.</div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px;margin-bottom:10px"><span style="width:20px;height:1px;background:var(--green)"></span>Akademický sektor</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,44px);letter-spacing:-.02em;margin:0">Databáze technologií</h2>
+        </div>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Výzkumné a&nbsp;vývojové technologie z&nbsp;českých univerzit s&nbsp;obranným a&nbsp;dual-use potenciálem.</p>
+      </div>
+
+      <!-- FILTERS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:32px;padding:16px;background:var(--mist);border:1px solid var(--line);border-radius:14px">
+        <div style="position:relative;flex:1;min-width:220px">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">⌕</span>
+          <input value="{{ techSearch }}" onInput="{{ onTechSearch }}" placeholder="Hledat technologii, oblast, klíčové slovo…" style="width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px 12px 36px;font-size:14.5px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);outline:none">
+        </div>
+        <select value="{{ techUni }}" onChange="{{ onTechUni }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:190px;cursor:pointer">
+          <option value="all">Všechny univerzity</option>
+          <sc-for list="{{ uniOptions }}" as="u" hint-placeholder-count="5"><option value="{{ u }}">{{ u }}</option></sc-for>
+        </select>
+        <select value="{{ techArea }}" onChange="{{ onTechArea }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:220px;cursor:pointer">
+          <option value="all">Všechny oblasti NATO</option>
+          <sc-for list="{{ areaOptions }}" as="a" hint-placeholder-count="12"><option value="{{ a.value }}">{{ a.label }}</option></sc-for>
+        </select>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);white-space:nowrap">{{ techCount }} / {{ techTotal }}</div>
+      </div>
+
+      <!-- GRID -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ techCards }}" as="t" hint-placeholder-count="7">
+          <div style="{{ t.cardStyle }}" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(19,35,78,.3)">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+              <span style="{{ t.uniBadge }}">{{ t.uni }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#fff;background:#13234E;padding:4px 9px;border-radius:7px;white-space:nowrap">TRL {{ t.trl }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:14px 0 4px;line-height:1.25">{{ t.name }}</h3>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.04em;margin-bottom:12px">{{ t.area }}</div>
+            <p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin:0;flex:1">{{ t.desc }}</p>
+            <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:4px">
+              <div style="font-size:13px;font-weight:600;color:var(--navy)">{{ t.contact }}</div>
+              <a href="{{ t.mailtoUrl }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--blue);text-decoration:none" style-hover="text-decoration:underline">{{ t.email }}</a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ techEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:54px;color:var(--muted);font-size:15px">Žádná technologie neodpovídá filtru. <span onClick="{{ resetTechFilters }}" style="color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline">Zrušit filtry</span></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="kontakt" style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px;text-align:center">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0 auto;max-width:22ch;line-height:1.1">Má vaše technologie potenciál pro obranu?</h2>
+      <p style="color:#B6C2DE;font-size:17px;max-width:54ch;margin:20px auto 0;line-height:1.6">Rezervujte si nezávaznou konzultaci s&nbsp;týmem Defence Hub CzechInvest a&nbsp;zjistěte, jaké příležitosti jsou pro vás relevantní.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <span onClick="{{ openLeadForm }}" style="background:#2B5CC4;color:#fff;cursor:pointer;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:#3E72E0">Rezervovat konzultaci</span>
+        <a href="NATO DIANA.dc.html" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">NATO DIANA 2027 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:54px 32px 40px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px">
+        <div style="max-width:34ch">
+          <img src="assets/logo-cobrand-white.png" alt="Defence Hub CzechInvest" style="height:42px;width:auto;display:block">
+          <p style="font-size:13.5px;line-height:1.65;margin:18px 0 0">Defence Hub CzechInvest propojuje lidi, technologie a&nbsp;příležitosti, které pomáhají budovat odolnější a&nbsp;bezpečnější budoucnost.</p>
+          <img src="assets/part-of-diana-white.png" alt="Part of the DIANA network" style="height:40px;margin-top:22px;opacity:.85">
+        </div>
+        <div style="display:flex;gap:60px;flex-wrap:wrap">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Navigace</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="#kdo" style="color:#C2CDE6;text-decoration:none">Kdo jste?</a>
+              <a href="#programy" style="color:#C2CDE6;text-decoration:none">Programy</a>
+              <a href="NATO DIANA.dc.html" style="color:#C2CDE6;text-decoration:none">NATO DIANA 2027</a>
+              <a href="#databaze" style="color:#C2CDE6;text-decoration:none">Databáze řešení</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Partneři</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="https://www.mo.gov.cz/" target="_blank" rel="noopener" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Ministerstvo obrany ČR</a>
+              <a href="https://czechinvest.gov.cz/" target="_blank" rel="noopener" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">CzechInvest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding-top:22px;border-top:1px solid #1d2b50;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <span>© 2026 DEFENCE HUB CZECHINVEST</span>
+        <a href="https://czechinvest.gov.cz/" target="_blank" rel="noopener" style="color:#8FA0C6;text-decoration:none" style-hover="color:#fff">Zpracování osobních údajů</a>
+        <span style="color:#5E6E92">CONNECT · ACCELERATE · DEPLOY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LEAD FORM MODAL -->
+  <sc-if value="{{ leadOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLeadForm }}" style="position:fixed;inset:0;z-index:200;background:rgba(8,15,34,.75);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stopLead }}" style="background:#fff;width:100%;max-width:580px;border-radius:22px;overflow:hidden;box-shadow:0 50px 100px -30px rgba(8,15,34,.85)">
+        <div style="background:linear-gradient(150deg,#13234E 0%,#0E1B3C 100%);color:#fff;padding:28px 32px;position:relative">
+          <div onClick="{{ closeLeadForm }}" style="position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px" style-hover="background:rgba(255,255,255,.2)">✕</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:#8CAA72;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px"><span style="width:18px;height:1px;background:#8CAA72;display:inline-block"></span>Rezervace konzultace · CRM</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:24px;margin:0 0 8px;letter-spacing:-.015em">Popište nám vaši situaci</h3>
+          <p style="color:#AEBBD8;font-size:14px;margin:0;line-height:1.5">Ozveme se do 2 pracovních dnů. Váš záznam bude automaticky zaevidován v CRM CzechInvest.</p>
+        </div>
+        <sc-if value="{{ leadSuccess }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:52px 32px;text-align:center">
+            <div style="width:58px;height:58px;background:#ECF1E5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:26px;color:#6E9152">✓</div>
+            <h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;color:#13234E;margin:0 0 10px">Odesláno do Dynamics CRM!</h4>
+            <p style="color:#5C6886;font-size:15px;line-height:1.55;margin:0 auto 26px;max-width:34ch">Váš lead byl zaevidován v Microsoft Dynamics. Brzy se ozveme.</p>
+            <span onClick="{{ closeLeadForm }}" style="display:inline-block;background:#13234E;color:#fff;font-weight:600;font-size:14px;padding:12px 26px;border-radius:10px;cursor:pointer" style-hover="background:#2B5CC4">Zavřít</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ leadNotSuccess }}" hint-placeholder-val="{{ true }}">
+          <div style="padding:26px 32px 30px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">Jméno a příjmení <span style="color:#2B5CC4">*</span></label>
+                <input value="{{ leadName }}" onInput="{{ onLeadName }}" placeholder="Jan Novák" style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;outline:none;box-sizing:border-box" style-focus="border-color:#2B5CC4;outline:none">
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">Firma / Organizace <span style="color:#2B5CC4">*</span></label>
+                <input value="{{ leadCompany }}" onInput="{{ onLeadCompany }}" placeholder="Acme Defence s.r.o." style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;outline:none;box-sizing:border-box" style-focus="border-color:#2B5CC4;outline:none">
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">E-mail <span style="color:#2B5CC4">*</span></label>
+                <input value="{{ leadEmail }}" onInput="{{ onLeadEmail }}" type="email" placeholder="jan@firma.cz" style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;outline:none;box-sizing:border-box" style-focus="border-color:#2B5CC4;outline:none">
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">Telefon</label>
+                <input value="{{ leadPhone }}" onInput="{{ onLeadPhone }}" placeholder="+420 123 456 789" style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;outline:none;box-sizing:border-box" style-focus="border-color:#2B5CC4;outline:none">
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">Jsem</label>
+              <select value="{{ leadRole }}" onChange="{{ onLeadRole }}" style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;background:#fff;cursor:pointer;outline:none">
+                <option value="startup">Startup / Scale-up</option>
+                <option value="prime">Firma / Prime / SME</option>
+                <option value="university">Univerzita / Výzkum</option>
+                <option value="investor">Investor / VC</option>
+                <option value="other">Jiné</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;color:#13234E;margin-bottom:5px;letter-spacing:.02em">Stručně popište zájem / technologii</label>
+              <textarea value="{{ leadMsg }}" onInput="{{ onLeadMsg }}" placeholder="Vyvíjíme autonomní UAV systém pro logistiku, zajímáme se o NATO DIANA 2027…" style="width:100%;border:1.5px solid #E2E7F0;border-radius:10px;padding:10px 13px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:#13234E;outline:none;resize:vertical;min-height:88px;box-sizing:border-box" style-focus="border-color:#2B5CC4;outline:none"></textarea>
+            </div>
+            <sc-if value="{{ leadError }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fff5f5;border:1px solid #fcc;border-radius:10px;padding:12px 15px;font-size:13px;color:#c00;line-height:1.5">Odeslání selhalo. Kontaktujte nás přímo: <a href="mailto:defencehub@czechinvest.org" style="color:#c00;font-weight:600">defencehub@czechinvest.org</a></div>
+            </sc-if>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid #E2E7F0;padding-top:16px">
+              <p style="font-size:11.5px;color:#5C6886;margin:0;line-height:1.45;max-width:28ch">Odesláním souhlasíte se zpracováním osobních údajů CzechInvest dle GDPR.</p>
+              <span onClick="{{ submitLead }}" style="{{ submitBtnStyle }}">{{ submitLabel }}</span>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- MODAL -->
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(8,15,34,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stop }}" style="background:#fff;width:100%;max-width:680px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(8,15,34,.7)">
+        <div style="background:linear-gradient(150deg,#13234E,#0E1B3C);color:#fff;padding:30px 32px;position:relative">
+          <div onClick="{{ closeModal }}" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.2)">✕</div>
+          <span style="{{ sel.areaBadge }}">{{ sel.area }}</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;margin:16px 0 6px;letter-spacing:-.01em">{{ sel.name }}</h3>
+          <p style="color:#B6C2DE;font-size:15px;margin:0;line-height:1.5">{{ sel.oneLiner }}</p>
+        </div>
+        <div style="padding:28px 32px">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">TRL</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-top:3px">{{ sel.trl }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Země</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.country }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Založeno</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.founded }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Tým</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.emp }}</div></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Medailonek</div>
+          <p style="font-size:14.5px;line-height:1.65;color:#33405e;margin:0 0 22px">{{ sel.desc }}</p>
+          <div style="background:var(--greenSoft);border:1px solid #d8e3cb;border-radius:12px;padding:16px 18px;margin-bottom:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--greenDeep);margin-bottom:6px">Call to action</div>
+            <p style="font-size:14px;color:#2f4022;margin:0;line-height:1.55">{{ sel.cta }}</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line)">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Kontaktní osoba</div>
+              <div style="font-weight:600;font-size:15px;color:var(--navy)">{{ sel.contactName }}</div>
+              <div style="font-size:13px;color:var(--muted)">{{ sel.contactRole }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--blue);margin-top:4px">{{ sel.contactEmail }}</div>
+            </div>
+            <a href="{{ sel.webUrl }}" target="_blank" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">{{ sel.web }} ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1280, &quot;height&quot;: 900},
+  &quot;dealroomUrl&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;https://app.dealroom.co&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  },
+  &quot;paWebhook&quot;: {
+    &quot;editor&quot;: &quot;text&quot;,
+    &quot;default&quot;: &quot;&quot;,
+    &quot;tsType&quot;: &quot;string&quot;
+  }
+}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.canvasRef = React.createRef();
+    this.state = { search:'', area:'all', trl:'all', tag:'all', selected:null, now: Date.now(), leadOpen:false, leadName:'', leadCompany:'', leadEmail:'', leadPhone:'', leadRole:'startup', leadMsg:'', leadStatus:'idle', techSearch:'', techUni:'all', techArea:'all' };
+    this.areas = [
+      'Odolné kosmické operace','Energie a energetika','Pokročilé komunikační technologie',
+      'Sporná elektromagnetická prostředí','Kritická infrastruktura a logistika','Lidská odolnost a biotechnologie',
+      'Rozhodování podporované daty','Námořní operace','Operace v extrémních prostředích',
+      'Autonomie a bezosádkové systémy','Kvantové a nastupující technologie','Senzory a sledování'
+    ];
+    this.areaColors = {
+      'Odolné kosmické operace':'#2B5CC4','Energie a energetika':'#6E9152','Pokročilé komunikační technologie':'#3E7CA8',
+      'Sporná elektromagnetická prostředí':'#46618F','Kritická infrastruktura a logistika':'#1C2F63','Lidská odolnost a biotechnologie':'#8CAA72',
+      'Rozhodování podporované daty':'#2B5CC4','Námořní operace':'#3E7CA8','Operace v extrémních prostředích':'#6E9152',
+      'Autonomie a bezosádkové systémy':'#46618F','Kvantové a nastupující technologie':'#1C2F63','Senzory a sledování':'#8CAA72'
+    };
+    this.areaShort = {
+      'Odolné kosmické operace':'Kosmické operace','Kritická infrastruktura a logistika':'Kritická infra & logistika'
+    };
+    this.companies = [
+      {name:'Canadian Strategic Missions Corp. (CSMC)',oneLiner:'Vzdálený monitoring micro modular reaktorů (MMR) pro odolnou energetiku.',desc:'CSMC se rychle stalo kanadským lídrem ve vývoji micro modular reaktorů. Jejich systém Mission Control je robustní, semi-autonomní cyber-fyzický monitoring, který průběžně vyhodnocuje stav reaktoru, předvídá poruchy a údržbu a umožňuje rychlou reakci na nestandardní podmínky i vnější hrozby — pro odolné napájení kritické obranné infrastruktury.',country:'Kanada',code:'CA',founded:2020,emp:'11–50',trl:2,area:'Kritická infrastruktura a logistika',web:'csmc-scms.ca',cta:'Hledá Series A investici.'},
+      {name:'Connect Robotics',oneLiner:'Autonomní vzdušný most pro taktickou logistiku nezávislý na pozemní infrastruktuře.',desc:'„The Aerial Bridge“ je drone-agnostická, certifikovatelná softwarová a avionická platforma, která mění komerční UAV v autonomní logistická aktiva s vysokou spolehlivostí. Pohání ji pokročilý software s AI strojovým viděním pro přesné doručení a vizuální navigací pro provoz v prostředí bez GNSS a v „radio silent“ režimech.',country:'Portugalsko',code:'PT',founded:2015,emp:'1–10',trl:5,area:'Kritická infrastruktura a logistika',web:'connect-robotics.com',cta:'Hledá strategická partnerství s NATO defence primes pro nasazení v contested logistice.'},
+      {name:'Copsys Technologies',oneLiner:'Inteligentní digitální kůže chránící kritickou infrastrukturu před korozí a biofoulingem.',desc:'Copsys Intelligent Digital Skin (CIDS) mění pasivní kritickou infrastrukturu v „self-aware“ aktiva. Integruje real-time monitoring stavu s aktivní elektrochemickou ochranou, která neutralizuje korozi a biofouling v místě vzniku — tiše a bez podvodního elektrického potenciálu (UEP).',country:'Kanada',code:'CA',founded:2020,emp:'1–10',trl:4,area:'Kritická infrastruktura a logistika',web:'copsys.ca',cta:'Zve námořní obranné a kolaborativní partnery k posunu od reaktivní k prediktivní údržbě.'},
+      {name:'Ethicronics',oneLiner:'Software pro ověření integrity a pravosti elektronických komponent.',desc:'Ethicronics nezávisle ověřuje integritu a autenticitu elektronických komponent pomocí evidence-based analýzy a automatizovaných integrity-checking technik. Řešení se hladce integruje do procurementu, testování a údržby a posiluje důvěru v mission-critical vybavení napříč složitými dodavatelskými řetězci.',country:'Velká Británie',code:'GB',founded:2022,emp:'1–10',trl:4,area:'Kritická infrastruktura a logistika',web:'ethicronics.com',cta:'Hledá obranné a komerční partnery pro integraci a validaci řešení.'},
+      {name:'Niricson',oneLiner:'AI monitoring stavu civilní infrastruktury pomocí UAV a počítačového vidění.',desc:'Niricson kombinuje algoritmy detekce a kvantifikace defektů s fotogrammetrií pro milimetrové digitální baseline. Proprietární UAV senzor umožňuje real-time mapování poškození a kvantifikovaná data podporují prediktivní analytiku pro plánování oprav a údržby.',country:'Kanada',code:'CA',founded:2020,emp:'11–50',trl:6,area:'Kritická infrastruktura a logistika',web:'niricson.com',cta:'Hledá Series B investici.'},
+      {name:'Safety Bolt',oneLiner:'Senzory napětí ve šroubech pro monitoring a prodloužení životnosti konstrukcí.',desc:'Safety Bolt poskytuje AI-enabled monitoring infrastruktury díky patentovaným senzorům napětí ve šroubech. Technologie umožňuje 1minutový retrofit a 20 let kontinuálního sběru dat o strukturální integritě mostů, tunelů a železnic — i pod těžkým vojenským provozem.',country:'Švédsko',code:'SE',founded:2023,emp:'1–10',trl:4,area:'Kritická infrastruktura a logistika',web:'safety-bolt.com',cta:'Uzavírá €2,2M investici, otevřen dalším strategickým partnerům.'},
+      {name:'Simularge',oneLiner:'Fyzikálně poučená AI a digital twin pro spolehlivou obrannou výrobu.',desc:'Simularge řeší nedetekované výrobní odchylky physics-informed digitálním dvojčetem, které kombinuje AI, prediktivní analytiku, simulaci a senzorová data pro real-time optimalizaci. Plug-and-play edge architektura se připojí k PLC během vteřin a předchází vzniku vadných dílů — podporuje zero-defect výrobu.',country:'Turecko',code:'TR',founded:2018,emp:'1–10',trl:5,area:'Kritická infrastruktura a logistika',web:'simularge.com',cta:'Hledá výrobní partnery a testovací centra pro pilotování digital twinu.'},
+      {name:'Deep Space Energy',oneLiner:'Odolné radioizotopové napájení pro manévrování satelitů a obranu proti hrozbám.',desc:'Spin-off Univerzity v Lotyšsku vyvíjí pokročilé evropské radioizotopové napájecí systémy. RDG kombinuje radioizotopový zdroj tepla s vysokoúčinným konvertorem RTALIG (~25 %), který snižuje potřebu izotopového paliva a podporuje strategické satelity v GEO, HEO a cislunárních orbitách.',country:'Lotyšsko',code:'LV',founded:2022,emp:'1–10',trl:3,area:'Odolné kosmické operace',web:'deepspaceenergy.space',cta:'Hledá rané partnery se zájmem o technologii pro mise a projekty.'},
+      {name:'Space Power',oneLiner:'Bezdrátový laserový přenos energie kompatibilní s libovolným satelitem.',desc:'Patentovaný laserový power-beaming systém Space Power dokáže bezdrátově dodat energii libovolnému satelitu, minimalizovat velikost konstelací a maximalizovat životnost strategických aktiv. Energii lze přenést na jakýkoliv solární panel bez předinstalovaného hardwaru.',country:'Velká Británie',code:'GB',founded:2019,emp:'1–10',trl:3,area:'Odolné kosmické operace',web:'space-power.com',cta:'Hledá mise vyžadující nouzové napájení strategických aktiv (např. Skynet).'},
+      {name:'WarpWare',oneLiner:'Charakterizace orbitálního smetí pro udržitelný přístup do vesmíru.',desc:'WarpWare standardizuje vesmírný software a jeho řešení Deep Sight řeší problém nesledovatelného sub-10 cm orbitálního smetí. Využívá low-SWaP optické senzory a pozemní zpracování k identifikaci objektů od 1 cm a fúzuje multi-angle pozorování do přesné orbitální inteligence.',country:'USA',code:'US',founded:2023,emp:'1–10',trl:3,area:'Odolné kosmické operace',web:'www.warpware.co',cta:'Hledá vládní partnery a satelitní operátory pro rozšíření softwaru napříč orbity.'}
+    ];
+    this.deadline = new Date('2026-07-03T12:00:00+01:00').getTime();
+    this.uniColors = {'UNOB':'#1C2F63','ČVUT':'#2B5CC4','VŠB-TUO':'#46618F','MUNI':'#6E9152','ZČU':'#3E7CA8'};
+    this.uniBgs = {'UNOB':'#EAEEF5','ČVUT':'#E8EEFA','VŠB-TUO':'#EAEFF7','MUNI':'#ECF1E5','ZČU':'#E5EEF5'};
+    this.techs = [
+      {name:'Systém autonomní detekce IED a EOD SENTINEL',uni:'UNOB',uniFull:'Univerzita obrany v Brně',area:'Autonomie a bezosádkové systémy',trl:4,desc:'Modulární UGV platforma pro detekci a klasifikaci výbušnin v urbanním prostředí. Multi-spektrální senzorový systém s AI detekcí v reálném čase.',contact:'prof. Ing. Jan Mašek, Ph.D.',email:'masek@unob.cz'},
+      {name:'TacMesh: Šifrovaná taktická mesh síť pro GNSS-denied prostředí',uni:'UNOB',uniFull:'Univerzita obrany v Brně',area:'Pokročilé komunikační technologie',trl:5,desc:'Softwarová vrstva pro end-to-end šifrování decentralizovaných taktických sítí bez závislosti na GPS. NATO STANAG kompatibilní, latence < 12 ms.',contact:'doc. Ing. Petra Horáčková, Ph.D.',email:'horackova@unob.cz'},
+      {name:'HyperVision: AI analýza hyperspektrálních UAV snímků',uni:'ČVUT',uniFull:'České vysoké učení technické v Praze',area:'Senzory a sledování',trl:4,desc:'Algoritmická sada pro real-time zpracování hyperspektrálních dat z UAV. Detekce maskování a anomálií s přesností 94 %. Kompatibilní s komerčními senzory.',contact:'Ing. Tomáš Válek, Ph.D.',email:'valek@fel.cvut.cz'},
+      {name:'FiberShield: Lehká kompozitní balistická ochrana',uni:'ČVUT',uniFull:'České vysoké učení technické v Praze',area:'Kritická infrastruktura a logistika',trl:5,desc:'Hybridní vláknové kompozity s balistickou odolností CRISAT a hmotnostní úsporou 35 % vůči oceli. Aplikace pro ochranu vozidel a mobilních velitelišť.',contact:'prof. Ing. Miroslava Šulcová, DrSc.',email:'sulcova@fs.cvut.cz'},
+      {name:'HAZMAT-µ: Přenosný detektor CBRN látek',uni:'VŠB-TUO',uniFull:'VŠB — Technická univerzita Ostrava',area:'Lidská odolnost a biotechnologie',trl:3,desc:'Miniaturizovaný multi-senzorový detektor CBRN látek (< 500 g). Šifrované LoRa připojení k velitelskému systému, autonomie 48 h.',contact:'Ing. Radek Kubíček, Ph.D.',email:'r.kubicek@vsb.cz'},
+      {name:'BattleFit: Psychofyziologický monitoring bojové zdatnosti',uni:'MUNI',uniFull:'Masarykova univerzita v Brně',area:'Lidská odolnost a biotechnologie',trl:2,desc:'Neinvazivní wearable systém pro monitoring kognitivní a fyzické kondice vojáků v reálném čase. Upozorňuje velitele na kritické snížení bojeschopnosti.',contact:'MUDr. Jakub Procházka, Ph.D.',email:'prochazka@med.muni.cz'},
+      {name:'PowerGrid-X: Hybridní odolné napájení pro polní operace',uni:'ZČU',uniFull:'Západočeská univerzita v Plzni',area:'Energie a energetika',trl:4,desc:'Modulární hybridní napájecí jednotka (solár + palivový článek + baterie) pro autonomní provoz 72+ hodin. Splňuje MIL-STD-461. Vhodné pro FOB a mobilní velitelství.',contact:'doc. Ing. Ondřej Fišer, Ph.D.',email:'fiser@kee.zcu.cz'}
+    ];
+  }
+  runIntro(){
+    const el = document.getElementById('dh-intro'); if(!el) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let seen = false; try { seen = sessionStorage.getItem('dh_intro_seen') === '1'; } catch(_){}
+    const remove = () => { if(el && el.parentNode){ el.parentNode.removeChild(el); } };
+    if(seen || reduce){ remove(); return; }
+    try { sessionStorage.setItem('dh_intro_seen','1'); } catch(_){}
+    const skip = () => { el.style.transition='opacity .4s ease'; el.style.opacity='0'; setTimeout(remove, 400); };
+    el.addEventListener('click', skip);
+    this._introTimer = setTimeout(remove, 4150);
+  }
+  componentDidMount(){
+    document.title = 'Defence Hub CzechInvest — obranné a dual-use inovace';
+    document.documentElement.lang = 'cs';
+    this.runIntro();
+    this._tick = setInterval(()=>this.setState({now:Date.now()}), 1000);
+    const canvas = this.canvasRef.current; if(!canvas) return;
+    const ctx = canvas.getContext('2d'); const parent = canvas.parentElement;
+    let w,h,dpr; const N=46; const nodes=[];
+    const resize=()=>{ dpr=Math.min(2,window.devicePixelRatio||1); w=parent.clientWidth; h=parent.clientHeight; canvas.width=w*dpr; canvas.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); };
+    resize();
+    for(let i=0;i<N;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.7});
+    const draw=()=>{
+      ctx.clearRect(0,0,w,h);
+      for(let i=0;i<N;i++){ const a=nodes[i]; a.x+=a.vx; a.y+=a.vy; if(a.x<0||a.x>w)a.vx*=-1; if(a.y<0||a.y>h)a.vy*=-1;
+        for(let j=i+1;j<N;j++){ const b=nodes[j]; const dx=a.x-b.x,dy=a.y-b.y; const d=Math.hypot(dx,dy); if(d<150){ ctx.globalAlpha=(1-d/150)*.45; ctx.strokeStyle='#5B79C9'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
+      ctx.globalAlpha=1;
+      for(const n of nodes){ ctx.fillStyle = n.r>1.5?'#8CAA72':'#9FB6E8'; ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,7); ctx.fill(); }
+      this._raf=requestAnimationFrame(draw);
+    };
+    draw();
+    this._resize=resize; window.addEventListener('resize',resize);
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this._raf); clearInterval(this._tick); window.removeEventListener('resize',this._resize); }
+  exportExcel(){
+    const rows = this._currentFiltered || this.companies;
+    if(window.XLSX){
+      const data = rows.map(c=>({
+        'Název':c.name, 'Oblast NATO':c.area, 'TRL':c.trl, 'Země':c.country,
+        'Popis':c.oneLiner, 'Podrobnosti':c.desc,
+        'Web':c.web, 'CTA':c.cta, 'Kontakt':'defencehub@czechinvest.org'
+      }));
+      const ws = window.XLSX.utils.json_to_sheet(data);
+      ws['!cols']=[{wch:36},{wch:38},{wch:5},{wch:12},{wch:60},{wch:80},{wch:24},{wch:60},{wch:30}];
+      const wb = window.XLSX.utils.book_new();
+      window.XLSX.utils.book_append_sheet(wb, ws, 'Databáze řešení');
+      window.XLSX.writeFile(wb,`Defence_Hub_Databaze_${new Date().toISOString().slice(0,10)}.xlsx`);
+    } else {
+      const hdr=['Název','Oblast NATO','TRL','Země','Popis','Web'];
+      const csv=[hdr,...rows.map(c=>[c.name,c.area,c.trl,c.country,c.oneLiner,c.web])]
+        .map(r=>r.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(',')).join('\n');
+      const a=document.createElement('a');
+      a.href='data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(csv);
+      a.download='Defence_Hub_Databaze.csv'; a.click();
+    }
+  }
+  async submitLead(){
+    const s = this.state;
+    if(!s.leadName.trim()||!s.leadCompany.trim()||!s.leadEmail.trim()) return;
+    const webhook = (this.props.paWebhook||'').trim();
+    this.setState({leadStatus:'submitting'});
+    const [first,...rest] = s.leadName.trim().split(' ');
+    const payload = {
+      firstname: first, lastname: rest.join(' '),
+      emailaddress1: s.leadEmail, telephone1: s.leadPhone,
+      companyname: s.leadCompany, jobtitle: s.leadRole,
+      leadsourcecode: 'defence-hub-web',
+      description: s.leadMsg,
+      subject: `Defence Hub – ${s.leadRole} – ${s.leadCompany}`
+    };
+    try {
+      if(!webhook){
+        const body = encodeURIComponent(`Firma: ${s.leadCompany}\nRole: ${s.leadRole}\nTelefon: ${s.leadPhone}\n\n${s.leadMsg}`);
+        window.open(`mailto:defencehub@czechinvest.org?subject=${encodeURIComponent('Konzultace: '+s.leadCompany)}&body=${body}`,'_blank');
+        this.setState({leadStatus:'success'}); return;
+      }
+      const res = await fetch(webhook,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(res.ok||res.status===202){ this.setState({leadStatus:'success'}); }
+      else throw new Error('HTTP '+res.status);
+    } catch(e){ console.error('Lead submit:',e); this.setState({leadStatus:'error'}); }
+  }
+  badge(area){ const c=this.areaColors[area]||'#13234E'; return {background:c,color:'#fff',fontSize:'11px',fontFamily:"'IBM Plex Mono',monospace",fontWeight:500,padding:'5px 11px',borderRadius:'20px',letterSpacing:'.04em',display:'inline-block',whiteSpace:'nowrap'}; }
+  shortArea(area){ return this.areaShort[area]||area; }
+  renderVals(){
+    const s=this.state;
+    const inRange=(t)=>{ if(s.trl==='all')return true; const[a,b]=s.trl.split('-').map(Number); return t>=a&&t<=b; };
+    const q=s.search.trim().toLowerCase();
+    const filtered=this.companies.filter(c=>{
+      if(s.area!=='all' && c.area!==s.area) return false;
+      if(!inRange(c.trl)) return false;
+      if(s.tag!=='all' && !(c.tags||[]).includes(s.tag)) return false;
+      if(q && !((c.name+' '+c.oneLiner+' '+c.country+' '+c.area).toLowerCase().includes(q))) return false;
+      return true;
+    });
+    this._currentFiltered = filtered;
+    const companies=filtered.map((c,i)=>({
+      ...c, areaShort:this.shortArea(c.area), areaBadge:this.badge(c.area),
+      open:()=>this.setState({selected:c})
+    }));
+    const sel=s.selected;
+    const selView = sel ? {
+      ...sel, areaBadge:this.badge(sel.area),
+      webUrl: (sel.web.startsWith('http')?sel.web:'https://'+sel.web),
+      contactName:'Tým Defence Hub CzechInvest', contactRole:'Akcelerační garant · NATO DIANA Czechia', contactEmail:'defencehub@czechinvest.org'
+    } : {};
+    const diff=Math.max(0,this.deadline - s.now);
+    const cd={ days:String(Math.floor(diff/86400000)) };
+    const tq=s.techSearch.trim().toLowerCase();
+    const techFiltered=this.techs.filter(t=>{
+      if(s.techUni!=='all'&&t.uni!==s.techUni) return false;
+      if(s.techArea!=='all'&&t.area!==s.techArea) return false;
+      if(tq&&!(t.name+' '+t.desc+' '+t.area+' '+t.uni).toLowerCase().includes(tq)) return false;
+      return true;
+    });
+    const techCards=techFiltered.map(t=>({...t,
+      cardStyle:`background:#fff;border:1px solid #E2E7F0;border-left:4px solid ${this.uniColors[t.uni]||'#2B5CC4'};border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s`,
+      uniBadge:`background:${this.uniBgs[t.uni]||'#E8EEFA'};color:${this.uniColors[t.uni]||'#2B5CC4'};font-size:11px;font-family:'IBM Plex Mono',monospace;font-weight:600;padding:5px 10px;border-radius:20px;letter-spacing:.04em;white-space:nowrap`,
+      mailtoUrl:`mailto:${t.email}?subject=${encodeURIComponent('Zájem o technologii: '+t.name)}`
+    }));
+    const uniOptions=[...new Set(this.techs.map(t=>t.uni))];
+    return {
+      canvasRef:this.canvasRef,
+      search:s.search, area:s.area, trl:s.trl,
+      onSearch:(e)=>this.setState({search:e.target.value}),
+      onArea:(e)=>this.setState({area:e.target.value}),
+      onTrl:(e)=>this.setState({trl:e.target.value}),
+      areaOptions:this.areas.map(a=>({value:a,label:a})),
+      companies, count:filtered.length, total:this.companies.length, isEmpty:filtered.length===0,
+      resetFilters:()=>this.setState({search:'',area:'all',trl:'all',tag:'all'}),
+      techSearch:s.techSearch, onTechSearch:e=>this.setState({techSearch:e.target.value}),
+      techUni:s.techUni, onTechUni:e=>this.setState({techUni:e.target.value}),
+      techArea:s.techArea, onTechArea:e=>this.setState({techArea:e.target.value}),
+      uniOptions, techCards, techCount:techFiltered.length, techTotal:this.techs.length,
+      techEmpty:techFiltered.length===0,
+      resetTechFilters:()=>this.setState({techSearch:'',techUni:'all',techArea:'all'}),
+      hasSelected:!!sel, sel:selView, closeModal:()=>this.setState({selected:null}), stop:(e)=>e.stopPropagation(),
+      cd,
+      dealroomUrl: this.props.dealroomUrl||'https://app.dealroom.co',
+      tag: s.tag,
+      onTagAll: ()=>this.setState({tag:'all'}),
+      onTagNato: ()=>this.setState({tag:'nato-alumni'}),
+      onTagTech: ()=>this.setState({tag:'tech-incubation'}),
+      tagAllStyle: `font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;border:1.5px solid ${s.tag==='all'?'#13234E;background:#13234E;color:#fff':'#E2E7F0;background:#fff;color:#5C6886'}`,
+      tagNatoStyle: `font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;border:1.5px solid ${s.tag==='nato-alumni'?'#2B5CC4;background:#2B5CC4;color:#fff':'#E2E7F0;background:#fff;color:#5C6886'}`,
+      tagTechStyle: `font-size:12.5px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;border:1.5px solid ${s.tag==='tech-incubation'?'#6E9152;background:#6E9152;color:#fff':'#E2E7F0;background:#fff;color:#5C6886'}`,
+      leadOpen: s.leadOpen,
+      leadSuccess: s.leadStatus==='success',
+      leadNotSuccess: s.leadStatus!=='success',
+      leadError: s.leadStatus==='error',
+      leadName: s.leadName, onLeadName: e=>this.setState({leadName:e.target.value}),
+      leadCompany: s.leadCompany, onLeadCompany: e=>this.setState({leadCompany:e.target.value}),
+      leadEmail: s.leadEmail, onLeadEmail: e=>this.setState({leadEmail:e.target.value}),
+      leadPhone: s.leadPhone, onLeadPhone: e=>this.setState({leadPhone:e.target.value}),
+      leadRole: s.leadRole, onLeadRole: e=>this.setState({leadRole:e.target.value}),
+      leadMsg: s.leadMsg, onLeadMsg: e=>this.setState({leadMsg:e.target.value}),
+      submitLabel: s.leadStatus==='submitting'?'Odesílám…':'Odeslat →',
+      submitBtnStyle: `background:${s.leadStatus==='submitting'?'#6a7fa8':'#13234E'};color:#fff;font-weight:600;font-size:14.5px;padding:12px 26px;border-radius:10px;cursor:${s.leadStatus==='submitting'?'wait':'pointer'};white-space:nowrap;font-family:'IBM Plex Sans',sans-serif`,
+      openLeadForm: ()=>this.setState({leadOpen:true,leadStatus:'idle'}),
+      closeLeadForm: ()=>this.setState({leadOpen:false,leadStatus:'idle',leadName:'',leadCompany:'',leadEmail:'',leadPhone:'',leadRole:'startup',leadMsg:''}),
+      stopLead: e=>e.stopPropagation(),
+      exportExcel: ()=>this.exportExcel(),
+      submitLead: ()=>this.submitLead()
+    };
+  }
+}
+</script>
+</body>
+</html>

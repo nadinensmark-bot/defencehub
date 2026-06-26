@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#0B1530"></rect>
+<g transform="translate(600 300)">
+<path d="M0 -120 L104 -60 L0 0 L-104 -60 Z" fill="#2B5CC4"></path>
+<path d="M-104 -60 L0 0 L0 120 L-104 60 Z" fill="#1C2F63"></path>
+<path d="M104 -60 L0 0 L0 120 L104 60 Z" fill="#8CAA72"></path>
+</g>
+<text x="600" y="540" font-family="Space Grotesk, sans-serif" font-size="56" font-weight="700" fill="#FFFFFF" text-anchor="middle">Defence Hub</text>
+<text x="600" y="600" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="4" fill="#7FA6F0" text-anchor="middle">CZECHINVEST</text>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+@keyframes dhfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes dhpulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes dhfade{from{opacity:0}to{opacity:1}}
+@keyframes dhIntroOut{0%{opacity:1}100%{opacity:0;visibility:hidden}}
+@keyframes dhSun{0%{opacity:0;transform:translate(-50%,-50%) scale(.4)}60%{opacity:1}100%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes dhHaze{0%{transform:translateX(-5%)}100%{transform:translateX(8%)}}
+@keyframes dhJet{0%{opacity:0;transform:translate(-60vw,16vh) rotate(-8deg) scale(.3)}9%{opacity:1}100%{opacity:1;transform:translate(66vw,-14vh) rotate(-8deg) scale(1.2)}}
+@keyframes dhBurn{0%,100%{opacity:.6;transform:scaleX(1) scaleY(.92)}50%{opacity:1;transform:scaleX(1.6) scaleY(1.08)}}
+@keyframes dhShock{0%{opacity:0;transform:translate(-50%,-50%) scale(.12)}16%{opacity:.6}100%{opacity:0;transform:translate(-50%,-50%) scale(2.9)}}
+@keyframes dhStreak{0%{opacity:0;transform:translateX(24vw)}12%{opacity:.55}100%{opacity:0;transform:translateX(-130vw)}}
+@keyframes dhFlash{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+@keyframes dhShake{0%,100%{transform:translate(0,0)}20%{transform:translate(5px,-4px)}40%{transform:translate(-5px,4px)}60%{transform:translate(4px,3px)}80%{transform:translate(-3px,-3px)}}
+@keyframes dhTitle{0%{opacity:0;transform:translateY(30px);filter:blur(9px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes dhKick{0%{opacity:0;letter-spacing:.5em;transform:translateY(10px)}100%{opacity:1;letter-spacing:.28em;transform:translateY(0)}}
+@keyframes dhReticle{0%{opacity:0;transform:translate(-50%,-50%) scale(1.7) rotate(-30deg)}100%{opacity:.9;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes dhHud{0%{opacity:0}100%{opacity:.75}}
+@keyframes dhBarT{0%{transform:translateY(-100%)}100%{transform:translateY(0)}}
+@keyframes dhBarB{0%{transform:translateY(100%)}100%{transform:translateY(0)}}
+@keyframes dhSpin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- INTRO OVERLAY (cinematic) -->
+  <div id="dh-intro" style="position:fixed;inset:0;z-index:9999;background:#05060E;overflow:hidden;cursor:pointer;animation:dhIntroOut .85s ease forwards 3.25s">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,#05060E 0%,#0A1530 38%,#13285C 70%,#1E3F7A 100%)"></div>
+    <div style="position:absolute;left:62%;top:78%;width:120vw;height:120vw;border-radius:50%;background:radial-gradient(circle,rgba(255,233,196,.55) 0%,rgba(127,166,240,.34) 24%,rgba(43,92,196,.18) 42%,rgba(11,21,48,0) 62%);transform:translate(-50%,-50%);animation:dhSun 1.8s ease-out forwards"></div>
+    <div style="position:absolute;left:-10%;right:-10%;top:66%;height:32%;background:radial-gradient(60% 100% at 60% 100%,rgba(170,200,255,.18),rgba(11,21,48,0) 70%);filter:blur(8px);animation:dhHaze 7s ease-in-out infinite alternate"></div>
+
+    <div style="position:absolute;inset:0;animation:dhShake .55s ease 1.1s">
+      <div style="position:absolute;top:30%;left:0;width:60vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.7));animation:dhStreak 1.5s ease-in forwards .25s"></div>
+      <div style="position:absolute;top:38%;left:0;width:48vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.5));animation:dhStreak 1.4s ease-in forwards .42s"></div>
+      <div style="position:absolute;top:52%;left:0;width:70vw;height:3px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(140,170,114,.5));animation:dhStreak 1.6s ease-in forwards .15s"></div>
+      <div style="position:absolute;top:61%;left:0;width:42vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.45));animation:dhStreak 1.45s ease-in forwards .55s"></div>
+      <div style="position:absolute;top:46%;left:0;width:55vw;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(190,212,255,.6));animation:dhStreak 1.5s ease-in forwards .33s"></div>
+
+      <div style="position:absolute;left:50%;top:46%;width:30vw;height:30vw;border-radius:50%;border:2px solid rgba(200,222,255,.6);transform:translate(-50%,-50%) scale(.12);animation:dhShock 1.2s ease-out forwards 1.0s"></div>
+
+      <div style="position:absolute;top:46%;left:0;display:flex;align-items:center;will-change:transform;filter:drop-shadow(0 16px 30px rgba(0,0,0,.55));animation:dhJet 2.5s cubic-bezier(.42,.02,.5,1) forwards .3s">
+        <div style="width:600px;height:7px;border-radius:7px;background:linear-gradient(90deg,rgba(190,212,255,0) 0%,rgba(190,212,255,.25) 55%,rgba(255,255,255,.9) 100%);filter:blur(1px)"></div>
+        <div style="width:84px;height:30px;margin:0 -14px 0 -6px;border-radius:50%;background:radial-gradient(ellipse at 78% 50%,#FFFFFF 0%,#CFE7FF 26%,#7FA6F0 52%,rgba(140,170,114,.5) 70%,rgba(140,170,114,0) 84%);filter:blur(1.5px);animation:dhBurn .26s ease-in-out infinite"></div>
+        <svg width="320" height="134" viewBox="0 0 360 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M74 76 L42 24 L98 74 Z" fill="#0A1024"></path>
+          <path d="M188 90 L92 146 L150 86 Z" fill="#0A1024"></path>
+          <path d="M96 92 L52 130 L108 88 Z" fill="#0A1024"></path>
+          <path d="M34 82 L150 72 L300 71 L347 80 L300 89 L150 92 Z" fill="#0A1024"></path>
+          <path d="M250 73 C268 60 296 64 306 76 L250 79 Z" fill="#2B5CC4"></path>
+          <path d="M40 80 L150 71 L300 70 L345 79" stroke="#90B0F0" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".85"></path>
+          <path d="M150 86 L232 84 L232 90 L150 90 Z" fill="#05060E" opacity=".5"></path>
+          <ellipse cx="35" cy="82" rx="7" ry="6" fill="#BFE0FF"></ellipse>
+        </svg>
+      </div>
+    </div>
+
+    <div style="position:absolute;inset:0;pointer-events:none;opacity:0;animation:dhHud .8s ease forwards 1.5s">
+      <div style="position:absolute;left:34px;top:14vh;width:34px;height:34px;border-left:2px solid rgba(143,176,240,.6);border-top:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;right:34px;top:14vh;width:34px;height:34px;border-right:2px solid rgba(143,176,240,.6);border-top:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;left:34px;bottom:14vh;width:34px;height:34px;border-left:2px solid rgba(143,176,240,.6);border-bottom:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;right:34px;bottom:14vh;width:34px;height:34px;border-right:2px solid rgba(143,176,240,.6);border-bottom:2px solid rgba(143,176,240,.6)"></div>
+      <div style="position:absolute;left:34px;top:calc(14vh + 46px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(190,212,255,.75)">DEFENCE&nbsp;HUB&nbsp;//&nbsp;DIANA&nbsp;NETWORK</div>
+      <div style="position:absolute;left:34px;bottom:calc(14vh + 22px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:rgba(140,170,114,.9);display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;background:#8CAA72;display:inline-block;animation:dhpulse 1s infinite"></span>TRACKING&nbsp;TARGET</div>
+      <div style="position:absolute;right:34px;bottom:calc(14vh + 22px);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:rgba(190,212,255,.75)">CZ&nbsp;✦&nbsp;EU&nbsp;✦&nbsp;NATO</div>
+    </div>
+
+    <div style="position:absolute;left:50%;top:42%;width:130px;height:130px;transform:translate(-50%,-50%);opacity:0;animation:dhReticle .7s cubic-bezier(.2,.7,.3,1) forwards 1.0s, dhHud .8s ease forwards 1.0s">
+      <div style="position:absolute;inset:0;border:1px solid rgba(143,176,240,.35);border-radius:50%"></div>
+      <div style="position:absolute;inset:18px;border:1px dashed rgba(143,176,240,.5);border-radius:50%;animation:dhSpin 9s linear infinite"></div>
+      <div style="position:absolute;left:50%;top:0;width:1px;height:18px;background:rgba(143,176,240,.7);transform:translateX(-50%)"></div>
+      <div style="position:absolute;left:50%;bottom:0;width:1px;height:18px;background:rgba(143,176,240,.7);transform:translateX(-50%)"></div>
+      <div style="position:absolute;top:50%;left:0;height:1px;width:18px;background:rgba(143,176,240,.7);transform:translateY(-50%)"></div>
+      <div style="position:absolute;top:50%;right:0;height:1px;width:18px;background:rgba(143,176,240,.7);transform:translateY(-50%)"></div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;top:60%;text-align:center;padding:0 24px">
+      <div style="opacity:0;animation:dhTitle .9s cubic-bezier(.2,.7,.3,1) forwards 1.75s">
+        <div style="display:inline-flex;align-items:center;gap:16px;justify-content:center">
+          <div style="width:46px;height:46px;position:relative;flex:none">
+            <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+            <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+            <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+          </div>
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,5vw,58px);letter-spacing:-.02em;color:#fff;line-height:1">Defence Hub <span style="color:#8CAA72">CzechInvest</span></div>
+        </div>
+      </div>
+      <div style="opacity:0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#7FA6F0;margin-top:18px;animation:dhKick .7s ease forwards 2.05s">Your gateway to defence &amp; dual-use innovation</div>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;top:0;height:9vh;background:#05060E;animation:dhBarT .6s cubic-bezier(.6,0,.3,1) forwards"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:9vh;background:#05060E;animation:dhBarB .6s cubic-bezier(.6,0,.3,1) forwards"></div>
+
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 52% 46%,#FFFFFF,rgba(255,255,255,0) 60%);opacity:0;pointer-events:none;animation:dhFlash .7s ease forwards 1.15s"></div>
+    <div style="position:absolute;inset:0;background:#FFFFFF;opacity:0;pointer-events:none;animation:dhFlash .85s ease forwards 2.95s"></div>
+
+    <div style="position:absolute;right:34px;top:calc(14vh + 46px);font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:rgba(190,212,255,.45);opacity:0;animation:dhHud .8s ease forwards 1.8s">CLICK TO SKIP ›</div>
+  </div>
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">National contact point for defence and dual-use innovation</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>PART OF THE DIANA NETWORK</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="#kdo" style="color:var(--navy);text-decoration:none">HUB</a>
+        <a href="#programy" style="color:var(--navy);text-decoration:none">Programs</a>
+        <a href="NATO DIANA EN.dc.html" style="color:var(--blue);text-decoration:none;font-weight:600">NATO DIANA</a>
+        <a href="#databaze" style="color:var(--navy);text-decoration:none">Solutions database</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em"><a href="Defence Hub.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--navy)">CZ</a><span style="opacity:.4"> / </span><span style="color:var(--navy);font-weight:600">EN</span></span>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">Book a consultation</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative;background:radial-gradient(120% 130% at 78% 8%,#1B2D5E 0%,#0E1B3C 46%,#0B1530 100%);color:#fff;overflow:hidden">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9"></canvas>
+    <div style="position:absolute;top:88px;right:7%;width:150px;height:150px;z-index:1;animation:dhfloat 7s ease-in-out infinite;filter:drop-shadow(0 26px 40px rgba(0,0,0,.35))">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:absolute;top:250px;right:20%;width:78px;height:78px;z-index:1;animation:dhfloat 9s ease-in-out .8s infinite;filter:drop-shadow(0 16px 26px rgba(0,0,0,.3))">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:104px 32px 92px">
+        <div style="font-family: 'IBM Plex Mono',monospace; font-size: 12.5px; letter-spacing: .26em; text-transform: uppercase; color: #7FA6F0; display: flex; align-items: center; gap: 12px; font-weight: 800"><span style="width:26px;height:1px;background:#7FA6F0"></span>National defence &amp; dual-use hub</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.025em;margin:22px 0 0;max-width:15ch">Your gateway to the world of <span style="color:#8CAA72">defence</span> and&nbsp;<span style="color:#6E9bE8">dual-use</span> innovation</h1>
+        
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px">
+          <a href="#kdo" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:#3E72E0">Find your path →</a>
+          <a href="#databaze" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:rgba(255,255,255,.14)">Solutions database</a>
+        </div>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#C4CFE8;max-width:62ch;margin:26px 0 0">We connect startups, research, industry and investors to accelerate the creation and deployment of technologies for defence, security and resilience. We guide you to programs such as NATO DIANA, EUDIS, EDF and EIC — and open the door to the international ecosystem.</p><div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.12)">
+          <div style="font-family: 'IBM Plex Mono',monospace; font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: #8CAA72; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; font-weight: 800"><span style="width:22px;height:1px;background:#8CAA72"></span>Our mission</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px">
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">We build the ecosystem</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">We build the Czech defence and dual-use ecosystem and connect its players — startups, industry, research, investors and the armed forces.</p></div>
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">Advisory for SMEs &amp; startups</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">We navigate companies through the defence world — from the defence use-case through programs to application preparation.</p></div>
+            <div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;color:#fff;margin:0 0 7px">Communication with end users</h3><p style="font-size:13.5px;line-height:1.55;color:#A9B6D6;margin:0">We open a dialogue between innovators, the military and end users, so technology solves real needs.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ROZCESTNIK -->
+  <section id="kdo" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px 40px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(30px,4vw,50px);line-height:1.04;letter-spacing:-.02em;margin:0;max-width:16ch">Hub</h2>
+        <p style="color:var(--muted);font-size:17px;max-width:42ch;margin:0">Pick your role and we will point you to the relevant opportunities and the second level of needs.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:18px;margin-top:42px">
+
+        <a href="#databaze" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #2B5CC4;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="3" y="14" width="7" height="17" rx="1.5" fill="#2B5CC4"></rect><rect x="13" y="9" width="7" height="22" rx="1.5" fill="#2B5CC4"></rect><rect x="23" y="4" width="7" height="27" rx="1.5" fill="#1C2F63"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">01</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Company <span style="color:var(--muted);font-weight:500;font-size:15px">(Prime)</span></h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Manufacturing, supply chain, technology integration.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>I have manufacturing capacity</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>I need suppliers</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#2B5CC4">›</span>I need technology</li>
+          </ul>
+        </a>
+
+        <a href="NATO DIANA EN.dc.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #6E9152;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><polygon points="17,3 31,29 3,29" fill="#6E9152"></polygon><polygon points="17,15 24,29 10,29" fill="#13234E"></polygon></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">02</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Startup</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Dual-use technology, acceleration, funding, testing.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>Advice on a defence use-case</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>I need to test</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>NATO DIANA</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#6E9152">›</span>I need funding</li>
+          </ul>
+        </a>
+
+        <a href="#databaze" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #1C2F63;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><polygon points="17,4 30,12 17,20 4,12" fill="#1C2F63"></polygon><polygon points="17,18 27,12.5 27,22 17,28 7,22 7,12.5" fill="#2B5CC4"></polygon></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">03</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">University</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">R&amp;D, spin-offs, technology transfer.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>We have R&amp;D</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>We have / want scale-up</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#1C2F63">›</span>Solutions database</li>
+          </ul>
+        </a>
+
+        <a href="#databaze" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #3E7CA8;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(19,35,78,.32)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="4" y="20" width="7" height="11" rx="1.5" fill="#3E7CA8"></rect><rect x="14" y="13" width="7" height="18" rx="1.5" fill="#3E7CA8"></rect><rect x="24" y="6" width="7" height="25" rx="1.5" fill="#8CAA72"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B7C0D4">04</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Investor</h3>
+          <p style="color:var(--muted);font-size:13.5px;margin:0 0 16px;line-height:1.5">Defence venture opportunities.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px;font-size:14px;font-weight:500">
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#3E7CA8">›</span>Looking for a portfolio company</li>
+            <li style="display:flex;gap:8px;align-items:center"><span style="color:#3E7CA8">›</span>Portfolio company + funding</li>
+          </ul>
+        </a>
+
+        <a href="#programy" style="text-decoration:none;color:inherit;background:var(--ink);border:1px solid var(--ink);border-top:3px solid #8CAA72;border-radius:16px;padding:26px 24px;display:flex;flex-direction:column;color:#fff;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-6px);box-shadow:0 22px 44px -20px rgba(11,21,48,.6)">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <svg width="34" height="34" viewBox="0 0 34 34"><rect x="4" y="4" width="11" height="11" rx="2" fill="#2B5CC4"></rect><rect x="19" y="4" width="11" height="11" rx="2" fill="#8CAA72"></rect><rect x="4" y="19" width="11" height="11" rx="2" fill="#8CAA72"></rect><rect x="19" y="19" width="11" height="11" rx="2" fill="#2B5CC4"></rect></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5E6E92">05</span>
+          </div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;margin:20px 0 4px">Programs</h3>
+          <p style="color:#9DABCB;font-size:13.5px;margin:0 0 16px;line-height:1.5">Overview of programs for defence and dual-use innovation.</p>
+          <ul style="list-style:none;margin:0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:1fr 1fr;gap:9px;font-size:13.5px;font-weight:500">
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EDF</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EUDIS</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>EIC</li>
+            <li style="display:flex;gap:7px;align-items:center"><span style="color:#8CAA72">›</span>NATO DIANA</li>
+          </ul>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NASE ROLE -->
+  <section style="background:var(--ink);color:#fff;display:flex;justify-content:center;margin-top:48px">
+    <div style="width:100%;max-width:1280px;padding:70px 32px">
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:34px;margin-top:34px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">01</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">We identify opportunities</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">We help uncover the defence and dual-use potential of your technology.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">02</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">We connect partners</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Startups, universities, industry, investors, the military and end users.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">03</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">We help find funding</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Guidance through NATO, EU and other funding programs.</p></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">04</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18px;margin:10px 0 8px">We help with validation</h4><p style="color:#9DABCB;font-size:14px;line-height:1.6;margin:0">Use-case scenarios, partners for testing and real-world validation — including Brave1.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMY -->
+  <section id="programy" style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:18ch">Funding &amp; acceleration programs</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">No need to read 20 pages. We show you which program is relevant for you.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:40px">
+
+        <a href="NATO DIANA EN.dc.html" style="text-decoration:none;background:linear-gradient(160deg,#13234E,#0E1B3C);color:#fff;border-radius:16px;padding:26px;border:1px solid #243a6e;display:flex;flex-direction:column" style-hover="border-color:#2B5CC4">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">NATO DIANA</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:#2B5CC4;color:#fff;padding:5px 9px;border-radius:20px">ACCELERATION</span></div>
+          <p style="color:#AEBBD8;font-size:14px;line-height:1.55;margin:14px 0 16px">NATO accelerator for emerging and disruptive technologies. We host NATO DIANA Czechia.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:#D6DEF0">
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>€100,000 grant</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Mentoring · test centres</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>NATO network</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:#8FB6FF;font-weight:600;font-size:13.5px">Open the 2027 challenges →</span>
+        </a>
+
+        <a href="https://eudis.europa.eu/index_en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EUDIS</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--greenSoft);color:var(--greenDeep);padding:5px 9px;border-radius:20px">EU · STARTUP</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">For startups and small companies entering the defence sector.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Business accelerator · matchmaking</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Coaching</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Test in Ukraine</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">eudis.europa.eu ↗</span>
+        </a>
+
+        <a href="https://defence-industry-space.ec.europa.eu/eu-defence-industry/european-defence-fund-edf_en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EDF</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU · CONSORTIA</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">Europe’s largest defence R&amp;D funding program.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Research · development</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Collaborative R&amp;D</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Consortia across the EU</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">European Commission — EDF ↗</span>
+        </a>
+
+        <a href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-2026-work-programme_en" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .16s,transform .16s" style-hover="border-color:#cdd6e6;transform:translateY(-4px)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px">EIC</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">DEEP-TECH</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">For deep-tech companies with global growth potential.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Grant · equity</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Scale-up support</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Pathfinder &amp; Transition</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">EIC 2026 Work Programme ↗</span>
+        </a>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIANA TEASER -->
+  <section style="background:var(--ink);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:0 32px 80px">
+      <a href="NATO DIANA EN.dc.html" style="text-decoration:none;display:block;background:linear-gradient(120deg,#13234E 0%,#1C2F63 55%,#23407e 100%);border:1px solid #2c477f;border-radius:22px;padding:46px 44px;position:relative;overflow:hidden" style-hover="border-color:#2B5CC4">
+        <div style="position:absolute;right:-30px;top:-30px;width:200px;height:200px;opacity:.16">
+          <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+          <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#fff"></div>
+          <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+        </div>
+        <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:26px">
+          <div style="max-width:60ch">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;color:#8CAA72;text-transform:uppercase">Current call · Cohort 2027</div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3vw,38px);color:#fff;margin:12px 0 8px;letter-spacing:-.02em">NATO DIANA 2027 applications are open</h3>
+            <p style="color:#B6C2DE;font-size:15.5px;margin:0;line-height:1.55">6 new challenges · €100,000 grant · 200+ test centres. Deadline <strong style="color:#fff">3 Jul 2026</strong>.</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;color:#fff;line-height:1">{{ cd.days }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">days to deadline</div></div>
+            <span style="background:#2B5CC4;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:11px">Explore the challenges →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- UKRAINE -->
+  <section id="ukrajina" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:92px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue)">[ Cooperation with Ukraine ]</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:20ch">Defence innovation hand-in-hand with Ukraine</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Programs connecting the European and Ukrainian ecosystems — from funding to testing in real conditions.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:40px">
+        <a href="BraveTech EU.dc.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #2B5CC4;border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(19,35,78,.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">BraveTech EU</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--blueSoft);color:var(--blue);padding:5px 9px;border-radius:20px">EU × UKRAINE</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">A joint European Commission–Ukraine initiative for defence innovation. Brings together the European Defence Fund (EDF), EUDIS and Ukraine's BRAVE1 platform.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Up to €50M from the EU, matched by €50M from Ukraine</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>Two phases: Seed and Scale Up</li>
+            <li style="display:flex;gap:8px"><span style="color:#2B5CC4">✔</span>EU–Ukraine matchmaking, joint development and testing</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">Programme detail →</span>
+        </a>
+        <a href="https://brave1.gov.ua/en/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:var(--ink);border:1px solid var(--ink);border-top:3px solid #8CAA72;border-radius:16px;padding:28px;display:flex;flex-direction:column;color:#fff;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(11,21,48,.55)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">Brave1</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:rgba(140,170,114,.18);color:#A9C98C;padding:5px 9px;border-radius:20px">PLATFORM · UKRAINE</span></div>
+          <p style="color:#AEBBD8;font-size:14px;line-height:1.55;margin:14px 0 16px">The one-of-a-kind entry point for cooperation in Ukrainian defence tech — companies, startups, government, defence forces, investors, volunteer funds and media joining forces for victory through technology.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:#D6DEF0">
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Soft-landing and access to Ukrainian defence innovations</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Pitches, hackathons, grants and investments</li>
+            <li style="display:flex;gap:8px"><span style="color:#8CAA72">✔</span>Development and testing of advanced technologies</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:#8FB6FF;font-weight:600;font-size:13.5px">brave1.gov.ua ↗</span>
+        </a>
+        <a href="https://investinbravery.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid #8CAA72;border-radius:16px;padding:28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(19,35,78,.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px">Invest in Bravery</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;background:var(--greenSoft);color:var(--greenDeep);padding:5px 9px;border-radius:20px">EVENTS · UKRAINE</span></div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.55;margin:14px 0 16px">A nonprofit organisation dedicated to supporting Ukraine's integration into the world economy through its powerful brand and its incredible people.</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--navy)">
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Pitch Competition for defensetech and resiliencetech</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Prague Demo Day to 30+ European VCs</li>
+            <li style="display:flex;gap:8px"><span style="color:#6E9152">✔</span>Startups, investors and sponsors</li>
+          </ul>
+          <span style="margin-top:auto;padding-top:18px;color:var(--blue);font-weight:600;font-size:13.5px">investinbravery.com ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATABAZE -->
+  <section id="databaze" style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:90px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue)">[ Solutions database ]</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:20ch">Discover Czech and allied defence &amp; dual-use innovations</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:38ch;margin:0">Filter by TRL and the 12 NATO technology areas. Each solution has a profile and a contact.</p>
+      </div>
+
+      <!-- FILTERS -->
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:36px;padding:16px;background:var(--mist);border:1px solid var(--line);border-radius:14px">
+        <div style="position:relative;flex:1;min-width:220px">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">⌕</span>
+          <input value="{{ search }}" onInput="{{ onSearch }}" placeholder="Search company, technology, country…" style="width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px 12px 36px;font-size:14.5px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);outline:none">
+        </div>
+        <select value="{{ area }}" onChange="{{ onArea }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:230px;cursor:pointer">
+          <option value="all">All NATO areas (12)</option>
+          <sc-for list="{{ areaOptions }}" as="a" hint-placeholder-count="12"><option value="{{ a.value }}">{{ a.label }}</option></sc-for>
+        </select>
+        <select value="{{ trl }}" onChange="{{ onTrl }}" style="border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);cursor:pointer">
+          <option value="all">All TRL</option>
+          <option value="1-3">TRL 1–3 · research</option>
+          <option value="4-6">TRL 4–6 · development</option>
+          <option value="7-9">TRL 7–9 · deployment</option>
+        </select>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);padding:0 6px;white-space:nowrap">{{ count }} / {{ total }}</div>
+        <a href="https://forms.office.com/e/FscmUKHp3c" target="_blank" rel="noopener" style="margin-left:auto;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:13.5px;padding:11px 17px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">+ Add your solution</a>
+      </div>
+
+      <!-- GRID -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ companies }}" as="c" hint-placeholder-count="6">
+          <div onClick="{{ c.open }}" style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;cursor:pointer;display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s,border-color .16s" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(19,35,78,.34);border-color:#cdd6e6">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+              <span style="{{ c.areaBadge }}">{{ c.areaShort }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);border:1px solid var(--line);padding:5px 8px;border-radius:8px;white-space:nowrap">{{ c.code }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;margin:18px 0 6px;line-height:1.15">{{ c.name }}</h3>
+            <p style="color:var(--muted);font-size:13.5px;line-height:1.5;margin:0 0 18px;flex:1">{{ c.oneLiner }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:15px;border-top:1px solid var(--line)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#fff;background:#13234E;padding:4px 9px;border-radius:7px">TRL {{ c.trl }}</span>
+                <span style="font-size:12.5px;color:var(--muted)">{{ c.country }}</span>
+              </div>
+              <span style="font-size:13px;font-weight:600;color:var(--blue)">Detail →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:54px;color:var(--muted);font-size:15px">No solution matches the filter. <span onClick="{{ resetFilters }}" style="color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline">Clear filters</span></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="kontakt" style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px;text-align:center">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0 auto;max-width:22ch;line-height:1.1">Does your technology have defence potential?</h2>
+      <p style="color:#B6C2DE;font-size:17px;max-width:54ch;margin:20px auto 0;line-height:1.6">Book a no-obligation consultation with the Defence Hub CzechInvest team and find out which opportunities are relevant for you.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:#3E72E0">Book a consultation</a>
+        <a href="NATO DIANA EN.dc.html" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">NATO DIANA 2027 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:54px 32px 40px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px">
+        <div style="max-width:34ch">
+          <img src="assets/logo-cobrand-white.png" alt="Defence Hub CzechInvest" style="height:42px;width:auto;display:block">
+          <p style="font-size:13.5px;line-height:1.65;margin:18px 0 0">Defence Hub CzechInvest connects people, technology and opportunities that help build a more resilient and secure future.</p>
+          <img src="assets/part-of-diana-white.png" alt="Part of the DIANA network" style="height:40px;margin-top:22px;opacity:.85">
+        </div>
+        <div style="display:flex;gap:60px;flex-wrap:wrap">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Navigation</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="#kdo" style="color:#C2CDE6;text-decoration:none">Who are you?</a>
+              <a href="#programy" style="color:#C2CDE6;text-decoration:none">Programs</a>
+              <a href="NATO DIANA EN.dc.html" style="color:#C2CDE6;text-decoration:none">NATO DIANA 2027</a>
+              <a href="#databaze" style="color:#C2CDE6;text-decoration:none">Solutions database</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Partners</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="https://www.mo.gov.cz/" target="_blank" rel="noopener" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Ministry of Defence CZ</a>
+              <a href="https://czechinvest.gov.cz/" target="_blank" rel="noopener" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">CzechInvest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding-top:22px;border-top:1px solid #1d2b50;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <span>© 2026 DEFENCE HUB CZECHINVEST</span>
+        <a href="https://czechinvest.gov.cz/en/" target="_blank" rel="noopener" style="color:#8FA0C6;text-decoration:none" style-hover="color:#fff">Privacy &amp; data protection</a>
+        <span style="color:#5E6E92">CONNECT · ACCELERATE · DEPLOY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(8,15,34,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stop }}" style="background:#fff;width:100%;max-width:680px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(8,15,34,.7)">
+        <div style="background:linear-gradient(150deg,#13234E,#0E1B3C);color:#fff;padding:30px 32px;position:relative">
+          <div onClick="{{ closeModal }}" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.2)">✕</div>
+          <span style="{{ sel.areaBadge }}">{{ sel.area }}</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;margin:16px 0 6px;letter-spacing:-.01em">{{ sel.name }}</h3>
+          <p style="color:#B6C2DE;font-size:15px;margin:0;line-height:1.5">{{ sel.oneLiner }}</p>
+        </div>
+        <div style="padding:28px 32px">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">TRL</div><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-top:3px">{{ sel.trl }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Country</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.country }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Founded</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.founded }}</div></div>
+            <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase">Team</div><div style="font-weight:600;font-size:15px;color:var(--navy);margin-top:6px">{{ sel.emp }}</div></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Profile</div>
+          <p style="font-size:14.5px;line-height:1.65;color:#33405e;margin:0 0 22px">{{ sel.desc }}</p>
+          <div style="background:var(--greenSoft);border:1px solid #d8e3cb;border-radius:12px;padding:16px 18px;margin-bottom:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--greenDeep);margin-bottom:6px">Call to action</div>
+            <p style="font-size:14px;color:#2f4022;margin:0;line-height:1.55">{{ sel.cta }}</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line)">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Contact person</div>
+              <div style="font-weight:600;font-size:15px;color:var(--navy)">{{ sel.contactName }}</div>
+              <div style="font-size:13px;color:var(--muted)">{{ sel.contactRole }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--blue);margin-top:4px">{{ sel.contactEmail }}</div>
+            </div>
+            <a href="{{ sel.webUrl }}" target="_blank" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">{{ sel.web }} ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.canvasRef = React.createRef();
+    this.state = { search:'', area:'all', trl:'all', selected:null, now: Date.now() };
+    this.areas = [
+      'Resilient Space Operations','Energy &amp; Power','Advanced Communications',
+      'Contested Electromagnetic Environments','Critical Infrastructure &amp; Logistics','Human Resilience &amp; Biotech',
+      'Data-Enabled Decision-Making','Maritime Operations','Operations in Extreme Environments',
+      'Autonomy &amp; Uncrewed Systems','Quantum &amp; Emerging Technologies','Sensing &amp; Surveillance'
+    ];
+    this.areaColors = {
+      'Resilient Space Operations':'#2B5CC4','Energy &amp; Power':'#6E9152','Advanced Communications':'#3E7CA8',
+      'Contested Electromagnetic Environments':'#46618F','Critical Infrastructure &amp; Logistics':'#1C2F63','Human Resilience &amp; Biotech':'#8CAA72',
+      'Data-Enabled Decision-Making':'#2B5CC4','Maritime Operations':'#3E7CA8','Operations in Extreme Environments':'#6E9152',
+      'Autonomy &amp; Uncrewed Systems':'#46618F','Quantum &amp; Emerging Technologies':'#1C2F63','Sensing &amp; Surveillance':'#8CAA72'
+    };
+    this.areaShort = {
+      'Resilient Space Operations':'Space Operations','Critical Infrastructure &amp; Logistics':'Critical Infra & Logistics'
+    };
+    this.companies = [
+      {name:'Canadian Strategic Missions Corp. (CSMC)',oneLiner:'Remote monitoring of micro modular reactors (MMR) for resilient power.',desc:'CSMC has rapidly become a Canadian leader in micro modular reactor development. Their Mission Control system is a robust, semi-autonomous cyber-physical monitoring solution that continuously assesses reactor health, predicts faults and maintenance, and enables rapid response to off-nominal conditions and external threats — for resilient power to critical defence infrastructure.',country:'Canada',code:'CA',founded:2020,emp:'11–50',trl:2,area:'Critical Infrastructure &amp; Logistics',web:'csmc-scms.ca',cta:'Raising a Series A.'},
+      {name:'Connect Robotics',oneLiner:'An autonomous aerial bridge for tactical logistics, independent of ground infrastructure.',desc:'“The Aerial Bridge” is a drone-agnostic, certifiable software and avionics platform that turns commercial UAVs into highly reliable autonomous logistics assets. It is powered by advanced software with AI machine vision for precise delivery and visual navigation for operation in GNSS-denied and radio-silent modes.',country:'Portugal',code:'PT',founded:2015,emp:'1–10',trl:5,area:'Critical Infrastructure &amp; Logistics',web:'connect-robotics.com',cta:'Seeking strategic partnerships with NATO defence primes for deployment in contested logistics.'},
+      {name:'Copsys Technologies',oneLiner:'An intelligent digital skin protecting critical infrastructure from corrosion and biofouling.',desc:'Copsys Intelligent Digital Skin (CIDS) turns passive critical infrastructure into self-aware assets. It integrates real-time condition monitoring with active electrochemical protection that neutralises corrosion and biofouling at the source — quietly and without underwater electric potential (UEP).',country:'Canada',code:'CA',founded:2020,emp:'1–10',trl:4,area:'Critical Infrastructure &amp; Logistics',web:'copsys.ca',cta:'Inviting naval defence and collaborative partners to move from reactive to predictive maintenance.'},
+      {name:'Ethicronics',oneLiner:'Software to verify the integrity and authenticity of electronic components.',desc:'Ethicronics independently verifies the integrity and authenticity of electronic components using evidence-based analysis and automated integrity-checking techniques. The solution integrates seamlessly into procurement, testing and maintenance, strengthening trust in mission-critical equipment across complex supply chains.',country:'United Kingdom',code:'GB',founded:2022,emp:'1–10',trl:4,area:'Critical Infrastructure &amp; Logistics',web:'ethicronics.com',cta:'Seeking defence and commercial partners for integration and validation.'},
+      {name:'Niricson',oneLiner:'AI condition monitoring of civil infrastructure using UAVs and computer vision.',desc:'Niricson combines defect detection and quantification algorithms with photogrammetry for millimetre-accurate digital baselines. Its proprietary UAV sensor enables real-time damage mapping, and the quantified data feeds predictive analytics for repair and maintenance planning.',country:'Canada',code:'CA',founded:2020,emp:'11–50',trl:6,area:'Critical Infrastructure &amp; Logistics',web:'niricson.com',cta:'Raising a Series B.'},
+      {name:'Safety Bolt',oneLiner:'In-bolt strain sensors to monitor and extend the lifespan of structures.',desc:'Safety Bolt provides AI-enabled infrastructure monitoring through patented in-bolt strain sensors. The technology enables a 1-minute retrofit and 20 years of continuous structural-integrity data on bridges, tunnels and railways — even under heavy military traffic.',country:'Sweden',code:'SE',founded:2023,emp:'1–10',trl:4,area:'Critical Infrastructure &amp; Logistics',web:'safety-bolt.com',cta:'Closing a €2.2M round, open to further strategic partners.'},
+      {name:'Simularge',oneLiner:'Physics-informed AI and digital twins for reliable defence manufacturing.',desc:'Simularge tackles undetected manufacturing deviations with a physics-informed digital twin that combines AI, predictive analytics, simulation and sensor data for real-time optimisation. Its plug-and-play edge architecture connects to a PLC within seconds and prevents defective parts — enabling zero-defect manufacturing.',country:'Turkey',code:'TR',founded:2018,emp:'1–10',trl:5,area:'Critical Infrastructure &amp; Logistics',web:'simularge.com',cta:'Seeking manufacturing partners and test centres to pilot the digital twin.'},
+      {name:'Deep Space Energy',oneLiner:'Resilient radioisotope power for satellite manoeuvring and threat defence.',desc:'A spin-off of the University of Latvia developing advanced European radioisotope power systems. The RDG combines a radioisotope heat source with the high-efficiency RTALIG converter (~25%), reducing isotope fuel needs and supporting strategic satellites in GEO, HEO and cislunar orbits.',country:'Latvia',code:'LV',founded:2022,emp:'1–10',trl:3,area:'Resilient Space Operations',web:'deepspaceenergy.space',cta:'Seeking early partners interested in the technology for missions and projects.'},
+      {name:'Space Power',oneLiner:'Wireless laser power transfer compatible with any satellite.',desc:'Space Power’s patented laser power-beaming system can wirelessly deliver energy to any satellite, minimising constellation size and maximising the lifespan of strategic assets. Power can be beamed to any solar panel with no pre-installed hardware.',country:'United Kingdom',code:'GB',founded:2019,emp:'1–10',trl:3,area:'Resilient Space Operations',web:'space-power.com',cta:'Seeking missions requiring emergency power for strategic assets (e.g. Skynet).'},
+      {name:'WarpWare',oneLiner:'Characterising orbital debris for sustainable access to space.',desc:'WarpWare standardises space software, and its Deep Sight solution tackles untrackable sub-10 cm orbital debris. It uses low-SWaP optical sensors and ground processing to identify objects from 1 cm and fuses multi-angle observations into precise orbital intelligence.',country:'USA',code:'US',founded:2023,emp:'1–10',trl:3,area:'Resilient Space Operations',web:'www.warpware.co',cta:'Seeking government partners and satellite operators to scale the software across orbits.'}
+    ];
+    this.deadline = new Date('2026-07-03T12:00:00+01:00').getTime();
+  }
+  runIntro(){
+    const el = document.getElementById('dh-intro'); if(!el) return;
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let seen = false; try { seen = sessionStorage.getItem('dh_intro_seen') === '1'; } catch(_){}
+    const remove = () => { if(el && el.parentNode){ el.parentNode.removeChild(el); } };
+    if(seen || reduce){ remove(); return; }
+    try { sessionStorage.setItem('dh_intro_seen','1'); } catch(_){}
+    const skip = () => { el.style.transition='opacity .4s ease'; el.style.opacity='0'; setTimeout(remove, 400); };
+    el.addEventListener('click', skip);
+    this._introTimer = setTimeout(remove, 4150);
+  }
+  componentDidMount(){
+    document.title = 'Defence Hub CzechInvest — defence & dual-use innovation';
+    document.documentElement.lang = 'en';
+    this.runIntro();
+    this._tick = setInterval(()=>this.setState({now:Date.now()}), 1000);
+    const canvas = this.canvasRef.current; if(!canvas) return;
+    const ctx = canvas.getContext('2d'); const parent = canvas.parentElement;
+    let w,h,dpr; const N=46; const nodes=[];
+    const resize=()=>{ dpr=Math.min(2,window.devicePixelRatio||1); w=parent.clientWidth; h=parent.clientHeight; canvas.width=w*dpr; canvas.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); };
+    resize();
+    for(let i=0;i<N;i++) nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.6+.7});
+    const draw=()=>{
+      ctx.clearRect(0,0,w,h);
+      for(let i=0;i<N;i++){ const a=nodes[i]; a.x+=a.vx; a.y+=a.vy; if(a.x<0||a.x>w)a.vx*=-1; if(a.y<0||a.y>h)a.vy*=-1;
+        for(let j=i+1;j<N;j++){ const b=nodes[j]; const dx=a.x-b.x,dy=a.y-b.y; const d=Math.hypot(dx,dy); if(d<150){ ctx.globalAlpha=(1-d/150)*.45; ctx.strokeStyle='#5B79C9'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); } } }
+      ctx.globalAlpha=1;
+      for(const n of nodes){ ctx.fillStyle = n.r>1.5?'#8CAA72':'#9FB6E8'; ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,7); ctx.fill(); }
+      this._raf=requestAnimationFrame(draw);
+    };
+    draw();
+    this._resize=resize; window.addEventListener('resize',resize);
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this._raf); clearInterval(this._tick); window.removeEventListener('resize',this._resize); }
+  badge(area){ const c=this.areaColors[area]||'#13234E'; return {background:c,color:'#fff',fontSize:'11px',fontFamily:"'IBM Plex Mono',monospace",fontWeight:500,padding:'5px 11px',borderRadius:'20px',letterSpacing:'.04em',display:'inline-block',whiteSpace:'nowrap'}; }
+  shortArea(area){ return this.areaShort[area]||area; }
+  renderVals(){
+    const s=this.state;
+    const inRange=(t)=>{ if(s.trl==='all')return true; const[a,b]=s.trl.split('-').map(Number); return t>=a&&t<=b; };
+    const q=s.search.trim().toLowerCase();
+    const filtered=this.companies.filter(c=>{
+      if(s.area!=='all' && c.area!==s.area) return false;
+      if(!inRange(c.trl)) return false;
+      if(q && !((c.name+' '+c.oneLiner+' '+c.country+' '+c.area).toLowerCase().includes(q))) return false;
+      return true;
+    });
+    const companies=filtered.map((c,i)=>({
+      ...c, areaShort:this.shortArea(c.area), areaBadge:this.badge(c.area),
+      open:()=>this.setState({selected:c})
+    }));
+    const sel=s.selected;
+    const selView = sel ? {
+      ...sel, areaBadge:this.badge(sel.area),
+      webUrl: (sel.web.startsWith('http')?sel.web:'https://'+sel.web),
+      contactName:'Defence Hub CzechInvest team', contactRole:'Acceleration lead · NATO DIANA Czechia', contactEmail:'defencehub@czechinvest.org'
+    } : {};
+    const diff=Math.max(0,this.deadline - s.now);
+    const cd={ days:String(Math.floor(diff/86400000)) };
+    return {
+      canvasRef:this.canvasRef,
+      search:s.search, area:s.area, trl:s.trl,
+      onSearch:(e)=>this.setState({search:e.target.value}),
+      onArea:(e)=>this.setState({area:e.target.value}),
+      onTrl:(e)=>this.setState({trl:e.target.value}),
+      areaOptions:this.areas.map(a=>({value:a,label:a})),
+      companies, count:filtered.length, total:this.companies.length, isEmpty:filtered.length===0,
+      resetFilters:()=>this.setState({search:'',area:'all',trl:'all'}),
+      hasSelected:!!sel, sel:selView, closeModal:()=>this.setState({selected:null}), stop:(e)=>e.stopPropagation(),
+      cd
+    };
+  }
+}
+</script>
+</body>
+</html>

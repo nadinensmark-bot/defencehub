@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+@keyframes dhpulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes dhfade{from{opacity:0}to{opacity:1}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">Matchmaking · kapitál &amp; investice</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>STARTUP ↔ INVESTOR</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="Defence Hub.dc.html#kdo" style="color:var(--navy);text-decoration:none">Rozcestník</a>
+        <a href="Matchmaking Prime.dc.html" style="color:var(--navy);text-decoration:none">Matchmaking Prime</a>
+        <a href="Matchmaking Investor.dc.html" style="color:var(--blue);text-decoration:none;font-weight:600">Matchmaking Investor</a>
+        <a href="Defence Hub.dc.html#databaze" style="color:var(--navy);text-decoration:none">Databáze řešení</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="https://dealroom.co" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);color:var(--navy);text-decoration:none;font-weight:600;font-size:13px;padding:8px 14px;border-radius:9px" style-hover="border-color:#2B5CC4;color:#2B5CC4"><svg width="13" height="13" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.7"></circle><path d="M7 10h6M10.5 7.5 13 10l-2.5 2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>Dealroom.co</a>
+        <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">+ Zapsat profil</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="background:radial-gradient(120% 130% at 80% 6%,#1B2D5E 0%,#0E1B3C 50%,#0B1530 100%);color:#fff">
+    <div style="display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:72px 32px 60px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#9FBE86;display:flex;align-items:center;gap:12px;font-weight:700"><span style="width:26px;height:1px;background:#9FBE86"></span>Matchmaking platforma</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(34px,5vw,62px);line-height:1.03;letter-spacing:-.025em;margin:20px 0 0;max-width:18ch">Startup&nbsp;↔&nbsp;Investor: <span style="color:#8CAA72">seed round</span> potkává <span style="color:#6E9bE8">kapitál</span></h1>
+        <p style="font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:#C4CFE8;max-width:60ch;margin:22px 0 0">Databáze startupů, které otevírají kolo, a&nbsp;investorů hledajících defence a&nbsp;dual-use příležitosti. Máte seed round a&nbsp;chcete se nabídnout do databáze investorům? Hledáte firmu do portfolia? Tady se potkáte.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:40px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12)">
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">01</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Zapište profil</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Startup: fáze, kolo, trakce. Investor: ticket, fáze, fokus.</p></div></div>
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">02</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Filtrujte protistrany</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Podle typu, fáze, sektoru a&nbsp;velikosti kola.</p></div></div>
+          <div style="display:flex;gap:14px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px;font-weight:600">03</div><div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;color:#fff;margin:0 0 5px">Propojíme vás</h3><p style="font-size:13px;line-height:1.5;color:#A9B6D6;margin:0">Defence Hub zprostředkuje warm intro. Zdarma.</p></div></div>
+        </div>
+        <div style="margin-top:28px;display:inline-flex;align-items:center;gap:14px;padding:12px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;flex-wrap:wrap">
+          <span style="font-size:13px;color:#9DABCB;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em">POWERED BY</span>
+          <a href="https://dealroom.co" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;color:#fff;text-decoration:none;letter-spacing:.05em;display:flex;align-items:center;gap:6px" style-hover="color:#8CAA72">Dealroom.co ↗</a>
+          <span style="width:1px;height:16px;background:rgba(255,255,255,.15)"></span>
+          <span style="font-size:12.5px;color:#7A8FAD">Profily startupů a investorů jsou dostupné i na globální platformě</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DATABAZE -->
+  <section style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:56px 32px 90px">
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <sc-for list="{{ roleChips }}" as="r" hint-placeholder-count="3">
+          <div onClick="{{ r.pick }}" style="{{ r.chipStyle }}">{{ r.label }}<span style="opacity:.6;font-weight:400">&nbsp;{{ r.n }}</span></div>
+        </sc-for>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px">
+        <div style="position:relative;flex:1;min-width:220px">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted)">⌕</span>
+          <input value="{{ search }}" onInput="{{ onSearch }}" placeholder="Hledat startup, investora, sektor…" style="width:100%;border:1px solid var(--line);background:var(--mist);border-radius:10px;padding:12px 14px 12px 36px;font-size:14.5px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);outline:none">
+        </div>
+        <select value="{{ sector }}" onChange="{{ onSector }}" style="border:1px solid var(--line);background:var(--mist);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'IBM Plex Sans',sans-serif;color:var(--navy);min-width:200px;cursor:pointer">
+          <option value="all">Všechny sektory</option>
+          <sc-for list="{{ sectorOptions }}" as="s" hint-placeholder-count="6"><option value="{{ s }}">{{ s }}</option></sc-for>
+        </select>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);padding:0 6px;white-space:nowrap">{{ count }} / {{ total }}</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:22px">
+        <sc-for list="{{ cards }}" as="c" hint-placeholder-count="8">
+          <div onClick="{{ c.open }}" style="background:#fff;border:1px solid var(--line);border-left:4px solid {{ c.color }};border-radius:14px;padding:24px;cursor:pointer;display:flex;flex-direction:column;transition:transform .16s,box-shadow .16s,border-color .16s" style-hover="transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(19,35,78,.34)">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+              <span style="{{ c.badge }}">{{ c.badgeText }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#fff;background:{{ c.color }};padding:5px 9px;border-radius:8px;white-space:nowrap">{{ c.metaChip }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:18.5px;margin:16px 0 4px;line-height:1.15">{{ c.name }}</h3>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.02em;margin-bottom:12px">{{ c.sector }}</div>
+            <p style="color:#41506e;font-size:13.5px;line-height:1.5;margin:0 0 18px;flex:1">{{ c.oneLiner }}</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--line)">
+              <span style="font-size:12.5px;color:var(--muted)">{{ c.location }}</span>
+              <span style="font-size:13px;font-weight:600;color:var(--blue)">Detail →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:54px;color:var(--muted);font-size:15px">Žádný profil neodpovídá filtru. <span onClick="{{ resetFilters }}" style="color:var(--blue);cursor:pointer;font-weight:600;text-decoration:underline">Zrušit filtry</span></div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:76px 32px;text-align:center">
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,42px);letter-spacing:-.02em;margin:0 auto;max-width:24ch;line-height:1.12">Otevíráte kolo — nebo hledáte deal flow?</h2>
+      <p style="color:#B6C2DE;font-size:16px;max-width:52ch;margin:18px auto 0;line-height:1.6">Zapište svůj profil do investičního matchmakingu. Defence Hub CzechInvest vás propojí se&nbsp;startupy a&nbsp;investory v&nbsp;obranném a&nbsp;dual-use ekosystému.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:#3E72E0">+ Zapsat profil</a>
+        <a href="Matchmaking Prime.dc.html" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">Matchmaking Prime →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:48px 32px 38px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center">
+      <a href="Defence Hub.dc.html" style="text-decoration:none"><img src="assets/logo-cobrand-white.png" alt="Defence Hub CzechInvest" style="height:38px;display:block"></a>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <a href="Defence Hub.dc.html#kdo" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Rozcestník</a>
+        <a href="Matchmaking Prime.dc.html" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Matchmaking Prime</a>
+        <span style="color:#5E6E92">© 2026 DEFENCE HUB CZECHINVEST</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(8,15,34,.62);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stop }}" style="background:#fff;width:100%;max-width:680px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(8,15,34,.7)">
+        <div style="background:linear-gradient(150deg,#13234E,#0E1B3C);color:#fff;padding:30px 32px;position:relative">
+          <div onClick="{{ closeModal }}" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.2)">✕</div>
+          <span style="{{ sel.badge }}">{{ sel.badgeText }}</span>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:27px;margin:16px 0 6px;letter-spacing:-.01em">{{ sel.name }}</h3>
+          <p style="color:#B6C2DE;font-size:15px;margin:0;line-height:1.5">{{ sel.oneLiner }}</p>
+        </div>
+        <div style="padding:28px 32px">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px">
+            <sc-for list="{{ sel.stats }}" as="st" hint-placeholder-count="4">
+              <div style="background:var(--mist);border-radius:11px;padding:14px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase">{{ st.label }}</div><div style="font-weight:600;font-size:14px;color:var(--navy);margin-top:6px;line-height:1.25">{{ st.val }}</div></div>
+            </sc-for>
+          </div>
+
+          <div style="background:{{ sel.highlightBg }};border-radius:12px;padding:16px 18px;margin-bottom:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:{{ sel.highlightInk }};margin-bottom:6px">{{ sel.highlightLabel }}</div>
+            <p style="font-size:13.5px;color:#2c3a58;margin:0;line-height:1.55">{{ sel.highlightText }}</p>
+          </div>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Medailonek</div>
+          <p style="font-size:14.5px;line-height:1.65;color:#33405e;margin:0 0 18px">{{ sel.desc }}</p>
+
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px">{{ sel.tagsLabel }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px">
+            <sc-for list="{{ sel.tags }}" as="t" hint-placeholder-count="3"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--mist);border:1px solid var(--line);color:var(--navy);padding:6px 10px;border-radius:8px">{{ t }}</span></sc-for>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line)">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Kontaktní osoba</div>
+              <div style="font-weight:600;font-size:15px;color:var(--navy)">{{ sel.contactName }}</div>
+              <div style="font-size:13px;color:var(--muted)">{{ sel.contactRole }}</div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              <a href="{{ sel.dealroomSearch }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);color:var(--navy);text-decoration:none;font-weight:600;font-size:13.5px;padding:11px 16px;border-radius:10px" style-hover="border-color:#2B5CC4;color:#2B5CC4">Dealroom.co ↗</a>
+              <a href="{{ addUrl }}" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:10px;white-space:nowrap" style-hover="background:var(--blue)">Propojit přes Defence Hub →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = { search:'', role:'all', sector:'all', selected:null };
+    this.addUrl = 'https://forms.office.com/e/FscmUKHp3c';
+    this.colors = { startup:'#2B5CC4', investor:'#6E9152' };
+    this.companies = [
+      {kind:'startup', name:'Helios Optronics', sector:'Senzory · EO/IR', stage:'Seed', raise:'€2,5M', valuation:'€10M pre', trl:7, location:'Brno, CZ',
+        oneLiner:'EO/IR moduly pro integraci do platforem. Otevírá seed kolo na škálování výroby.',
+        traction:'3 podepsané LOI s evropskými prime; pilot s AČR; první tržby €120k.',
+        desc:'Helios Optronics má validovaný produkt a první zákazníky. Kolo využije na sériovou výrobu a certifikaci. Hledá lead investora se zkušeností v deep-tech / defence.',
+        tags:['Defence','Dual-use','Hardware','TRL 7'], contactName:'Ing. Petr Malý', contactRole:'CEO & co-founder'},
+      {kind:'startup', name:'SkyMesh Communications', sector:'Komunikace · odolné sítě', stage:'Pre-seed', raise:'€0,8M', valuation:'€4M pre', trl:6, location:'Praha, CZ',
+        oneLiner:'Anti-jam mesh rádio pro GNSS-denied prostředí. Sbírá pre-seed na vývoj a polní testy.',
+        traction:'Funkční prototyp, zájem dvou integrátorů, grant TAČR.',
+        desc:'SkyMesh staví softwarově definované rádio pro taktické sítě. Pre-seed pokryje vývoj k MIL-STD certifikaci a polní validaci s integrátorem.',
+        tags:['Defence','Comms','SDR','TRL 6'], contactName:'Martin Dvořák', contactRole:'CTO & co-founder'},
+      {kind:'startup', name:'Pulsar Power', sector:'Energetika · úložiště', stage:'Seed', raise:'€3M', valuation:'€12M pre', trl:5, location:'Ostrava, CZ',
+        oneLiner:'Odolné bateriové moduly pro polní napájení. Seed na pilotní výrobní linku.',
+        traction:'Dva pilotní projekty; partnerství s výrobcem vozidel.',
+        desc:'Pulsar Power vyvíjí LFP energetické moduly pro extrémní podmínky. Kolo financuje pilotní linku a první sériové dodávky.',
+        tags:['Dual-use','Energy','Hardware','TRL 5'], contactName:'Bc. Jan Pospíšil', contactRole:'CEO'},
+      {kind:'startup', name:'Ridgeline Robotics', sector:'Autonomie · UGV', stage:'Series A', raise:'€6M', valuation:'€24M pre', trl:6, location:'Plzeň, CZ',
+        oneLiner:'Autonomní pozemní robot pro logistiku v terénu. Series A na škálování a vstup na trh.',
+        traction:'€0,4M ARR; kontrakt s logistickým integrátorem; tým 18 lidí.',
+        desc:'Ridgeline má ověřený produkt a opakované tržby. Series A využije na sériovou výrobu, mezinárodní expanzi a rozšíření týmu.',
+        tags:['Defence','Autonomy','Robotics','TRL 6'], contactName:'Tomáš Říha', contactRole:'COO'},
+      {kind:'startup', name:'Nyx Cyber', sector:'Kyberbezpečnost', stage:'Seed', raise:'€1,8M', valuation:'€8M pre', trl:7, location:'Brno, CZ',
+        oneLiner:'OT/ICS detekce hrozeb pro kritickou infrastrukturu. Seed na go-to-market.',
+        traction:'4 platící zákazníci (utility, obrana); €0,2M ARR.',
+        desc:'Nyx Cyber chrání průmyslové řídicí systémy. Kolo směřuje na obchodní tým a rozšíření do dalších zemí CEE.',
+        tags:['Dual-use','Cyber','SaaS','TRL 7'], contactName:'Ing. Klára Šimková', contactRole:'CEO'},
+      {kind:'investor', name:'Presidio Ventures', sector:'Defence · Dual-use · Deep-tech', ticket:'€0,5–3M', stageFocus:'Seed – Series A', geo:'EU / CEE', portfolio:'14 firem',
+        oneLiner:'Early-stage fond zaměřený na obranné a dual-use deep-tech. Hledá technické zakladatele.',
+        thesis:'Investujeme do hardware-heavy a deep-tech týmů s obranným nebo dual-use využitím a jasnou cestou k odběrateli (armáda, kritická infra).',
+        desc:'Presidio Ventures je evropský early-stage fond. Vedle kapitálu nabízí přístup k odběratelům, pomoc s certifikací a navazujícími koly. Preferuje lead/co-lead pozici.',
+        tags:['Seed','Series A','Hardware','Deep-tech','EU'], contactName:'Anna Richter', contactRole:'Partner'},
+      {kind:'investor', name:'Vltava Defence Capital', sector:'Resilience · Security tech', ticket:'€1–5M', stageFocus:'Series A – B', geo:'CZ / EU', portfolio:'9 firem',
+        oneLiner:'Growth fond pro firmy s tržbami v resilience a security tech. Hledá škálovatelné modely.',
+        thesis:'Cílíme na firmy s prokázanou trakcí a opakovatelnými tržbami, které škálují napříč EU a NATO trhy.',
+        desc:'Vltava Defence Capital je český fond zaměřený na pozdější fáze. Pomáhá s expanzí, M&A a přípravou na strategické investory.',
+        tags:['Series A','Series B','Revenue','CZ','EU'], contactName:'Ing. Filip Marek', contactRole:'Managing Partner'},
+      {kind:'investor', name:'Bastion Angels', sector:'Dual-use · Hardware', ticket:'€50–300k', stageFocus:'Pre-seed / Seed', geo:'CEE', portfolio:'22 firem',
+        oneLiner:'Andělský syndikát operátorů a exitovaných zakladatelů. Píše první šeky.',
+        thesis:'Podporujeme nejranější fázi — first check do dual-use hardware týmů s technickou převahou a ambicí na NATO trhy.',
+        desc:'Bastion Angels sdružuje 40+ andělů z obranného a tech sektoru. Kromě kapitálu nabízí mentoring, kontakty a pomoc s dalším kolem.',
+        tags:['Pre-seed','Seed','Angels','Hardware','CEE'], contactName:'Jakub Veselý', contactRole:'Syndicate Lead'}
+    ];
+  }
+  componentDidMount(){
+    document.title = 'Matchmaking Investor — Defence Hub CzechInvest';
+    document.documentElement.lang = 'cs';
+  }
+  filtered(){
+    const q = this.state.search.trim().toLowerCase();
+    return this.companies.filter(c=>{
+      if(this.state.role!=='all' && c.kind!==this.state.role) return false;
+      if(this.state.sector!=='all' && c.sector!==this.state.sector) return false;
+      if(q){ const hay=(c.name+' '+c.sector+' '+c.oneLiner+' '+(c.thesis||'')+' '+(c.traction||'')).toLowerCase(); if(!hay.includes(q)) return false; }
+      return true;
+    });
+  }
+  badgeStyle(kind){
+    const col = this.colors[kind]||'#2B5CC4';
+    return 'display:inline-block;font-family:\'IBM Plex Mono\',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:5px 10px;border-radius:20px;background:'+col+'1A;color:'+col+';border:1px solid '+col+'33';
+  }
+  badgeText(c){ return c.kind==='startup' ? (c.stage+' · hledá investici') : 'Investor · hledá portfolio'; }
+  renderVals(){
+    const list = this.filtered();
+    const nStart = this.companies.filter(c=>c.kind==='startup').length;
+    const nInv = this.companies.filter(c=>c.kind==='investor').length;
+    const chipBase = 'cursor:pointer;font-family:\'IBM Plex Mono\',monospace;font-size:12px;letter-spacing:.04em;padding:8px 13px;border-radius:9px;border:1px solid var(--line);transition:all .15s;user-select:none;';
+    const mkChip = (val,label,n,col)=>{
+      const active = this.state.role===val;
+      const style = active
+        ? chipBase+'background:'+col+';color:#fff;border-color:'+col+';font-weight:600'
+        : chipBase+'background:#fff;color:var(--navy);font-weight:500';
+      return { label, n:'· '+n, chipStyle:style, pick:()=>this.setState({role:val}) };
+    };
+    const roleChips = [
+      mkChip('all','Vše', this.companies.length, '#2B5CC4'),
+      mkChip('startup','Startupy', nStart, this.colors.startup),
+      mkChip('investor','Investoři', nInv, this.colors.investor)
+    ];
+    const sectorOptions = [...new Set(this.companies.map(c=>c.sector))].sort();
+    const cards = list.map(c=>({
+      name:c.name, sector:c.sector, oneLiner:c.oneLiner, location:c.kind==='investor'?c.geo:c.location,
+      color:this.colors[c.kind], badge:this.badgeStyle(c.kind), badgeText:this.badgeText(c),
+      metaChip: c.kind==='startup' ? c.raise : c.ticket,
+      open:()=>this.setState({selected:c})
+    }));
+    const s = this.state.selected;
+    let sel = {};
+    if(s){
+      const stats = s.kind==='startup'
+        ? [ {label:'Fáze',val:s.stage}, {label:'Kolo',val:s.raise}, {label:'TRL',val:String(s.trl)}, {label:'Lokalita',val:s.location} ]
+        : [ {label:'Ticket',val:s.ticket}, {label:'Fáze',val:s.stageFocus}, {label:'Portfolio',val:s.portfolio}, {label:'Region',val:s.geo} ];
+      sel = {
+        name:s.name, oneLiner:s.oneLiner, desc:s.desc, tags:s.tags||[],
+        badge:this.badgeStyle(s.kind), badgeText:this.badgeText(s),
+        stats,
+        highlightLabel: s.kind==='startup' ? 'Trakce' : 'Investiční teze',
+        highlightText: s.kind==='startup' ? s.traction : s.thesis,
+        highlightBg: s.kind==='startup' ? 'var(--blueSoft)' : 'var(--greenSoft)',
+        highlightInk: s.kind==='startup' ? 'var(--blue)' : 'var(--greenDeep)',
+        tagsLabel: s.kind==='startup' ? 'Sektor & fáze' : 'Fokus',
+        contactName:s.contactName, contactRole:s.contactRole,
+        dealroomSearch: `https://app.dealroom.co/companies/all?q=${encodeURIComponent(s.name)}`
+      };
+    }
+    return {
+      addUrl:this.addUrl,
+      search:this.state.search, onSearch:(e)=>this.setState({search:e.target.value}),
+      sector:this.state.sector, onSector:(e)=>this.setState({sector:e.target.value}), sectorOptions,
+      roleChips,
+      count:list.length, total:this.companies.length,
+      cards, isEmpty:list.length===0,
+      resetFilters:()=>this.setState({search:'',role:'all',sector:'all'}),
+      hasSelected:!!s, sel, closeModal:()=>this.setState({selected:null}), stop:(e)=>e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>

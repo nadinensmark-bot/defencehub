@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+::selection{background:#2B5CC4;color:#fff}
+@keyframes dhpulse{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">Společná iniciativa EU a Ukrajiny pro obranné inovace</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>BRAVETECH EU</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500">
+        <a href="#deftech" style="color:var(--navy);text-decoration:none">DefTech Forges</a>
+        <a href="#nastroje" style="color:var(--navy);text-decoration:none">EU nástroje</a>
+        <a href="#unite" style="color:var(--navy);text-decoration:none">UNITE – Brave NATO</a>
+      </div>
+      <a href="Defence Hub.dc.html#ukrajina" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px" style-hover="background:var(--blue)">← Zpět na Defence Hub</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative;background:radial-gradient(130% 120% at 20% 0%,#1B2D5E 0%,#0E1B3C 50%,#0B1530 100%);color:#fff;overflow:hidden">
+    <div style="position:relative;z-index:2;display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:84px 32px 76px">
+        <a href="Defence Hub.dc.html#ukrajina" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8FA0C6;text-decoration:none;letter-spacing:.08em">← Spolupráce s Ukrajinou</a>
+        
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,6.5vw,80px);line-height:1;letter-spacing:-.03em;margin:22px 0 0">BraveTech EU<br><span style="color:#7FA6F0;font-size:.5em;font-weight:600;letter-spacing:0">DefTech Forges</span></h1>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#C4CFE8;max-width:62ch;margin:22px 0 0">Společná iniciativa Evropské komise a&nbsp;Ukrajiny pro obranné inovace. Propojuje Evropský obranný fond (EDF), EUDIS a&nbsp;ukrajinskou platformu BRAVE1 — od soutěží DefTech Forges přes testovací kampaně až po navazující EU nástroje financování.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:38px;margin-top:54px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);font-family:'IBM Plex Mono',monospace">
+          <div><div style="font-size:26px;font-weight:600;color:#fff">€120k</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">FÁZE 1</div></div>
+          <div><div style="font-size:26px;font-weight:600;color:#fff">€1 mil.</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">FÁZE 2</div></div>
+          <div></div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DEFTECH FORGES -->
+  <section id="deftech" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px 30px">
+      <div style="font-family: 'IBM Plex Mono',monospace; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--blue); font-weight: 700">[ Fáze 1 ]</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.02em;margin:12px 0 0">DefTech Forges</h2>
+      <div style="background:var(--greenSoft);border:1px solid #d8e3cb;border-radius:12px;padding:14px 18px;margin:18px 0 0;display:inline-block"><span style="font-weight:600;color:var(--greenDeep);font-size:14.5px">Cíl: vyfiltrovat nejslibnější řešení odpovídající reálným operačním potřebám.</span></div>
+
+      <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:32px;align-items:start">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px">
+          <div style="display:flex;flex-direction:column;gap:13px;font-size:14.5px;color:#33405e;line-height:1.5">
+            <div style="display:flex;gap:11px"><span style="color:var(--green);font-weight:700">✔</span><span><strong>Týdenní akce</strong> pořádané souběžně na 2&nbsp;místech (2026 dvakrát ročně, 2027 a&nbsp;2028 třikrát ročně).</span></div>
+            <div style="display:flex;gap:11px"><span style="color:var(--green);font-weight:700">✔</span><span>První DefTech Forges: <strong>1.–5. června ve Francii</strong> a&nbsp;<strong>3.–7. června v&nbsp;Estonsku</strong>.</span></div>
+            <div style="display:flex;gap:11px"><span style="color:var(--green);font-weight:700">✔</span><span>Setkání <strong>inovátorů z&nbsp;EU a&nbsp;Ukrajiny</strong> s&nbsp;řešeními na operační výzvy identifikované Ukrajinou na bojišti.</span></div>
+            <div style="display:flex;gap:11px"><span style="color:var(--green);font-weight:700">✔</span><span><strong>Startupy, SME, jednotliví inovátoři</strong> i&nbsp;velký průmysl jsou vítáni.</span></div>
+            <div style="display:flex;gap:11px"><span style="color:var(--green);font-weight:700">✔</span><span>3 nejlepší týmy na každém místě získají <strong>€120&nbsp;000</strong> na další rozvoj řešení a&nbsp;postup do Fáze&nbsp;2.</span></div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="background:var(--ink);color:#fff;border-radius:16px;padding:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8CAA72;margin-bottom:10px">Operační výzvy — Estonsko 🇪🇪</div>
+            <p style="font-size:13.5px;color:#D6DEF0;margin:0;line-height:1.5">Útočné a&nbsp;odolné bezpilotní vzdušné systémy pro contested prostředí.</p>
+          </div>
+          <div style="background:var(--navy2);color:#fff;border-radius:16px;padding:22px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8CAA72;margin-bottom:10px">Operační výzvy — Francie 🇫🇷</div>
+            <ul style="margin:0;padding-left:18px;font-size:13.5px;color:#D6DEF0;line-height:1.55">
+              <li>Pozemní schopnosti pro ochranu sil</li>
+              <li>Ochrana perimetru</li>
+              <li>Podpora boje zblízka v&nbsp;contested prostředí</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASE 2 -->
+  <section style="background:var(--mist);display:flex;justify-content:center;margin-top:54px">
+    <div style="width:100%;max-width:1280px;padding:80px 32px">
+      <div style="font-family: 'IBM Plex Mono',monospace; font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--blue); font-weight: 700">[ Fáze 2 ]</div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:12px 0 0;max-width:24ch">Kampaň testování, evaluace a experimentování</h2>
+      <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:18px 0 0;display:inline-block"><span style="font-weight:600;color:var(--navy);font-size:14.5px">Cíl: validace a zpřesňování prototypů.</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;font-size:14px;color:#33405e;line-height:1.5">Vítězné týmy DefTech Forge postupují do Fáze&nbsp;2 — <strong>start ve 3. čtvrtletí 2026</strong>.</div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;font-size:14px;color:#33405e;line-height:1.5">Organizuje <strong>Evropská obranná agentura (EDA)</strong>.</div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;font-size:14px;color:#33405e;line-height:1.5">Každá kampaň trvá <strong>až 2 týdny</strong>, opakovaně po každé Fázi&nbsp;1 <strong>až do 2029</strong>.</div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;font-size:14px;color:#33405e;line-height:1.5">Týmy získají <strong>podporu expertů a&nbsp;mentorů</strong> pro další rozvoj řešení.</div>
+        <div style="background:var(--ink);color:#fff;border-radius:14px;padding:22px;font-size:14px;line-height:1.5;color:#D6DEF0">Až <strong style="color:#fff">€1 milion</strong> na nejlepší projekty; opakované ceny pro další testování.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER EU INSTRUMENTS -->
+  <section id="nastroje" style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px">
+      
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.02em;margin:12px 0 0;max-width:24ch">Ukraine Support Instrument &amp; Evropský obranný fond</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px">
+        <div style="background:var(--ink);color:#fff;border-radius:18px;padding:30px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px">Ukraine Support Instrument</span><span style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-weight:600">EUR 300 mil.</span></div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:16px;font-size:13.5px;color:#D6DEF0;line-height:1.5">
+            <div>
+              <div style="font-weight:600;color:#fff;margin-bottom:5px">Industrial Reinforcement Actions</div>
+              <div>1. výzva: rakety, munice a&nbsp;bomby (EUR 180&nbsp;mil.)</div>
+              <div>2. výzva: bezpilotní a&nbsp;protibezpilotní systémy (EUR 80&nbsp;mil.)</div>
+            </div>
+            <div>
+              <div style="font-weight:600;color:#fff;margin-bottom:5px">Innovation action</div>
+              <div>realizováno Ukrajinou (EUR 35&nbsp;mil.)</div>
+            </div>
+            <div style="padding-top:12px;border-top:1px solid rgba(255,255,255,.14)">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8FA0C6;margin-bottom:6px">Termíny</div>
+              <div>1. výzva: otevření 17.&nbsp;6.&nbsp;2026 · uzávěrka 13.&nbsp;10.&nbsp;2026</div>
+              <div>2. výzva: otevření 17.&nbsp;6.&nbsp;2026 · uzávěrka 16.&nbsp;2.&nbsp;2027</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--blue);border-radius:18px;padding:30px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;color:var(--navy)">Evropský obranný fond (EDF)</span><span style="font-family:'IBM Plex Mono',monospace;color:var(--greenDeep);font-weight:600">EUR 1 mld.</span></div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:14px;font-size:13.5px;color:#33405e;line-height:1.55">
+            <div>
+              <div style="font-weight:600;color:var(--navy);margin-bottom:6px">31 témat výzev celkem</div>
+              <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px">
+                <li>7 tematických výzev (zabezpečená digitální vojenská mobilita, raketomety…)</li>
+                <li>3 netematické výzvy (pro SME a&nbsp;výzkumné organizace…)</li>
+                <li>1 akce — hrozby hypersonických kluzných prostředků</li>
+                <li>2 akce — obranná zdravotnická protiopatření EU Alliance</li>
+              </ul>
+            </div>
+            <div style="padding-top:12px;border-top:1px solid var(--line)">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Uzávěrka</span> <strong style="color:var(--navy)">29.&nbsp;9.&nbsp;2026</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-decoration:none;font-weight:600;font-size:14px;color:var(--navy)" style-hover="border-color:#cdd6e6">EU Funding &amp; Tenders Portal <span style="color:var(--blue)">↗</span></a>
+    </div>
+  </section>
+
+  <!-- UNITE - BRAVE NATO -->
+  <section id="unite" style="background:var(--ink);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px">
+      
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.02em;margin:12px 0 6px">UNITE – Brave NATO</h2>
+      <p style="color:#9DABCB;font-size:15px;margin:0 0 8px;max-width:60ch">Ukraine-NATO Innovation, Technology &amp; Engineering — NATO a&nbsp;ukrajinská Brave1 jako rovnocenní partneři.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px">
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA6F0;margin-bottom:14px">Cíle spolupráce NATO–Ukrajina</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:14px;color:#C4CFE8;line-height:1.5">
+            <li>Podpora urgentních potřeb Ukrajiny, kde inovace přinášejí asymetrickou výhodu</li>
+            <li>Budování kapacit a&nbsp;odolnosti ukrajinského inovačního ekosystému</li>
+            <li>Tvorba synergií mezi inovačními ekosystémy Aliance a&nbsp;Ukrajiny</li>
+            <li>Posílení připravenosti Aliance a&nbsp;adopce technologií, doktrín a&nbsp;CONOPS z&nbsp;Ukrajiny</li>
+            <li>Zrychlení a&nbsp;zefektivnění procesů NATO pro tempo vojenských inovací</li>
+          </ul>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7FA6F0;margin-bottom:14px">Program</div>
+          <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:9px;font-size:14px;color:#C4CFE8;line-height:1.5">
+            <li>Až <strong style="color:#fff">€50 milionů</strong> na inovační soutěže</li>
+            <li>NATO a&nbsp;ukrajinská <strong style="color:#fff">Brave1</strong> jako rovnocenní partneři (financování, plánování, realizace)</li>
+            <li>Společné soutěže NATO–Ukrajina zaměřené na škálování ověřených technologií pro interoperabilitu</li>
+            <li>Vysoké TRL · iterativní, problem-based contracting · společné návrhy spojeneckých a&nbsp;ukrajinských firem</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(150deg,#1C2F63,#13234E);border:1px solid #2c477f;border-radius:18px;padding:30px;margin-top:18px">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;justify-content:space-between">
+          <span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;color:#fff">První soutěž — counter-UAS a protivzdušná obrana</span>
+          <span style="font-family:'IBM Plex Mono',monospace;color:#E9D24B;font-weight:600">€10 mil.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:20px;font-size:13.5px;color:#C4CFE8;line-height:1.5">
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8FA0C6;text-transform:uppercase;margin-bottom:6px">TRL</div>Ukrajina TRL 6+ · NATO TRL 7+</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8FA0C6;text-transform:uppercase;margin-bottom:6px">Očekávání</div>Prokázaný výkon v&nbsp;bojovém prostředí do šesti měsíců</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8FA0C6;text-transform:uppercase;margin-bottom:6px">Vítězové získají</div>Financování až €1&nbsp;mil. na přihlášku · testování v&nbsp;NATO i&nbsp;na Ukrajině · navazující adopce</div>
+        </div>
+      </div>
+
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7FA6F0;margin:34px 0 14px">Výzvy první soutěže</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px"><div style="font-weight:600;color:#fff;font-size:15px;margin-bottom:8px">Counter-FPV</div><p style="margin:0;font-size:13px;color:#9DABCB;line-height:1.5">Aktivní ochranné systémy proti FPV dronům · elektromagnetický útok (EA) na FPV drony.</p></div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px"><div style="font-weight:600;color:#fff;font-size:15px;margin-bottom:8px">Counter-Shahed &amp; SIGINT</div><p style="margin:0;font-size:13px;color:#9DABCB;line-height:1.5">Dostupné systémy proti Shahed loitering munici · elektromagnetická podpora pro SIGINT.</p></div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px"><div style="font-weight:600;color:#fff;font-size:15px;margin-bottom:8px">High-Altitude &amp; Navigation</div><p style="margin:0;font-size:13px;color:#9DABCB;line-height:1.5">Vysokovýškové platformy pro dlouhý dohled · autonomní navigace v&nbsp;GNSS-denied prostředí.</p></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px">
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px">
+          <div style="font-family: 'IBM Plex Mono',monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #7FA6F0; margin-bottom: 14px; font-weight: 700">Jak se zapojit</div>
+          <p style="font-size:14px;color:#C4CFE8;line-height:1.55;margin:0 0 12px">Firmy z&nbsp;NATO zemí požádají o&nbsp;Declaration of Eligibility (DoE) přes svou národní delegaci; ukrajinské firmy se registrují přímo přes Brave1.</p>
+          <p style="font-size:14px;color:#C4CFE8;line-height:1.55;margin:0">Všechny firmy se registrují na interaktivním portálu UNITE – Brave NATO na webu Brave1; přihlášky probíhají přímo přes portál.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:26px">
+          <div style="font-family: 'IBM Plex Mono',monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #7FA6F0; margin-bottom: 14px; font-weight: 700">Lines of Effort</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Counter-UAS</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Signals &amp; electronic warfare</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">ISR processing</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Navigace v&nbsp;contested EM prostředí</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Collaborative autonomy</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Komunikace nové generace</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">UxS pro nebezpečné úkoly</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">COTS ruggedisation</span>
+            <span style="background:rgba(127,166,240,.12);color:#9FB6E8;font-size:12.5px;padding:6px 11px;border-radius:20px">Podvodní technologie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:50px 32px 38px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center">
+      <a href="Defence Hub.dc.html" style="color:#C2CDE6;text-decoration:none;font-weight:600">← Defence Hub CzechInvest</a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">BRAVETECH EU · UNITE – BRAVE NATO</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  componentDidMount(){ document.title='BraveTech EU — Defence Hub CzechInvest'; document.documentElement.lang='cs'; }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

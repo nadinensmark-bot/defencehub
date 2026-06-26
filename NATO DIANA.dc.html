@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#0B1530"></rect>
+<g transform="translate(600 320)">
+<path d="M0 -120 L104 -60 L0 0 L-104 -60 Z" fill="#2B5CC4"></path>
+<path d="M-104 -60 L0 0 L0 120 L-104 60 Z" fill="#1C2F63"></path>
+<path d="M104 -60 L0 0 L0 120 L104 60 Z" fill="#8CAA72"></path>
+</g>
+<text x="600" y="560" font-family="Space Grotesk, sans-serif" font-size="60" font-weight="700" fill="#FFFFFF" text-anchor="middle">NATO DIANA</text>
+<text x="600" y="624" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="4" fill="#7FA6F0" text-anchor="middle">2027</text>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#0B1530}
+@keyframes dhfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes dhpulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes dhfade{from{opacity:0}to{opacity:1}}
+@keyframes dhblink{0%,49%{opacity:1}50%,100%{opacity:.25}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">JSME HRDÍ, ŽE VEDEME AKCELERÁTOR NATO DIANA CZECHIA</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>PART OF THE DIANA NETWORK</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="Defence Hub.dc.html#kdo" style="color:var(--navy);text-decoration:none">Rozcestník</a>
+        <a href="Defence Hub.dc.html#programy" style="color:var(--navy);text-decoration:none">Programy</a>
+        <a href="#top" style="color:var(--blue);text-decoration:none;font-weight:600">NATO DIANA</a>
+        <a href="Defence Hub.dc.html#databaze" style="color:var(--navy);text-decoration:none">Databáze řešení</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em"><span style="color:var(--navy);font-weight:600">CZ</span><span style="opacity:.4"> / </span><a href="NATO DIANA EN.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--navy)">EN</a></span>
+        <a href="https://www.diana.nato.int/challenges.html" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">Podat přihlášku</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO + COUNTDOWN -->
+  <header style="position:relative;background:radial-gradient(130% 120% at 20% 0%,#1B2D5E 0%,#0E1B3C 50%,#0B1530 100%);color:#fff;overflow:hidden">
+    <div style="position:absolute;top:60px;left:-40px;width:240px;height:240px;opacity:.12;animation:dhfloat 9s ease-in-out infinite">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#fff"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:90px 32px 84px">
+        <a href="Defence Hub.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8FA0C6;text-decoration:none;letter-spacing:.08em">← Defence Hub CzechInvest</a>
+        <div style="display:flex;flex-wrap:wrap;gap:54px;align-items:flex-end;justify-content:space-between;margin-top:22px">
+          <div style="max-width:60ch">
+            <div style="display: inline-flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono',monospace; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #8CAA72; border: 1px solid rgba(140,170,114,.4); padding: 7px 13px; border-radius: 30px; font-weight: 800">Cohort 2027 · Výzva otevřená</div>
+            <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(44px,7vw,88px);line-height:.98;letter-spacing:-.03em;margin:24px 0 0">NATO DIANA<br><span style="color:#7FA6F0">2027</span></h1>
+            <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#C4CFE8;max-width:54ch;margin:24px 0 0">Akcelerační program NATO pro technologie s&nbsp;obranným a&nbsp;dual-use potenciálem. €100 000 grant, přístup k&nbsp;200+ testovacím centrům a&nbsp;6měsíční akcelerátor začínající v&nbsp;lednu 2027. <strong style="color:#fff">Defence Hub CzechInvest je váš parťák.</strong></p>
+            <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:32px">
+              <a href="#prihlaska" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:#3E72E0">Jak se přihlásit →</a>
+              <a href="#challenges" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:rgba(255,255,255,.14)">6 challenges</a>
+            </div>
+          </div>
+
+          <!-- COUNTDOWN -->
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:26px 28px;min-width:330px;backdrop-filter:blur(8px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#8FA0C6;display:flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#E0564B;display:inline-block;animation:dhblink 1.4s infinite"></span>Uzávěrka přihlášek</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px">
+              <div style="background:#0B1530;border:1px solid #243a6e;border-radius:12px;padding:14px 6px;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:#fff">{{ cd.days }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:7px">dní</div></div>
+              <div style="background:#0B1530;border:1px solid #243a6e;border-radius:12px;padding:14px 6px;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:#fff">{{ cd.hours }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:7px">hod</div></div>
+              <div style="background:#0B1530;border:1px solid #243a6e;border-radius:12px;padding:14px 6px;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:#fff">{{ cd.mins }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:7px">min</div></div>
+              <div style="background:#0B1530;border:1px solid #243a6e;border-radius:12px;padding:14px 6px;text-align:center"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:#8CAA72">{{ cd.secs }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:7px">sec</div></div>
+            </div>
+            <div style="margin-top:16px;font-size:13.5px;color:#C4CFE8;display:flex;justify-content:space-between;align-items:center"><span>Pátek 3. 7. 2026</span><span style="font-family:'IBM Plex Mono',monospace;color:#8FA0C6">12:00 UTC+1</span></div>
+          </div>
+        </div>
+
+        <!-- stat strip -->
+        <div style="display:flex;flex-wrap:wrap;gap:38px;margin-top:60px;padding-top:28px;border-top:1px solid rgba(255,255,255,.12);font-family:'IBM Plex Mono',monospace">
+          <div><div style="font-size:26px;font-weight:600;color:#fff">€100k</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">funding</div></div>
+          <div><div style="font-size:26px;font-weight:600;color:#fff">+€300k</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">possible Mission Track</div></div>
+          <div><div style="font-size:26px;font-weight:600;color:#fff">200+</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">testovacích center</div></div>
+          <div><div style="font-size:26px;font-weight:600;color:#fff">6</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">měsíční program</div></div>
+          <div><div style="font-size:26px;font-weight:600;color:#fff">TRL 4–7</div><div style="font-size:11px;letter-spacing:.1em;color:#8FA0C6;text-transform:uppercase;margin-top:4px">úroveň</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CO ZISKATE -->
+  <section style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px 30px">
+      
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:12px 0 0;max-width:20ch">Víc než grant — cesta k&nbsp;nasazení</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:38px">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="width:42px;height:42px;border-radius:11px;background:var(--blueSoft);display:flex;align-items:center;justify-content:center"><span style="width:18px;height:18px;border-radius:50%;border:3px solid var(--blue);display:block"></span></div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:18px 0 6px">Financování</h3><p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin:0">€100 000 první fáze, <br>+€300 000 v&nbsp;Mission Track.</p></div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="width:42px;height:42px;border-radius:11px;background:var(--greenSoft);display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:16px solid var(--greenDeep);display:block"></span></div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:18px 0 6px">Mentoring</h3><p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin:0">3 mentoři — byznys, defence a&nbsp;technologický + vzdělávání v akcelerátoru podle kurikulum NATO DIANA.</p></div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="width:42px;height:42px;border-radius:11px;background:var(--blueSoft);display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;border:3px solid var(--blue);display:block"></span></div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:18px 0 6px">Testovací centra</h3><p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin:0">200+ lokalit napříč Evropou a&nbsp;Severní Amerikou pro test, evaluaci a&nbsp;validaci.</p></div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="width:42px;height:42px;border-radius:11px;background:var(--greenSoft);display:flex;align-items:center;justify-content:center"><span style="width:16px;height:16px;background:var(--greenDeep);transform:rotate(45deg);display:block"></span></div><h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:17px;margin:18px 0 6px">NATO network</h3><p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin:0">Přístup ke koncovým uživatelům, armádě, průmyslu a&nbsp;síti investorů.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NIF -->
+  <section id="nif" style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue)">[ Inovační fond NATO ]</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:0;max-width:20ch">Inovační fond NATO (NIF)</h2>
+        <p style="color:var(--muted);font-size:16px;max-width:42ch;margin:0">První mnohonárodní fond rizikového kapitálu na světě — úzce propojený s&nbsp;akcelerátorem DIANA.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:38px">
+        <div style="background:var(--ink);color:#fff;border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1">€1 mld.</div><div style="color:#9DABCB;font-size:13px;margin-top:6px">objem fondu na 15 let — přímé i&nbsp;nepřímé investice</div></div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:var(--navy)">24</div><div style="color:var(--muted);font-size:13px;margin-top:6px">spojeneckých zemí NATO zapojených ve fondu</div></div>
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;line-height:1;color:var(--greenDeep)">1.</div><div style="color:var(--muted);font-size:13px;margin-top:6px">mnohonárodní VC fond rizikového kapitálu na světě</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:18px">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px">
+          <p style="font-size:15px;line-height:1.65;color:#33405e;margin:0 0 16px">Inovační fond NATO pomocí rizikového kapitálu a&nbsp;strategických investic podporuje rozvoj vysoce inovativních technologických firem v&nbsp;raném stádiu, které mají vysoký potenciál pro civilní a&nbsp;obranné užití.</p>
+          <p style="font-size:15px;line-height:1.65;color:#33405e;margin:0 0 18px">Zaměřuje se na nastupující a&nbsp;přelomové technologie dvojího užití (EDTs) — umělá inteligence, biotechnologie, vesmír, autonomie nebo kvantové technologie, včetně vývoje hardwaru a&nbsp;softwaru.</p>
+          <div style="background:var(--greenSoft);border:1px solid #d8e3cb;border-radius:12px;padding:16px 18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--greenDeep);margin-bottom:6px">Vazba na DIANA</div>
+            <p style="font-size:14px;color:#2f4022;margin:0;line-height:1.55">Fond bude <strong>preferenčně investovat do subjektů, které projdou akceleračním programem DIANA</strong>. Vzniká tak synergie mezi akcelerací a&nbsp;kapitálem pro rozvoj domácích EDTs.</p>
+          </div>
+          <p style="font-size:13px;line-height:1.6;color:var(--muted);margin:18px 0 0">ČR se do Inovačního fondu NATO zapojí skrze Národní rozvojovou investiční, a.s.</p>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px">Možnosti zapojení</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div><div style="font-weight:600;font-size:14.5px;color:var(--navy)">Founders</div><div style="color:var(--muted);font-size:13px;line-height:1.45">zástupci start-upu hledající investici</div></div>
+            <div><div style="font-weight:600;font-size:14.5px;color:var(--navy)">Ecosystem Leaders</div><div style="color:var(--muted);font-size:13px;line-height:1.45">akcelerátor, inkubátor, korporace, co-investor, univerzita, kancelář pro transfer technologií</div></div>
+            <div><div style="font-weight:600;font-size:14.5px;color:var(--navy)">Allied End Users</div><div style="color:var(--muted);font-size:13px;line-height:1.45">koncový uživatel produktů</div></div>
+          </div>
+          <a href="https://nif.fund/connect" target="_blank" rel="noopener" style="margin-top:auto;background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:13px 20px;border-radius:10px;text-align:center;margin-top:20px" style-hover="background:var(--blue)">Ozvěte se přes nif.fund →</a>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:18px">
+        <a href="https://nif.fund" target="_blank" rel="noopener" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-decoration:none;font-weight:600;font-size:14px;color:var(--navy);display:inline-flex;align-items:center;gap:8px" style-hover="border-color:#cdd6e6">Oficiální web NIF <span style="color:var(--blue)">↗</span></a>
+        <a href="https://spsp.mo.gov.cz/inovacni-fond-nato-nif" target="_blank" rel="noopener" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-decoration:none;font-weight:600;font-size:14px;color:var(--navy);display:inline-flex;align-items:center;gap:8px" style-hover="border-color:#cdd6e6">Ministerstvo obrany ČR — NIF <span style="color:var(--blue)">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIT MAPA -->
+  <section id="sit" style="background:var(--paper);display:flex;justify-content:center;margin-top:54px">
+    <div style="width: 100%; max-width: 1280px; padding: 84px 32px; overflow: visible">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px">
+        <div>
+          
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:12px 0 0;max-width:20ch">Akcelerátory a&nbsp;test centra napříč Aliancí</h2>
+        </div>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Jako akcelerátor v&nbsp;Praze vás napojíme na celou síť DIANA — stovky testovacích center napříč Aliancí — i&nbsp;na národní testovací centra Defence Hub CzechInvest.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:40px">
+        <a href="https://www.diana.nato.int/resources/site1/general/test%20centres/diana_testcentres_websitelist_v1.pdf" target="_blank" rel="noopener" style="text-decoration:none;background:var(--ink);color:#fff;border-radius:18px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;transition:transform .16s,box-shadow .16s" style-hover="transform:translateY(-5px);box-shadow:0 24px 48px -24px rgba(11,21,48,.5)">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8FA0C6">Testovací centra</span><span style="color:#8FB6FF;font-size:18px">↗</span></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:62px;line-height:1">200+</div>
+            <div style="color:#9DABCB;font-size:14.5px;margin-top:10px;max-width:34ch">200+ lokalit napříč Evropou a Severní Amerikou pro test, evaluaci a validaci.</div>
+            <div style="margin-top:16px;font-weight:600;font-size:13.5px;color:#8FB6FF">Oficiální seznam test center (PDF) →</div>
+          </div>
+        </a>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:18px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;transition:transform .16s,box-shadow .16s" style-hover="transform:translateY(-5px);box-shadow:0 24px 48px -24px rgba(19,35,78,.28)">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Testovací centra · ČR</span><span style="color:var(--blue);font-size:18px">↗</span></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;line-height:1.05;color:var(--greenDeep);letter-spacing:-.02em">Defence&nbsp;Hub<br>CzechInvest network</div>
+            <div style="color:var(--muted);font-size:14.5px;margin-top:10px;max-width:34ch">Národní síť testovacích a&nbsp;ověřovacích pracovišť v&nbsp;ČR — laboratoře, polygony a&nbsp;partneři pro test, evaluaci a&nbsp;validaci.</div>
+            <div style="margin-top:16px;font-weight:600;font-size:13.5px;color:var(--blue)">Napojit se na českou síť →</div>
+          </div>
+        </a>
+        <a href="https://www.diana.nato.int/accelerator-programme.html" target="_blank" rel="noopener" style="text-decoration:none;background:#fff;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:18px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;min-height:230px;transition:transform .16s,box-shadow .16s" style-hover="transform:translateY(-5px);box-shadow:0 24px 48px -24px rgba(19,35,78,.28)">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Akcelerátory</span><span style="color:var(--blue);font-size:18px">↗</span></div>
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:62px;line-height:1;color:var(--greenDeep)">16</div>
+            <div style="color:var(--muted);font-size:14.5px;margin-top:10px;max-width:34ch">Akcelerátory napříč Aliancí — Defence Hub CzechInvest je váš akcelerátor v&nbsp;Praze a&nbsp;napojí vás na celou síť.</div>
+            <div style="margin-top:16px;font-weight:600;font-size:13.5px;color:var(--blue)">Prozkoumat síť DIANA →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 CHALLENGES -->
+  <section id="challenges" style="background:var(--mist);display:flex;justify-content:center;margin-top:0">
+    <div style="width:100%;max-width:1280px;padding:84px 32px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px">
+        <div>
+          
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;margin:12px 0 0;max-width:18ch">AKTUÁLNÍ VÝZVY</h2>
+        </div>
+        <p style="color:var(--muted);font-size:16px;max-width:40ch;margin:0">Vyberte výzvu, do které vaše technologie zapadá. Klikněte pro detail a&nbsp;zaměření.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px;margin-top:40px">
+        <sc-for list="{{ challenges }}" as="ch" hint-placeholder-count="6">
+          <div onClick="{{ ch.open }}" style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;cursor:pointer;display:flex;gap:20px;align-items:flex-start;transition:transform .16s,box-shadow .16s,border-color .16s" style-hover="transform:translateY(-5px);box-shadow:0 22px 44px -22px rgba(19,35,78,.34);border-color:#cdd6e6">
+            <div style="{{ ch.tile }}">{{ ch.num }}</div>
+            <div style="flex:1">
+              <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:19px;line-height:1.15;margin:2px 0 4px">{{ ch.title }}</h3>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);letter-spacing:.02em;margin-bottom:11px">{{ ch.en }}</div>
+              <p style="color:#41506e;font-size:14px;line-height:1.55;margin:0 0 14px">{{ ch.short }}</p>
+              <span style="font-size:13px;font-weight:600;color:var(--blue)">Detail výzvy →</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAK SE PRIHLASIT -->
+  <section id="prihlaska" style="background:var(--ink);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:84px 32px">
+      
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px;margin-top:12px">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.02em;margin:0;max-width:18ch">Šest kroků k&nbsp;přihlášce</h2>
+        <p style="color:#9DABCB;font-size:16px;max-width:40ch;margin:0">Nevíte si rady? Defence Hub vám s&nbsp;přihláškou pomůže — zdarma.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:40px">
+        <a href="https://www.dnb.com/cs-cz/smb/duns.html" target="_blank" rel="noopener" style="text-decoration:none;display:block;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px;transition:background .16s,border-color .16s" style-hover="background:rgba(255,255,255,.07);border-color:rgba(140,170,114,.5)"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">01</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px;color:#fff;display:flex;align-items:center;gap:7px">DUNS Number <span style="font-size:13px;color:#8FB6FF">↗</span></h4><p style="color:#9DABCB;font-size:13px;line-height:1.5;margin:0">Získejte identifikátor organizace potřebný pro registraci.</p></a>
+        <a href="https://proposals.diana.tech/servlet/hype/IMT?userAction=BrowseCurrentUser&amp;templateName=MenuItem" target="_blank" rel="noopener" style="text-decoration:none;display:block;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px;transition:background .16s,border-color .16s" style-hover="background:rgba(255,255,255,.07);border-color:rgba(140,170,114,.5)"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">02</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px;color:#fff;display:flex;align-items:center;gap:7px">Registrace <span style="font-size:13px;color:#8FB6FF">↗</span></h4><p style="color:#9DABCB;font-size:13px;line-height:1.5;margin:0">Vytvořte profil na portálu NATO DIANA.</p></a>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="text-decoration:none;display:block;background:rgba(140,170,114,.1);border:1px solid rgba(140,170,114,.35);border-radius:14px;padding:22px;transition:background .16s,border-color .16s" style-hover="background:rgba(140,170,114,.18);border-color:rgba(140,170,114,.6)"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">03</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px;color:#fff;display:flex;align-items:center;gap:7px">Konzultace <span style="font-size:13px;color:#A9C98C">↗</span></h4><p style="color:#9DABCB;font-size:13px;line-height:1.5;margin:0">Nezávazná konzultace s Defence Hub — pomůžeme s výběrem výzvy i přihláškou. Zdarma.</p></a>
+        <a href="Průvodce přihláškou.dc.html" style="text-decoration:none;display:block;background:rgba(140,170,114,.1);border:1px solid rgba(140,170,114,.35);border-radius:14px;padding:22px;transition:background .16s,border-color .16s" style-hover="background:rgba(140,170,114,.18);border-color:rgba(140,170,114,.6)"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">04</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px;color:#fff;display:flex;align-items:center;gap:7px">Přihláška <span style="font-size:13px;color:#A9C98C">→</span></h4><p style="color:#9DABCB;font-size:13px;line-height:1.5;margin:0">Popište řešení a&nbsp;vyberte výzvu. Náš <strong style="color:#fff">průvodce přihláškou</strong> vás provede polem po poli. Uzávěrka 3. 7. 2026.</p></a>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;color:#8CAA72;font-size:13px">05</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px">Hodnocení</h4><p style="color:#9DABCB;font-size:13px;line-height:1.5;margin:0">Posouzení odbornými hodnotiteli NATO DIANA.</p></div>
+        <div style="background:linear-gradient(150deg,#1C2F63,#2B5CC4);border:1px solid #2B5CC4;border-radius:14px;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;color:#fff;font-size:13px">06</div><h4 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:12px 0 6px">Akcelerátor</h4><p style="color:#D6DEF0;font-size:13px;line-height:1.5;margin:0">6 měsíců v&nbsp;některém z 16 akcelerátorů. Start leden 2027.</p></div>
+      </div>
+      <div style="margin-top:34px;display:flex;flex-wrap:wrap;gap:13px">
+        <a href="Průvodce přihláškou.dc.html" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:#3E72E0">Průvodce přihláškou →</a>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">Rezervovat konzultaci</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="kontakt" style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:80px 32px;text-align:center">
+      <div style="width:64px;height:64px;margin:0 auto;position:relative;animation:dhfloat 6s ease-in-out infinite">
+        <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+        <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+        <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3.6vw,44px);letter-spacing:-.02em;margin:24px auto 0;max-width:22ch;line-height:1.1">Máte technologii která zapadá?</h2>
+      <p style="color:#B6C2DE;font-size:17px;max-width:52ch;margin:18px auto 0;line-height:1.6">Ozvěte se Defence Hub CzechInvest. Pomůžeme vám vybrat správnou výzvu, připravit silnou přihlášku a&nbsp;projít celým procesem.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:#3E72E0">Rezervovat konzultaci — zdarma</a>
+        <a href="Defence Hub.dc.html#databaze" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:16px 30px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">Databáze řešení</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:50px 32px 38px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center">
+      <img src="assets/part-of-diana-white.png" alt="Part of the DIANA network" style="height:42px;opacity:.85">
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <a href="https://czechinvest.gov.cz/" target="_blank" rel="noopener" style="color:#8FA0C6;text-decoration:none" style-hover="color:#fff">Zpracování osobních údajů</a>
+        <span>© 2026 DEFENCE HUB CZECHINVEST · CONNECT · ACCELERATE · DEPLOY</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHALLENGE MODAL -->
+  <sc-if value="{{ hasSelected }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:100;background:rgba(8,15,34,.64);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:48px 20px;overflow-y:auto;animation:dhfade .2s ease">
+      <div onClick="{{ stop }}" style="background:#fff;width:100%;max-width:680px;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(8,15,34,.7)">
+        <div style="{{ sel.head }}">
+          <div onClick="{{ closeModal }}" style="position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.28)">✕</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.7)">CHALLENGE {{ sel.num }} / 06</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;margin:12px 0 6px;letter-spacing:-.01em;line-height:1.1">{{ sel.title }}</h3>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:rgba(255,255,255,.75)">{{ sel.en }}</div>
+        </div>
+        <div style="padding:28px 32px">
+          <sc-if value="{{ sel.isRich }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:10px">Shrnutí výzvy</div>
+          </sc-if>
+          <p style="font-size:15px;line-height:1.65;color:#33405e;margin:0 0 22px">{{ sel.long }}</p>
+          <sc-if value="{{ sel.hasScenario }}" hint-placeholder-val="{{ false }}">
+            <div style="background:var(--mist);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:24px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--greenDeep);margin-bottom:8px">Ilustrativní scénář</div>
+              <p style="font-size:14px;line-height:1.65;color:#41506e;margin:0">{{ sel.scenario }}</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sel.hasEnablers }}" hint-placeholder-val="{{ false }}">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:8px">Příklady podpůrných technologií</div>
+            <p style="font-size:12.5px;line-height:1.55;color:var(--muted);margin:0 0 18px;font-style:italic">{{ sel.enablersNote }}</p>
+            <div style="display:flex;flex-direction:column;gap:18px;margin-bottom:24px">
+              <sc-for list="{{ sel.enablers }}" as="g" hint-placeholder-count="4">
+                <div>
+                  <div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);margin-bottom:9px">{{ g.title }}</div>
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2">
+                      <div style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#41506e;line-height:1.5"><span style="color:var(--green);font-weight:700;margin-top:1px">✔</span><span>{{ it }}</span></div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ sel.showFocus }}" hint-placeholder-val="{{ true }}">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px">Zaměření výzvy</div>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+              <sc-for list="{{ sel.focus }}" as="f" hint-placeholder-count="3">
+                <div style="display:flex;gap:11px;align-items:flex-start;font-size:14px;color:#33405e;line-height:1.45"><span style="color:var(--green);font-weight:700;margin-top:1px">✔</span><span>{{ f }}</span></div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--line)">
+            <div style="font-size:13px;color:var(--muted)">Uzávěrka <strong style="color:var(--navy)">3. 7. 2026</strong> · TRL 4–7</div>
+            <a href="https://www.diana.nato.int/challenges.html" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:12px 22px;border-radius:10px" style-hover="background:var(--blue)">Podat přihlášku →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.state = { now: Date.now(), selected:null };
+    this.deadline = new Date('2026-07-03T12:00:00+01:00').getTime();
+    this.challenges = [
+      {num:'01',title:'Schopnost přežití osob',en:'Human Survivability',color:'#2B5CC4',
+        short:'Ochrana jednotlivců, včasná detekce zhoršování stavu a udržení lidského života a výkonu v konfliktních a extrémních prostředích.',
+        summary:'Operace NATO stále častěji nasazují personál do náročných, konfliktních prostředí, kde se v čase kumulují zranění, fyziologická zátěž, vystavení vlivům prostředí a kognitivní degradace (zhoršování poznávacích funkcí), a to často ve chvíli, kdy je specializovaná péče a odsun zpožděné, omezené nebo zcela znemožněné. Za těchto podmínek nezávisí přežití pouze na ošetření jednotlivých zranění, ale na udržení výkonu a odolnosti člověka pod dlouhodobým stresem. Současné přístupy zůstávají převážně zaměřené na odsun a roztříštěné napříč ochranou, monitoringem, péčí a výkonem, což vytváří kritické mezery v řetězci péče (life-chain a continuum of care) ve chvílích, kdy je zdravotnická kapacita narušena, přetížena nebo aktivně napadána. To otevírá příležitost posunout se k integrovanějším konceptům přežití a stabilizace zaměřeným na vojáka. Aliance hledá integrovaná, interoperabilní a škálovatelná řešení, která ochrání jednotlivce, zmírní hrozby, včas odhalí zhoršení stavu a udrží lidský život a výkon v konfliktních a extrémních prostředích. Důraz je kladen na udržení bojeschopnosti i tehdy, když je odsun, zásobování a zdravotnická podpora omezená nebo narušená. Schopnost přežití osob a celý řetězec podpory života je třeba chápat jako jeden operační systém. Řešení musí umožnit déletrvající velkokapacitní operace ve vysokém tempu a zároveň posílit ochranu a znalost situace, aniž by zvyšovala kognitivní, fyzickou nebo logistickou zátěž.',
+        scenario:'Během vysoce intenzivní rozsáhlé bojové operace působí rozptýlené síly NATO pod neustálou nepřímou palbou, hrozbou dronů, elektronickým rušením, zátěží z prostředí a nejistotou ohledně chemického či biologického zamoření. Postupem času u personálu narůstá kumulativní únava, dehydratace, tepelná zátěž, oslabení imunity a kognitivní degradace, což snižuje kvalitu rozhodování, reakční dobu a odolnost vůči zranění. Po jednom ze střetů dochází k většímu počtu raněných v důsledku tlakové vlny a střepin, přičemž vystavení vlivům prostředí a opožděné ošetření dále zvyšují rizika pro přežití. Místní i týlové zdravotnické kapacity jsou kvůli rozsahu operací již vyčerpané a odsun se kvůli konfliktnímu vzdušnému prostoru a nebezpečným pozemním trasám zpožďuje o mnoho hodin. Integrovaná osobní ochrana snižuje druhotná zranění a expozici. Nositelné a environmentální senzory napříč jednotkou detekují ztrátu krve, indikátory šoku, kognitivní degradaci a časné signály biologického stresu, což umožňuje adaptivní zadávání úkolů a včasný zásah. Navádění s podporou umělé inteligence (AI) pomáhá při stabilizaci v přední linii a prodloužené polní péči, zatímco hybridní posádkové a bezosádkové systémy provádějí odsun raněných pod hrozbou — s monitorovanou péčí během transportu a digitalizovanými zdravotnickými daty zajišťujícími kontinuitu léčby.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Adaptivní ochrana, snižování expozice a řízení signatury (Adaptive Protection, Exposure Reduction, and Signature Management)',items:[
+            'Lehká, adaptivní ochrana proti balistickým, tlakovým (blast), chemickým, biologickým, radiologickým a jaderným (CBRN) hrozbám, účinkům řízené energie a nepříznivému počasí, včetně termoregulace a odolnosti vůči kontaminaci.',
+            'Pokročilé maskování a řízení signatury snižující vizuální, tepelnou, akustickou a elektromagnetickou zjistitelnost.'
+          ]},
+          {title:'Prodloužená polní péče, odsun raněných a péče během transportu (Prolonged Field-care, Casualty Extraction, and In-Transit Care)',items:[
+            'Přenosná diagnostika, resuscitační nástroje a protiopatření v místě potřeby pro intervenci v přední linii, stabilizaci, ošetření a prodlouženou polní péči.',
+            'Technologie podporující autonomní nebo automatizovaný odsun raněných a zdravotnický odsun, které snižují zátěž personálu, automatizují procesy a umožňují monitorovanou péči během transportu.',
+            'Triáž, směrování a telemedicínská podpora s využitím AI ve chvílích, kdy je nedostatek specialistů a odsunových prostředků.'
+          ]},
+          {title:'Kontinuální monitoring fyziologického a kognitivního stavu a hrozeb (Continuous Physiological, Cognitive, and Hazard Monitoring)',items:[
+            'Multimodální biosnímání pro průběžné vyhodnocování vitálních funkcí, indikátorů zranění, únavy a kognitivního stavu.',
+            'Monitoring biologického stresu (např. imunitní či metabolická zátěž, časné indikátory infekce) pro předvídání zhoršení stavu ještě před zraněním.',
+            'Detekce biologických a chemických hrozeb nezávislá na konkrétním patogenu (či syntetické entitě) pro včasné varování a reakci.',
+            'AI pro převod senzorových dat na akceschopné výstrahy a podporu rozhodování.'
+          ]},
+          {title:'Biotechnologie pro přežití osob a škálovatelnou operační podporu (Biotechnologies for Human Survivability and Scalable Operational Support)',items:[
+            'Biologické snímání a rychlá diagnostika vhodná pro nasazení v poli.',
+            'Biotechnologická protiopatření podporující ochranu, stabilizaci, zotavení a udržení sil pod stresem a při zranění.',
+            'Technologie biovýroby (biomanufacturing) pro výrobu paliva, krve, bílkovin, antibiotik, kritických chemikálií a vysokoenergetických materiálů.',
+            'Škálovatelné technologie pro zajištění metabolické odolnosti v konfliktních prostředích.'
+          ]},
+          {title:'Spolupráce člověka a stroje, rozhraní a interoperabilita (Human–Machine Teaming, Interfaces, and Interoperability)',items:[
+            'Exoskelety a augmentace jemné motoriky pro zlepšení mobility, manipulace s raněnými a chirurgických výkonů.',
+            'Integrované systémy vojáka, včetně přileb se zabudovaným snímáním a komunikací.',
+            'Rozhraní rozšířené, virtuální a smíšené reality (AR/VR/MR) pro výcvik, vzdálenou asistenci a zdravotnickou i operační podporu v reálném čase.',
+            'Digitalizovaná zdravotnická dokumentace a sledování pacienta napříč celým řetězcem péče.'
+          ]}
+        ]},
+      {num:'02',title:'Autonomie bezosádkových systémů napříč doménami',en:'Multidomain Autonomy of Uncrewed Systems',color:'#6E9152',
+        short:'Bezosádkové prostředky napříč doménami fungují jako jeden integrovaný systém, který se přizpůsobuje v reálném čase a zůstává efektivní i při rušení a ztrátách.',
+        summary:'Dnešní bezosádkové systémy často fungují jako izolované platformy s omezenou autonomií, nespolehlivou komunikací a omezenou schopností spolupracovat napříč vzdušnou, pozemní, námořní a kosmickou doménou nebo mezi sebou plynule sdílet data. V konfliktních podmínkách tyto nedostatky snižují rychlost a spolehlivost průzkumu a získávání informací (sensing), rozhodování i provádění účinků a zásahů (effects), a zároveň zvyšují zátěž operátorů, zranitelnost vůči rušení, možnost oklamání protivníkem a ztrátovost systémů. Podobná omezení brání efektivnímu využití i v civilních oblastech, například při reakci na katastrofy, monitorování hranic a ochraně kritické infrastruktury. Nové trendy, jako jsou odolná autonomie (resilient autonomy), kooperativní průzkum a sběr dat (cooperative sensing), decentralizované řízení misí a prediktivní udržování (predictive sustainment), mohou umožnit, aby bezosádkové prostředky napříč různými doménami fungovaly jako jeden integrovaný systém, který se v reálném čase přizpůsobuje situaci a zůstává efektivní i při rušení a ztrátách části prostředků.',
+        scenario:'Velký spojenecký přístav se stane terčem kybernetického útoku zaměřeného na systémy řízení lodní dopravy, globální navigační satelitní systémy (GNSS) a komunikační infrastrukturu. Je nasazena multidoménová kombinace autonomních bezosádkových prostředků působících ve vesmíru, ve vzduchu, na zemi i na moři. Tyto systémy vytvářejí společný obraz operační situace (Common Operational Picture, COP) bohatý na data a využívají integrované analytické mechanismy k odhalení strategických záměrů protivníka a předpovědi jeho pravděpodobných dalších kroků. Decentralizované řízení mise zajišťuje koordinaci a sladěný průběh operací navzdory rádiovému rušení, ztrátě signálu GNSS, spoofingu (podvržení falešných navigačních či identifikačních dat) a přerušované konektivitě. Systém se částečně opírá o inovativní malé satelity vyrobené z nových kompozitních materiálů. Náhle loď převážející hnojiva začne vysílat informaci, že ztratila kontrolu nad svými řídicími systémy, což vytváří riziko najetí na mělčinu a následné exploze. Na místo jsou okamžitě vyslány další autonomní průzkumné uzly vybavené sníženou elektrooptickou stopou, sníženou infračervenou stopou a prvky stealth technologií. Díky integraci s posádkovými prostředky je možné rychle, efektivně a s minimálním rizikem omezit vznikající hrozbu. Po zásahu na palubě zajišťují bezosádkové systémy odsun raněných, dopravu zásob a materiálu a autonomní opravy přímo na místě. Podobné schopnosti jsou využitelné nejen ve vojenských operacích, ale také při reakci na přírodní katastrofy, ochraně hranic, boji proti organizovanému zločinu a ochraně kritické infrastruktury.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Odolná autonomie a navigace (Resilient Autonomy and Navigation)',items:[
+            'Autonomní navigace umožňující bezpečný a efektivní provoz při degradovaném nebo nedostupném signálu GNSS, nepřesných mapových podkladech, neznámém terénu, dynamických překážkách napříč různými doménami a aktivním působení protivníka.',
+            'Nové subsystémy a komponenty umožňující vyšší úroveň autonomie prostřednictvím zlepšení vnímání okolí (perception), výpočetního výkonu, časové synchronizace a energetického hospodaření, zejména pro platformy s nízkými nároky na velikost, hmotnost a spotřebu energie (low-SWaP).',
+            'Nové materiály a konstrukční řešení pro výrobu a snižování zjistitelnosti, která omezují možnost odhalení a zvyšují přežití systémů v konfliktních a náročných prostředích napříč doménami.'
+          ]},
+          {title:'Koordinace více platforem a kooperativní průzkum (Multi-platform Orchestration and Cooperative Sensing)',items:[
+            'Metody koordinace více platforem umožňující přidělování úkolů, předcházení vzájemným konfliktům (deconfliction) a koordinované provádění účinků napříč různorodými prostředky.',
+            'Kooperativní průzkum a decentralizované vytváření společného obrazu operační situace (COP), které umožňují slučování distribuovaných pozorování, odolnost vůči klamání protivníkem a zachování znalosti situace i při narušení systémů.'
+          ]},
+          {title:'Udržování, opravy a škálovatelná výroba (Sustainment, Repair, and Scalable Production)',items:[
+            'Prediktivní údržba a autonomní opravy přímo v místě nasazení (in-situ autonomous repair), které zkracují dobu neprovozuschopnosti, snižují logistickou zátěž a udržují operační tempo i při ztrátách a velkých vzdálenostech.',
+            'Pokročilé, aditivní a adaptivní výrobní technologie umožňující rychlou náhradu poškozených součástí, tvorbu variant přizpůsobených konkrétní misi a decentralizovanou výrobu blíže místu potřeby.'
+          ]},
+          {title:'Dlouhodobá podpora z vysokých výšek a z vesmíru (Persistent, High-altitude and Space-enabled Support)',items:[
+            'Konstrukční energetické kompozitní materiály (structural power composite materials) pro prostředky operující ve vysokých výškách a ve vesmíru, které prodlužují dobu nasazení, umožňují dlouhodobý průzkum a podporují nepřetržitou komunikaci.',
+            'Servisní služby ve vzduchu a na oběžné dráze (in-air and in-orbit services), které umožňují údržbu, doplňování zdrojů a prodlužování životnosti bezosádkových systémů působících ve vysokých výškách a ve vesmíru.'
+          ]}
+        ]},
+      {num:'03',title:'Multidoménové snímání a pokročilé zpracování dat pro zpravodajství a sledování',en:'Multidomain Sensing and Advanced Data Processing for Intelligence and Surveillance',color:'#3E7CA8',
+        short:'Spolehlivější společný obraz operační situace díky multidoménovému snímání, fúzi dat a analytice napříč senzory, systémy a doménami.',
+        summary:'Schopnost detekovat, monitorovat a sledovat aktivitu napříč pozemní, vzdušnou, námořní, kybernetickou a kosmickou doménou je klíčová pro kolektivní obranu, bezpečnost a odolnost. Vlády i provozovatelé se stále více spoléhají na různorodé snímací systémy při podpoře řízení vzdušného prostoru, ochrany infrastruktury, monitorování prostředí, reakce na krize a znalosti situace ve složitých operačních prostředích. V praxi naráží snímání a sledování na roztříštěné senzorové sítě, degradovanou nebo přerušenou komunikaci a prostředí charakterizovaná zahlcením, rušením, klamáním nebo maskováním. Jednotlivé snímací systémy často poskytují jen částečný nebo kontextově závislý vhled. Když data nelze sdílet, kombinovat nebo společně vyhodnocovat, mezery v pokrytí, spolehlivosti a kontinuitě omezují znalost situace a brání vytvoření uceleného společného obrazu operační situace (Common Operational Picture, COP). Aliance hledá multidoménové snímání a pokročilé zpracování dat pro zpravodajství a sledování. Zaměřuje se na řešení, která zlepšují, jak jsou data snímána, přenášena, integrována a využívána napříč heterogenními senzory, systémy a doménami, a tím podporují spolehlivou tvorbu COP napříč organizacemi i státy. Relevantní přístupy mohou fungovat na úrovni samotného senzoru (edge), v rámci distribuovaných sítí i v uzlech pro fúzi dat a podporu rozhodování.',
+        scenario:'Spojenecká země odpovídá za monitorování aktivity ve vzdušném prostoru okolo velkých měst, dopravních uzlů a kritické infrastruktury. Během významné veřejné akce je v blízkosti civilních letišť a energetických zařízení hlášen prudký nárůst nekoordinovaných detekcí dronů, který se časově překrývá s hustým komerčním leteckým provozem a zvýšeným napětím v regionu. Úřady musí rychle odlišit bezpečnostní incidenty (safety) od potenciálních bezpečnostních hrozeb (security) a přitom zachovat běžný civilní provoz. Informace jsou shromažďovány z široké škály zdrojů, mezi něž patří pozemní radary, pasivní radiofrekvenční a infračervené senzory, vzdušné platformy, družice a data sdílená sousedními státy a civilními úřady. Každý snímací systém poskytuje cenný vhled za určitých podmínek, ale žádný jednotlivý zdroj sám o sobě nenabízí dostatečné pokrytí, spolehlivost ani kontinuitu, zejména v zahlcených nebo degradovaných prostředích. Tím, že umožní data z více senzorů, systémů a zainteresovaných stran sdílet, korelovat a společně vyhodnocovat, podporují pokročilá řešení snímání a zpracování dat tvorbu spolehlivějšího společného obrazu operační situace (COP). Tento integrovaný pohled snižuje počet falešných poplachů, zvyšuje spolehlivost detekce a umožňuje včasnou a koordinovanou reakci a rozhodování.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Multidoménové snímání a komunikace (Multidomain Sensing and Communications)',items:[
+            'Multidoménová a multisenzorová řešení, která detekují, sledují a monitorují objekty, aktivity nebo anomálie napříč pozemní, vzdušnou, námořní, kybernetickou a kosmickou doménou.',
+            'Bezpečné, odolné a adaptivní komunikační technologie umožňující sdílení zpravodajských a sledovacích dat napříč konfliktními, zahlcenými nebo degradovanými elektromagnetickými a kybernetickými prostředími.',
+            'Nové přístupy ke snímání, včetně pasivních, distribuovaných nebo nově vznikajících snímacích modalit, které zlepšují detekci, kontinuitu a přežití za rušení nebo protiopatření protivníka.',
+            'Aplikace relevantní pro pozorování Země, vzdušné a námořní sledování, elektromagnetické a kybernetické snímání a vesmírný monitoring, včetně schopností spojených se signálovým zpravodajstvím (SIGINT), obrazovým zpravodajstvím (IMINT), komunikačním zpravodajstvím (COMINT), znalostí situace ve vesmíru (SSA) a znalostí kosmické domény (SDA).'
+          ]},
+          {title:'Pokročilé zpracování a fúze dat (Advanced Data Processing and Fusion)',items:[
+            'Analytika využívající umělou inteligenci (AI) pro filtrování šumu, korelaci heterogenních dat, detekci vzorů a podporu sledování, klasifikace a vyhodnocení napříč rozsáhlými zpravodajskými a sledovacími datovými sadami.',
+            'Edge a distribuované výpočetní technologie umožňující zpracování dat blízko senzoru nebo uživatele, čímž snižují latenci a závislost na centralizované infrastruktuře.',
+            'Řešení pro správu dat, jejich značkování (labelling) a metadata, která zlepšují interoperabilitu, důvěryhodnost, dohledatelnost a opětovné využití zpravodajských a sledovacích dat napříč systémy a státy.'
+          ]},
+          {title:'Podpora rozhodování ve zpravodajství a sledování (Intelligence and Surveillance Decision Support)',items:[
+            'Nástroje podporující zpravodajskou analýzu, stanovení priorit, upozorňování (alerting) a vyhodnocení pro podporu rozhodování napříč úrovněmi velení.',
+            'Datově orientované architektury umožňující flexibilní integraci výstupů snímání a zpravodajství do systémů velení a řízení (C2).',
+            'Řešení pro mezidoménové navádění (cross-domain cueing) a korelaci, která umožní, aby informace získaná v jedné doméně posílila zpravodajství a sledování v jiné.'
+          ]}
+        ]},
+      {num:'04',title:'Operační odolnost v konfliktních prostředích',en:'Operational Resilience in Contested Environments',color:'#46618F',
+        short:'Udržení operační účinnosti na taktické úrovni tam, kde nelze spoléhat na konektivitu ani zaručenou navigaci.',
+        summary:'V konfliktních prostředích protivník cíleně narušuje snímání, komunikaci a navigaci prostřednictvím kybernetických útoků, rušení elektromagnetického spektra a znemožnění globálních navigačních satelitních systémů (GNSS). V kombinaci s náročnými a extrémními fyzickými podmínkami tyto zásahy omezují svobodu jednání tím, že snižují mobilitu, zpomalují rozhodování a ztěžují velení a řízení (Command and Control, C2). V důsledku toho jsou zvýšenému riziku vystaveny jak vojenské operace, tak další životně důležité bezpečnostní funkce, jako je ochrana kritické infrastruktury. Aliance hledá praktická a interoperabilní řešení v oblasti snímání, komunikace a určování polohy, navigace a času (Positioning, Navigation and Timing, PNT), která udrží operační účinnost na taktické úrovni i tam, kde nelze spoléhat na konektivitu a zaručenou navigaci. Řešení mají umožnit koordinaci, bezpečný pohyb a znalost situace a být ze své podstaty odolná vůči zpochybnění spektra a výpadku GNSS při nasazení v různorodém a náročném terénu. To zahrnuje detekci a klasifikaci komunikace a prostředků protivníka při současné ochraně vlastních. Dohromady by tyto schopnosti posílily operační odolnost, svobodu jednání a kontinuitu operací.',
+        scenario:'Spojenecké síly rychlé reakce jsou nasazeny do partnerského státu po narušení regionálního letiště a energetické infrastruktury. Viditelnost je zhoršená a elektromagnetické prostředí je vystaveno rušení (jamming) ze strany protivníka, dále komplikovanému vlastními protiopatřeními. Konvenční radiostanice se ukazují jako nespolehlivé a přístup ke GNSS je aktivně znemožněn, což omezuje velení a řízení (C2) i svobodu manévru. Předsunutá jednotka vysílá bezpilotní vzdušný systém (UAS) k průzkumu potenciálních hrozeb. S využitím navigace nezávislé na GNSS a multispektrálního snímacího kompletu odhalí neoznačený konvoj blížící se k přístupovým komunikacím s omezeným vstupem k letišti, a to navzdory zhoršené viditelnosti. Informace jsou přenášeny prostřednictvím odolné mesh radiové sítě, která dynamicky směruje data napříč taktickými, satelitními a civilními 5G datovými spoji. Korelací těchto informací s družicovými snímky ve vysokém rozlišení od civilního poskytovatele a analýzou elektromagnetických emisí je neznámý konvoj identifikován jako nepřátelský. Následně je pod rouškou tmy vyslán bezosádkový pozemní prostředek (UGV) opatřený povlakem snižujícím elektromagnetickou signaturu k dalšímu průzkumu. Po celou dobu operace si jednotka udržuje koordinaci a bezpečný pohyb v různorodém a náročném terénu, aniž by se spoléhala na zaručený přístup k elektromagnetickému spektru.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Správa spektra (Spectrum Management)',items:[
+            'Metody pro monitorování dostupnosti spektra, včetně detekce málo rušených a nedostatečně využívaných pásem.',
+            'Řešení pro detekci a charakterizaci elektromagnetického záření, včetně slabých, přerušovaných emisí s nízkou pravděpodobností zachycení (Low Probability of Intercept, LPI).',
+            'Přístupy využívající umělou inteligenci (AI) k dynamické správě spektra v zahlcených elektromagnetických prostředích.'
+          ]},
+          {title:'Odolné komunikační systémy (Resilient Communication Systems)',items:[
+            'Datové spoje s nízkou pravděpodobností zachycení (LPI), například s využitím milimetrového a terahertzového záření, které udrží spolehlivou komunikaci v konfliktních prostředích.',
+            'Vysokokapacitní komunikační systémy odolné vůči rušení, pozemní i vesmírné, které udrží konektivitu, když jsou konvenční radiofrekvenční (RF) spoje degradované nebo nedostupné.',
+            'Samokonfigurující se a autonomně nasaditelné technologie mesh sítí, které poskytují odolnou komunikaci bez závislosti na pevné infrastruktuře.'
+          ]},
+          {title:'Adaptivní snímací technologie (Adaptive Sensing Technologies)',items:[
+            'Softwarově definované systémy s kognitivními prvky, jako je povědomí o spektru a dekonflikce kanálů s podporou AI, schopné přizpůsobit se měnícím se podmínkám.',
+            'Integrované přístupy ke snímání a komunikaci pro efektivní využití spektra s minimalizovanou hardwarovou složitostí a elektromagnetickou stopou.',
+            'Vysoce citlivé snímací technologie, včetně řešení využívajících kvantové jevy, pro měření slabých signálů a pro detekci a určování vzdálenosti se sníženou pravděpodobností zachycení v konfliktních podmínkách.'
+          ]},
+          {title:'Odolná navigace, určování polohy a času (Resilient Navigation, Positioning and Timing)',items:[
+            'Inerciální měřicí jednotky (IMU), magnetické senzory a přístupy založené na strojovém vidění s využitím pozorování terénu a nebeských těles, které umožní přesnou navigaci bez spoléhání na vnější signály.',
+            'Alternativy ke GNSS, jako jsou navigační systémy využívající družice na nízké oběžné dráze (Low Earth Orbit, LEO) nebo náhodné rádiové signály (signals of opportunity).',
+            'Odolná řešení pro časování a synchronizaci umožňující distribuci důvěryhodných časových referencí v prostředích bez dostupného GNSS.'
+          ]},
+          {title:'Ochrana a mobilita (Protection and Mobility)',items:[
+            'Pokročilé materiály a povrchové úpravy umožňující snížení elektromagnetické signatury, včetně frekvenčně selektivních povrchů a metamateriálů.',
+            'Přístupy k ochraně platforem a podpoře mobility, které snižují zjistitelnost a umožňují pohyb ve vizuálně degradovaných prostředích a prostředích s odepřeným přístupem.',
+            'Přenosné systémy pro sběr signálového a obrazového zpravodajství (SIGINT/IMINT), například edge senzory vybavené širokopásmovými přijímači a zabudovanou AI, pro identifikaci emisí protivníka v šumu pozadí.'
+          ]}
+        ]},
+      {num:'05',title:'Pohotová logistika',en:'Responsive Logistics',color:'#1C2F63',
+        short:'Chytrá a interoperabilní logistická mobilita udržující výdrž a svobodu jednání v dynamickém a narušeném prostředí.',
+        summary:'Moderní civilní i obranné systémy se shodně spoléhají na odolnou logistiku a agilní mobilitu, což vytváří silnou poptávku po dual-use řešeních (dvojího užití), která dokážou posílit odolnost dodavatelských řetězců a robustnost infrastruktury. Schopnost přesouvat, zásobovat a podporovat osoby, techniku a data napříč složitými, distribuovanými a často narušenými prostředími je zásadní pro bezpečnost mise i operační úspěch. Řešení, která zvyšují efektivitu, odolnost a adaptabilitu v civilním prostředí, mohou zároveň posílit obrannou připravenost v době krize nebo konfliktu. Výpadky způsobené extrémním počasím, degradací infrastruktury, kybernetickým rušením a zpochybněným (konfliktním) přístupem dokážou rychle odhalit křehkost dlouhých lineárních dodavatelských řetězců a procesů náročných na lidskou práci. Zvládnutí těchto výzev závisí na multidoménové redundanci a pokročilých schopnostech oprav a údržby přímo na místě (in-situ). Napříč všemi doménami, včetně kosmické, bude navíc zapotřebí prediktivní údržba, diagnostika založená na digitálních dvojčatech (digital twins), aditivní výroba a autonomní doručování. Aliance hledá chytrá, interoperabilní řešení logistické mobility, která udrží výdrž a svobodu jednání v dynamických prostředích a posílí kolektivní obranu a bezpečnost.',
+        scenario:'Mnohonárodní úkolové uskupení pod vedením NATO se v krátké době nasazuje do odlehlého regionu s nedostatečnou infrastrukturou poté, co poblíž konfliktní hranice rychle eskaluje krize vyžadující současně humanitární i vojenské operace. Při nasazování sil umožňují interoperabilní prediktivní logistické a komunikační systémy spojencům koordinovat přesuny, zpravodajství, sledování a průzkum (Intelligence, Surveillance and Reconnaissance, ISR), distribuci zásob, vyprošťování a záchranu personálu a humanitární činnost. Dynamické multidoménové logistické systémy umožňují přerozdělování materiálu, potravin, zdravotnického materiálu a mobilních prostředků v reálném čase podle vyvíjejících se humanitárních potřeb, počasí, terénu a bezpečnostní situace. Sdílený digitální logistický obraz umožňuje prioritizované doplňování zásob v reálném čase, mobilizaci improvizovaných (ad-hoc) logistických uzlů, prostředků a tras, rychlé odbavení konvojů přes hranice a dynamické přizpůsobování tras i tváří v tvář intenzivním předsunutým operacím. Když technika v rozptýlených prostorech údržby selže, mobilní opravárenské týmy využívají autonomní diagnostiku, digitální dvojčata a aditivní výrobu k obnově nezbytných civilních i vojenských schopností během několika hodin, čímž udržují operační tempo a bojeschopnost.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Odolná mobilita a pohotová logistika v konfliktních podmínkách (Resilient Mobility & Responsive Logistics under Contested Conditions)',items:[
+            'Autonomní platformy pro plánování a optimalizaci logistiky, které posílí odolnost, redundanci a udržitelnost dodavatelského řetězce od začátku do konce napříč konfliktními a narušenými prostředími.',
+            'Alokace zásob a prognózování poptávky s využitím umělé inteligence (AI) pro podporu časově kritických rozhodnutí a vyvážení vojenských a civilních potřeb.',
+            'Interoperabilní software pro velení a řízení logistiky (C2) umožňující mnohonárodní koordinaci, digitalizovaný přeshraniční přesun, substituci materiálu a interoperabilitu.',
+            'Schopnosti fúze dat generující sdílený logistický obraz pro podporu koordinovaných rozhodnutí o zásobování napříč doménami.'
+          ]},
+          {title:'Rychlé udržování, prediktivní údržba a odolnost životního cyklu (Rapid Sustainment, Predictive Maintenance & Lifecycle Resilience)',items:[
+            'Operační digitální dvojčata vozidel, systémů a senzorů umožňující rychlé opravy přímo v poli.',
+            'Nástroje pro diagnostiku poruch založené na AI a hodnocení řízené simulací, které fungují i při neúplných nebo degradovaných datech a podporují částečné opravy a funkční obejití závady, když jsou náhradní díly, nářadí nebo přístup omezené.',
+            'Aditivní výroba a opravy metodou přidávání materiálu (repair by addition), včetně servisu, montáže a výroby ve vesmíru, pro obnovu kritických komponent bez závislosti na vzdálených logistických uzlech.',
+            'Nástroje pro softwarovou rekalibraci a rekonfiguraci systémů zlepšující interoperabilitu a improvizovanou (ad-hoc) integraci techniky a systémů.'
+          ]},
+          {title:'Energetická odolnost (Energy Resilience)',items:[
+            'Nasaditelná výroba energie z obnovitelných zdrojů a taktické úložiště energie pro expediční a konfliktní operace, včetně misí závislých na vesmíru.',
+            'Systémy řízení energie a napájení s využitím AI, včetně řídicí elektroniky s edge-AI, pro udržení odolnosti vůči degradaci, opotřebení nebo kinetickým účinkům.',
+            'Technologie úspory a sběru energie (energy harvesting) snižující závislost na pevných zásobovacích trasách a logistickém zázemí (logistics tail).'
+          ]},
+          {title:'Mobilní platformy a bezpečná přeprava (Mobility Platforms & Secure Transport)',items:[
+            'Vozidla s nízkou signaturou, stealth a zvýšenou ochranou, adaptovaná z civilních technologií, která pokryjí nedostatek specializovaných platforem.',
+            'Obalové a skladovací systémy odolné vůči nárazům, vibracím a extrémním prostředím.',
+            'Modulární architektury vozidel podporující ISR, velení a řízení (C2), logistiku a odsun raněných.',
+            'Řešení pro doručování, autonomní zásobování a operace setkání a přiblížení (rendezvous and proximity operations), která zkrátí logistické zázemí a sníží riziko pro personál napříč doménami.'
+          ]}
+        ]},
+      {num:'06',title:'Škálovatelná a adaptabilní protiopatření pro protivzdušnou obranu',en:'Scalable and Adaptable Countermeasures for Air Defence',color:'#8CAA72',
+        short:'Modulární, škálovatelná a datově integrovaná protiopatření chránící síly, velitelská stanoviště a infrastrukturu před vzdušnými hrozbami.',
+        summary:'Současná protiopatření proti vzdušným hrozbám naráží na stále větší omezení, když čelí hromadným kombinacím levných bezpilotních systémů, raket a potulné munice (loitering munitions), a také zahlcení senzorových sítí a sítí velení a řízení (C2). Další výzvou je nárůst hloubkových přesných úderů z dálky (stand-off), včetně řízených střel (cruise missiles) a koordinovaných úderů na velkou vzdálenost, podpořených prostředky elektromagnetického boje, jako je rušení (jamming) a podvrhávání signálu (spoofing). Aliance hledá modulární, škálovatelná, adaptabilní a datově integrovaná protiopatření na ochranu manévrujících sil, míst velení, logistických uzlů a klíčové infrastruktury před vzdušnými hrozbami. Řešení musí fungovat v nepřátelském elektromagnetickém prostředí charakterizovaném elektromagnetickým bojem a kybernetickými útoky a být odolná vůči nekonvenčním účinkům, jako jsou laserové zbraně. Měla by upřednostnit detekci z více senzorů a fúzi dat do sdíleného vzdušného obrazu. Klíčovými předpoklady procesu integrované protivzdušné a protiraketové obrany (Integrated Air and Missile Defence, IAMD) jsou rovněž odolné systémy C2, interoperabilní architektury pro koaliční operace a vesmírné systémy včasné detekce a varování.',
+        scenario:'Během rychlého posilování sil zřizuje manévrovací brigáda předsunuté místo velení poblíž kritické infrastruktury. Protivník vede koordinovanou kampaň s cílem zahltit místní obranu. K saturaci senzorů a systémů velení a řízení (C2) a k vyčerpání kapacity interceptorů nasazuje velké množství levných bezpilotních systémů. Následují koordinované údery na velkou vzdálenost, včetně řízených střel a dálkové palby, vedené proti uzlům C2 a protivzdušné obrany, mostům a palivovým skladům. Současně protivník zhoršuje elektromagnetické prostředí obránců, vede kybernetické útoky na sítě C2 a nasazuje vysokovýkonné elektromagnetické zbraně k saturaci senzorů a vyřazení senzorových sítí. Sdílený vzdušný obraz, umožněný fúzí různorodých senzorových dat a podporovaný vesmírnými systémy detekce a varování, slouží ke koordinaci vrstvené a škálovatelné reakce protiopatření. Ta sestává z kinetických i nekinetických možností ničení, které jsou nasazeny k neutralizaci hrozeb navzdory silnému zpochybnění elektromagnetického spektra. Brigáda chrání svůj personál a zároveň si udržuje kapacitu interceptorů, čímž umožňuje účinnou obranu kritických prostředků.',
+        enablersNote:'Následující seznam uvádí příklady technologií, které mohou přispět k řešení této výzvy. Seznam není vyčerpávající a NATO DIANA podporuje integrované a inovativní přístupy, které jej přesahují.',
+        enablers:[
+          {title:'Snímání, detekce a včasná výstraha (Sensing, Detection and Early Warning)',items:[
+            'Levné aktivní a pasivní snímací technologie (např. elektrooptické, infračervené, akustické, radiofrekvenční), které umožní trvalou detekci, sledování a klasifikaci malých bezpilotních vzdušných systémů (UAS) a dalších málo signaturních hrozeb v zarušeném provozním prostředí.',
+            'Fúze z více senzorů a metody pro určení, kdy se různá pozorování vztahují ke stejné hrozbě, umožňující sdílený, odolný a vysoce spolehlivý vzdušný obraz z heterogenních koaličních senzorů, a to i za saturace.',
+            'Vesmírné snímání, včasná výstraha a služby znalosti situace ve vesmíru (SSA), které poskytují navádění, detekci a atribuci přesných úderů na podporu rozhodování v integrované protivzdušné a protiraketové obraně (IAMD).'
+          ]},
+          {title:'Škálovatelná protiopatření a odolnost systémů (Scalable Countermeasures and System Resilience)',items:[
+            'Škálovatelná nekinetická protiopatření, která naruší nebo odepřou přístup k elektromagnetickému spektru či satelitní navigaci, včetně protokolově orientovaného zásahu a detekce a zmírnění spoofingu, pro boj proti masám levných UAS bez závislosti na omezených zásobách interceptorů.',
+            'Škálovatelné mechanismy tvrdého ničení (hard defeat), včetně levných interceptorů a alternativních efektorů, umožňující vrstvený obranný přístup při reakci na vysokoobjemové a saturační útoky.',
+            'Řešení pro zpevnění systémů (hardening) a řízenou degradaci (graceful degradation), jako je elektromagnetické stínění a kyberneticky odolné komponenty, díky nimž senzory a uzly C2 zůstanou funkční i pod silnými elektromagnetickými účinky a účinky řízené energie.'
+          ]},
+          {title:'Modulární a škálovatelné architektury (Modular and Scalable Architectures)',items:[
+            'Rychle nasaditelné a rekonfigurovatelné moduly protiopatření umožňující jednotkám protivzdušné obrany přizpůsobit kombinace senzorů a efektorů místním podmínkám hrozby a dostupným zdrojům.',
+            'Modulární otevřené architektury a společná rozhraní umožňující rychlou integraci, výměnu a rekonfiguraci senzorů, efektorů a softwaru napříč různými dodavateli a státy.'
+          ]},
+          {title:'Velení, řízení a rozhodování (Command, Control and Decision-Making)',items:[
+            'Odolné a interoperabilní schopnosti velení a řízení (C2) a datové spoje podporující koordinovaná rozhodnutí o vedení palby napříč distribuovanými jednotkami protivzdušné obrany, i za přítomnosti rušení (jamming), spoofingu a kybernetického narušení.',
+            'Nástroje podpory rozhodování a automatizace pro plánování zásahů a alokaci zdrojů, umožňující prioritizované, včasné a nákladově uvážlivé reakce na různorodé hrozby — včetně UAS, potulné munice a řízených střel — v časově kritických podmínkách.'
+          ]}
+        ]}
+    ];
+  }
+  buildMap(){
+    // equirectangular projection over the North Atlantic / Europe
+    const LON0=-78, LON1=40, LAT0=34, LAT1=63;
+    const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+    const proj=(lat,lon)=>({ x:(clamp(lon,LON0,LON1)-LON0)/(LON1-LON0)*100, y:(LAT1-clamp(lat,LAT0,LAT1))/(LAT1-LAT0)*56 });
+    const tc=[
+      [38.9,-77],[42.36,-71.06],[45.42,-75.7],[45.5,-73.55],[63,-21.9],
+      [59.91,10.75],[59.33,18.07],[60.17,24.94],[55.68,12.57],[52.37,4.9],
+      [50.85,4.35],[48.85,2.35],[52.52,13.4],[52.23,21.01],[54.69,25.28],
+      [56.95,24.1],[40.42,-3.7],[38.72,-9.14],[41.9,12.5],[37.98,23.73],
+      [39.93,32.86],[44.43,26.1],[42.7,23.32],[48.15,17.11],[47.5,19.04],[46.05,14.5]
+    ];
+    const tcDots=tc.map(([la,lo])=>{ const p=proj(la,lo); return {cx:p.x.toFixed(2),cy:p.y.toFixed(2)}; });
+    const hubDefs=[
+      {name:'Londýn',sub:'DIANA HQ',lat:51.5,lon:-0.13,fill:'#7FA6F0',align:'end'},
+      {name:'Tallinn',sub:'Regionální hub',lat:59.44,lon:24.75,fill:'#7FA6F0',align:'end'},
+      {name:'Halifax',sub:'Severoamerická kancelář',lat:44.65,lon:-63.57,fill:'#7FA6F0',align:'start'},
+      {name:'Praha',sub:'CzechInvest · hostitel',lat:50.08,lon:14.44,fill:'#8CAA72',align:'down'}
+    ];
+    const hubs=hubDefs.map(h=>({ ...h, ...proj(h.lat,h.lon) }));
+    const hubMarks=hubs.map(h=>({cx:h.x.toFixed(2),cy:h.y.toFixed(2),fill:h.fill}));
+    const hubLabels=hubs.map(h=>{
+      const leftPct=h.x, topPct=h.y/56*100;
+      let tx='8px,-50%', ta='left';
+      if(h.align==='end'){ tx='calc(-100% - 9px),-50%'; ta='right'; }
+      else if(h.align==='down'){ tx='-50%,9px'; ta='center'; }
+      const style={position:'absolute',left:leftPct+'%',top:topPct+'%',transform:'translate('+tx+')',textAlign:ta,pointerEvents:'none'};
+      return {style, name:h.name, sub:h.sub, subColor:(h.fill==='#8CAA72'?'#A9C98C':'#8FA0C6')};
+    });
+    const by=n=>hubs.find(h=>h.name===n);
+    const L=by('Londýn'),T=by('Tallinn'),H=by('Halifax'),P=by('Praha');
+    const mk=(a,b)=>({x1:a.x.toFixed(2),y1:a.y.toFixed(2),x2:b.x.toFixed(2),y2:b.y.toFixed(2)});
+    const netLines=[mk(P,L),mk(P,T),mk(L,T),mk(L,H)];
+    return {tcDots,hubMarks,hubLabels,netLines};
+  }
+  componentDidMount(){ document.title='NATO DIANA 2027 — Defence Hub CzechInvest'; document.documentElement.lang='cs'; this._tick=setInterval(()=>this.setState({now:Date.now()}),1000); }
+  componentWillUnmount(){ clearInterval(this._tick); }
+  pad(n){ return String(n).padStart(2,'0'); }
+  renderVals(){
+    const diff=Math.max(0,this.deadline-this.state.now);
+    const days=Math.floor(diff/86400000);
+    const hours=Math.floor(diff%86400000/3600000);
+    const mins=Math.floor(diff%3600000/60000);
+    const secs=Math.floor(diff%60000/1000);
+    const cd={ days:this.pad(days), hours:this.pad(hours), mins:this.pad(mins), secs:this.pad(secs) };
+    const challenges=this.challenges.map(c=>({
+      num:c.num, title:c.title, en:c.en, short:c.short,
+      tile:{background:c.color,flexShrink:0,width:'58px',height:'58px',borderRadius:'14px',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:"'Space Grotesk',sans-serif",fontWeight:700,fontSize:'24px',color:'#fff'},
+      open:()=>this.setState({selected:c})
+    }));
+    const s=this.state.selected;
+    const hasEnablers=!!(s&&s.enablers&&s.enablers.length);
+    const sel=s?{ num:s.num, title:s.title, en:s.en,
+      long:s.summary||s.long,
+      isRich:hasEnablers,
+      scenario:s.scenario||'', hasScenario:!!s.scenario,
+      enablers:s.enablers||[], hasEnablers:hasEnablers, enablersNote:s.enablersNote||'',
+      focus:s.focus||[], showFocus:!hasEnablers,
+      head:{background:'linear-gradient(150deg,'+s.color+',#0E1B3C)',color:'#fff',padding:'32px',position:'relative'} }:{focus:[],enablers:[]};
+    return {
+      cd, challenges,
+      hasSelected:!!s, sel,
+      closeModal:()=>this.setState({selected:null}), stop:(e)=>e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>
