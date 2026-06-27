@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>*{box-sizing:border-box}body{margin:0;background:#FBFBFC}@keyframes dhpulse{0%,100%{opacity:.45}50%{opacity:1}}::selection{background:#2B5CC4;color:#fff}</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased">
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between">
+      <span style="text-transform:uppercase">National Contact Point for Defence &amp; Dual-Use Innovation</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>PART OF THE DIANA NETWORK</span>
+    </div>
+  </div>
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub EN.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500">
+        <a href="Defence Hub EN.dc.html#who" style="color:var(--navy);text-decoration:none" style-hover="color:var(--blue)">Directory</a>
+        <a href="Defence Hub EN.dc.html#programs" style="color:var(--navy);text-decoration:none" style-hover="color:var(--blue)">Programmes</a>
+        <a href="NATO DIANA EN.dc.html" style="color:var(--blue);text-decoration:none;font-weight:600">NATO DIANA</a>
+        <a href="Partners.dc.html" style="color:var(--blue);font-weight:600;text-decoration:none;border-bottom:2px solid var(--blue);padding-bottom:2px">Partners</a>
+        <a href="Team.dc.html" style="color:var(--navy);text-decoration:none" style-hover="color:var(--blue)">Team</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em"><a href="Partneři.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--navy)">CZ</a><span style="opacity:.4"> / </span><span style="color:var(--navy);font-weight:600">EN</span></span>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px" style-hover="background:var(--blue)">Book a consultation</a>
+      </div>
+    </div>
+  </nav>
+  <header style="background:linear-gradient(140deg,#0E1B3C 0%,#13234E 50%,#0B1530 100%);color:#fff;display:flex;justify-content:center;overflow:hidden">
+    <div style="width:100%;max-width:1280px;padding:84px 32px 76px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#7FA6F0;display:flex;align-items:center;gap:12px"><span style="width:26px;height:1px;background:#7FA6F0"></span>Defence Hub · Ecosystem</div>
+      <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(36px,5vw,66px);line-height:1.03;letter-spacing:-.025em;margin:18px 0 0">Defence Hub <span style="color:#8CAA72">Partners</span></h1>
+      <p style="font-size:clamp(16px,1.4vw,19px);line-height:1.65;color:#C4CFE8;max-width:60ch;margin:20px 0 0">Strategic partners forming the backbone of the Czech defence and dual-use innovation ecosystem — from industry associations and academia to specialised state-owned enterprises and innovation events.</p>
+    </div>
+  </header>
+  <section style="background:var(--paper);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:80px 32px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px">
+        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="7">
+          <div style="{{ p.cardStyle }}" style-hover="transform:translateY(-5px);box-shadow:0 24px 48px -22px rgba(19,35,78,.3)">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:20px">
+              <div style="{{ p.monoStyle }}">{{ p.mono }}</div>
+              <span style="{{ p.typeBadge }}">{{ p.type }}</span>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:23px;margin:0 0 5px;letter-spacing:-.015em;line-height:1.1">{{ p.name }}</h3>
+            <p style="{{ p.nameStyle }}">{{ p.fullName }}</p>
+            <p style="color:#5C6886;font-size:14px;line-height:1.65;margin:0;flex:1">{{ p.desc }}</p>
+            <a href="{{ p.webUrl }}" target="_blank" rel="noopener" style="margin-top:22px;padding-top:18px;border-top:1px solid #E2E7F0;display:flex;align-items:center;justify-content:space-between;text-decoration:none;font-weight:600;font-size:13.5px;color:#13234E" style-hover="color:#2B5CC4">
+              <span>{{ p.web }}</span><span style="font-size:16px">↗</span>
+            </a>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--mist);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:76px 32px">
+      <div style="background:linear-gradient(135deg,#13234E 0%,#0B1530 100%);border-radius:22px;padding:52px 48px;position:relative;overflow:hidden">
+        <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:30px">
+          <div style="max-width:55ch">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.2em;color:#8CAA72;text-transform:uppercase;margin-bottom:14px">Partnership</div>
+            <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(24px,3vw,38px);color:#fff;margin:0 0 12px;letter-spacing:-.02em;line-height:1.1">Become part of the ecosystem</h2>
+            <p style="color:#B6C2DE;font-size:15.5px;margin:0;line-height:1.6">We are looking for organisations from industry, academia and the public sector who share the goal of building a stronger defence and dual-use ecosystem in the Czech Republic.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:15px 26px;border-radius:11px;white-space:nowrap;text-align:center" style-hover="background:#3E72E0">Contact Defence Hub →</a>
+            <a href="Defence Hub EN.dc.html" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;padding:13px 26px;border-radius:11px;white-space:nowrap;text-align:center" style-hover="background:rgba(255,255,255,.14)">Back to Defence Hub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:54px 32px 40px">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px">
+        <div style="max-width:34ch">
+          <img src="logo-cobrand-white.png" alt="Defence Hub CzechInvest" style="height:42px;width:auto;display:block">
+          <p style="font-size:13.5px;line-height:1.65;margin:18px 0 0">Defence Hub CzechInvest connects people, technologies and opportunities to help build a more resilient and secure future.</p>
+          <img src="part-of-diana-white.png" alt="Part of the DIANA network" style="height:40px;margin-top:22px;opacity:.85">
+        </div>
+        <div style="display:flex;gap:60px;flex-wrap:wrap">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Navigation</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="Defence Hub EN.dc.html#who" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Directory</a>
+              <a href="Defence Hub EN.dc.html#programs" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Programmes</a>
+              <a href="NATO DIANA EN.dc.html" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">NATO DIANA 2027</a>
+              <a href="Partners.dc.html" style="color:#8CAA72;text-decoration:none">Partners</a>
+              <a href="Team.dc.html" style="color:#C2CDE6;text-decoration:none" style-hover="color:#fff">Team</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5E6E92;margin-bottom:14px">Contact</div>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+              <a href="mailto:defencehub@czechinvest.org" style="color:#C2CDE6;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px" style-hover="color:#fff">defencehub@czechinvest.org</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:40px;padding-top:22px;border-top:1px solid #1d2b50;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;color:#5E6E92">© 2026 DEFENCE HUB CZECHINVEST · CONNECT · ACCELERATE · DEPLOY</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  partners = [
+    { id:'czechinvest', name:'CzechInvest', mono:'CI', fullName:'Agency for Business and Innovation', type:'State Agency · Innovation', color:'#2B5CC4', badgeBg:'#E8EEFA', desc:'Czech government agency under the Ministry of Industry and Trade supporting entrepreneurship, innovation and foreign investment. Founder of Defence Hub and national contact point for defence and dual-use innovation within the NATO DIANA network.', web:'czechinvest.gov.cz', webUrl:'https://czechinvest.gov.cz' },
+    { id:'mo', name:'Ministry of Defence CZ', mono:'MO', fullName:'Ministry of Defence of the Czech Republic', type:'State Institution · Defence', color:'#8CAA72', badgeBg:'#ECF1E5', desc:'Central government body for defence in the Czech Republic. Key Defence Hub partner for defining defence needs, technology testing in real environments and engaging innovators in the NATO and EU defence ecosystem.', web:'mocr.army.cz', webUrl:'https://www.mocr.army.cz' },
+    { id:'aobp', name:'AOBP', mono:'AB', fullName:'Defence & Security Industry Association of the CR', type:'Association · Industry', color:'#1C2F63', badgeBg:'#EAEEF5', desc:'Umbrella association representing over 150 members from the Czech defence and security industry. Advocates for the sector with government bodies, MoD, NATO and the EU — and actively contributes to the development of Czech industrial capacity.', web:'aobp.cz', webUrl:'https://www.aobp.cz' },
+    { id:'unob', name:'UNOB', mono:'UO', fullName:'University of Defence in Brno', type:'Academia · Research', color:'#46618F', badgeBg:'#EAEFF7', desc:'The only military university in the Czech Republic providing accredited education and research in defence and security. Centre for defence technology transfer, research projects and training military professionals.', web:'unob.cz', webUrl:'https://www.unob.cz' },
+    { id:'edth', name:'EDTH Hackathons', mono:'EH', fullName:'European Defence Tech Hackathon', type:'Innovation Events', color:'#6E9152', badgeBg:'#ECF1E5', desc:'Series of defence-technology hackathons focused on rapid prototyping of dual-use solutions. Connects startups, industry and defence forces from initial ideation to pilot deployment in real environments.', web:'edth.eu', webUrl:'https://edth.eu' },
+    { id:'lom', name:'LOM Praha', mono:'LP', fullName:'Letecké opravny Malešice, s.p.', type:'State Enterprise · Aviation', color:'#3E7CA8', badgeBg:'#E5EEF5', desc:'State enterprise providing repairs, modifications, upgrades and logistics for Czech Air Force aircraft and other customers. Holds certified capacities for military and commercial aviation.', web:'lompraha.cz', webUrl:'https://www.lompraha.cz' },
+    { id:'vop', name:'VOP CZ', mono:'VC', fullName:'Vojenský opravárenský podnik, s.p.', type:'State Enterprise · Industry', color:'#46618F', badgeBg:'#EAEFF7', desc:'State enterprise specialising in the repair, modernisation and development of ground military equipment. Extensive testing and development infrastructure available for defence innovation projects and industrial partners.', web:'vop.cz', webUrl:'https://www.vop.cz' }
+  ];
+  renderVals() {
+    const partners = this.partners.map(p => ({
+      ...p,
+      cardStyle:`background:#fff;border:1px solid #E2E7F0;border-left:4px solid ${p.color};border-radius:16px;padding:30px 28px;display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s`,
+      monoStyle:`width:52px;height:52px;border-radius:12px;background:${p.color};display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px;color:#fff;flex:none`,
+      typeBadge:`background:${p.badgeBg};color:${p.color};font-size:11px;font-family:'IBM Plex Mono',monospace;font-weight:600;padding:5px 10px;border-radius:20px;letter-spacing:.04em;white-space:nowrap`,
+      nameStyle:`font-size:13px;font-weight:500;margin:0 0 14px;color:${p.color}`
+    }));
+    return { partners };
+  }
+}
+</script>
+</body>
+</html>
