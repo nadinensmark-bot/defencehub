@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#0B1530"></rect>
+<g transform="translate(600 300)">
+<path d="M0 -120 L104 -60 L0 0 L-104 -60 Z" fill="#2B5CC4"></path>
+<path d="M-104 -60 L0 0 L0 120 L-104 60 Z" fill="#1C2F63"></path>
+<path d="M104 -60 L0 0 L0 120 L104 60 Z" fill="#8CAA72"></path>
+</g>
+<text x="600" y="540" font-family="Space Grotesk, sans-serif" font-size="54" font-weight="700" fill="#FFFFFF" text-anchor="middle">Průvodce přihláškou</text>
+<text x="600" y="600" font-family="IBM Plex Mono, monospace" font-size="22" letter-spacing="4" fill="#7FA6F0" text-anchor="middle">NATO DIANA 2027</text>
+</svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBFBFC}
+@keyframes dhfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes dhpulse{0%,100%{opacity:.4}50%{opacity:1}}
+::selection{background:#2B5CC4;color:#fff}
+</style>
+</helmet>
+<div style="--ink:#0B1530;--navy:#13234E;--navy2:#1C2F63;--blue:#2B5CC4;--blueSoft:#E8EEFA;--green:#8CAA72;--greenDeep:#6E9152;--greenSoft:#ECF1E5;--paper:#FBFBFC;--mist:#F3F5F9;--line:#E2E7F0;--muted:#5C6886;background:var(--paper);color:var(--navy);font-family:'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden" id="top">
+
+  <!-- TOP BAR -->
+  <div style="background:var(--ink);color:#AEBBD8;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:9px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <span style="text-transform:uppercase">Průvodce přihláškou · NATO DIANA 2027</span>
+      <span style="display:flex;align-items:center;gap:9px;color:#C7D2EC"><span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;animation:dhpulse 2.4s infinite"></span>Connect · Accelerate · Deploy</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(251,251,252,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;justify-content:center">
+    <div style="width:100%;max-width:1280px;padding:13px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="Defence Hub.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+        <img src="assets/logo-cobrand.png" alt="Defence Hub CzechInvest" style="height:34px;width:auto;display:block">
+      </a>
+      <div style="display:flex;align-items:center;gap:30px;font-size:14.5px;font-weight:500">
+        <a href="Defence Hub.dc.html#kdo" style="color:var(--navy);text-decoration:none">Rozcestník</a>
+        <a href="Defence Hub.dc.html#programy" style="color:var(--navy);text-decoration:none">Programy</a>
+        <a href="NATO DIANA.dc.html" style="color:var(--navy);text-decoration:none">NATO DIANA</a>
+        <a href="#top" style="color:var(--blue);text-decoration:none;font-weight:600">Průvodce</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em"><span style="color:var(--navy);font-weight:600">CZ</span><span style="opacity:.4"> / </span><a href="Průvodce přihláškou EN.dc.html" style="color:var(--muted);text-decoration:none" style-hover="color:var(--navy)">EN</a></span>
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:var(--navy);color:#fff;text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:9px;display:inline-block" style-hover="background:var(--blue)">Konzultace zdarma</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position:relative;background:radial-gradient(130% 120% at 18% 0%,#1B2D5E 0%,#0E1B3C 50%,#0B1530 100%);color:#fff;overflow:hidden">
+    <div style="position:absolute;top:54px;right:-30px;width:230px;height:230px;opacity:.1;animation:dhfloat 9s ease-in-out infinite">
+      <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#fff"></div>
+      <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+    </div>
+    <div style="position:relative;z-index:2;display:flex;justify-content:center">
+      <div style="width:100%;max-width:1280px;padding:74px 32px 62px">
+        <a href="NATO DIANA.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8FA0C6;text-decoration:none;letter-spacing:.08em">← NATO DIANA 2027</a>
+        <div style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8CAA72;border:1px solid rgba(140,170,114,.4);padding:7px 13px;border-radius:30px;font-weight:800;margin-top:22px">Krok za krokem</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-.03em;margin:22px 0 0">Průvodce přihláškou</h1>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:#C4CFE8;max-width:62ch;margin:22px 0 0">Provedeme vás celou přihláškou na portálu <strong style="color:#fff">proposals.diana.tech</strong> — od založení <strong style="color:#fff">Company Profile</strong> až po <strong style="color:#fff">přihlášku do challenge</strong>. U každého pole najdete, na co se DIANA ptá, kolik máte znaků a&nbsp;náš tip, jak na to.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:13px;margin-top:30px">
+          <a href="#company-profile" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:14px 24px;border-radius:11px" style-hover="background:#3E72E0">1 · Company Profile</a>
+          <a href="#challenge" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:14px 24px;border-radius:11px" style-hover="background:rgba(255,255,255,.14)">2 · Přihláška do challenge</a>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8FA0C6;padding:14px 4px"><span style="width:7px;height:7px;border-radius:50%;background:#E0564B;display:inline-block"></span>{{ deadlineNote }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BODY: TOC + CONTENT -->
+  <div style="display:flex;justify-content:center">
+    <div id="bodyGrid" style="width:100%;max-width:1280px;padding:0 32px;display:grid;grid-template-columns:1fr;gap:48px;align-items:start">
+
+      <!-- TOC -->
+      <aside style="position:sticky;top:78px;padding:34px 0 40px;display:none" id="toc">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px">Obsah</div>
+        <sc-for list="{{ parts }}" as="p" hint-placeholder-count="2">
+          <a href="#{{ p.id }}" style="display:block;text-decoration:none;color:var(--navy);font-weight:600;font-size:14.5px;margin:16px 0 8px" style-hover="color:var(--blue)">{{ p.tocLabel }}</a>
+          <sc-for list="{{ p.groups }}" as="g" hint-placeholder-count="4">
+            <a href="#{{ g.id }}" style="display:block;text-decoration:none;color:var(--muted);font-size:13px;line-height:1.4;padding:5px 0 5px 14px;border-left:1px solid var(--line)" style-hover="color:var(--blue)">{{ g.name }}</a>
+          </sc-for>
+        </sc-for>
+      </aside>
+
+      <!-- CONTENT -->
+      <main style="padding:40px 0 30px;min-width:0">
+
+        <!-- HOW TO USE -->
+        <div style="background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 26px">
+          <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:10px"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue)"></span>Jak používat průvodce</div>
+          <p style="font-size:15px;line-height:1.65;color:#33405e;margin:0">U&nbsp;každého povinného pole má formulář DIANA své <strong>návodné texty a&nbsp;otázky</strong>. Neberte je jako formalitu — ve své odpovědi byste měli na&nbsp;každou z&nbsp;nich nějak reagovat, evaluátoři podle nich kontrolují, že jste pokryli vše podstatné. Formulář je v&nbsp;angličtině; níže u&nbsp;každého pole najdete <strong>česky</strong>, na&nbsp;co se DIANA ptá, limit znaků a&nbsp;náš tip.</p>
+        </div>
+
+        <!-- PARTS -->
+        <sc-for list="{{ parts }}" as="part" hint-placeholder-count="2">
+          <section id="{{ part.id }}" style="scroll-margin-top:74px;margin-top:54px">
+            <div style="display:flex;align-items:center;gap:15px">
+              <div style="{{ part.badgeStyle }}">{{ part.step }}</div>
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">{{ part.kicker }}</div>
+                <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;color:var(--navy);margin:5px 0 0;line-height:1.05">{{ part.title }}</h2>
+              </div>
+            </div>
+            <p style="font-size:16px;line-height:1.65;color:#41506e;margin:18px 0 0;max-width:70ch">{{ part.lead }}</p>
+
+            <sc-if value="{{ part.hasWarn }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:20px;background:rgba(224,86,75,.06);border:1px solid rgba(224,86,75,.26);border-radius:14px;padding:18px 20px">
+                <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#B5392E;font-weight:600;margin-bottom:8px"><span style="width:7px;height:7px;border-radius:50%;background:#E0564B"></span>Časté nedorozumění</div>
+                <p style="font-size:14.5px;line-height:1.65;color:#7a2e26;margin:0">{{ part.warn }}</p>
+              </div>
+            </sc-if>
+
+            <sc-for list="{{ part.groups }}" as="g" hint-placeholder-count="4">
+              <div id="{{ g.id }}" style="scroll-margin-top:74px;margin-top:42px">
+                <div style="display:flex;align-items:baseline;gap:13px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px">
+                  <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;color:var(--navy);letter-spacing:-.01em;margin:0">{{ g.name }}</h3>
+                  <sc-if value="{{ g.hasMeta }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted)">{{ g.meta }}</span>
+                  </sc-if>
+                </div>
+                <sc-if value="{{ g.hasNote }}" hint-placeholder-val="{{ false }}">
+                  <p style="font-size:14px;line-height:1.6;color:var(--muted);margin:12px 0 0;max-width:70ch">{{ g.note }}</p>
+                </sc-if>
+
+                <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px">
+                  <sc-for list="{{ g.fields }}" as="f" hint-placeholder-count="3">
+                    <div style="background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px">
+                      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+                        <div style="font-weight:600;font-size:15.5px;color:var(--navy)">{{ f.label }}</div>
+                        <div style="display:flex;gap:7px;flex-wrap:wrap">
+                          <sc-for list="{{ f.badges }}" as="b" hint-placeholder-count="1">
+                            <span style="{{ b.style }}">{{ b.text }}</span>
+                          </sc-for>
+                        </div>
+                      </div>
+                      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:15px 0 6px">Zadání DIANA</div>
+                      <p style="font-size:14px;line-height:1.6;color:#41506e;margin:0">{{ f.prompt }}</p>
+                      <sc-if value="{{ f.hasList }}" hint-placeholder-val="{{ false }}">
+                        <ul style="margin:10px 0 0;padding-left:18px;color:#41506e;font-size:14px;line-height:1.6">
+                          <sc-for list="{{ f.list }}" as="q" hint-placeholder-count="3">
+                            <li style="margin-bottom:4px">{{ q }}</li>
+                          </sc-for>
+                        </ul>
+                      </sc-if>
+                      <sc-if value="{{ f.hasTip }}" hint-placeholder-val="{{ false }}">
+                        <div style="margin-top:14px;background:var(--greenSoft);border:1px solid #dce6d0;border-radius:11px;padding:13px 15px">
+                          <div style="display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--greenDeep);font-weight:600;margin-bottom:5px"><span style="width:6px;height:6px;border-radius:50%;background:var(--greenDeep)"></span>Tip Defence Hub</div>
+                          <p style="font-size:13.5px;line-height:1.6;color:#3c4a39;margin:0">{{ f.tip }}</p>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-for>
+          </section>
+        </sc-for>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,#13234E,#0B1530);color:#fff;display:flex;justify-content:center;margin-top:64px">
+    <div style="width:100%;max-width:1280px;padding:74px 32px;text-align:center">
+      <div style="width:58px;height:58px;margin:0 auto;position:relative;animation:dhfloat 6s ease-in-out infinite">
+        <div style="position:absolute;inset:0;clip-path:polygon(50% 0,100% 25%,50% 50%,0 25%);background:#2B5CC4"></div>
+        <div style="position:absolute;inset:0;clip-path:polygon(0 25%,50% 50%,50% 100%,0 75%);background:#1C2F63"></div>
+        <div style="position:absolute;inset:0;clip-path:polygon(100% 25%,50% 50%,50% 100%,100% 75%);background:#8CAA72"></div>
+      </div>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(26px,3.4vw,40px);letter-spacing:-.02em;margin:22px auto 0;max-width:24ch;line-height:1.12">Projdeme přihlášku s&nbsp;vámi</h2>
+      <p style="color:#B6C2DE;font-size:17px;max-width:54ch;margin:16px auto 0;line-height:1.6">Pošlete nám draft a&nbsp;společně doladíme Company Profile i&nbsp;jednotlivé části přihlášky, ať máte co nejsilnější šanci.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+        <a href="https://forms.office.com/e/zrrL3dGXkx" target="_blank" rel="noopener" style="background:#2B5CC4;color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:#3E72E0">Rezervovat konzultaci — zdarma</a>
+        <a href="https://proposals.diana.tech/" target="_blank" rel="noopener" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:15px 28px;border-radius:11px" style-hover="background:rgba(255,255,255,.16)">Otevřít proposals.diana.tech ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--ink);color:#8FA0C6;display:flex;justify-content:center;border-top:1px solid #1d2b50">
+    <div style="width:100%;max-width:1280px;padding:46px 32px 36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center">
+      <img src="assets/part-of-diana-white.png" alt="Part of the DIANA network" style="height:40px;opacity:.85">
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">
+        <a href="NATO DIANA.dc.html" style="color:#8FA0C6;text-decoration:none" style-hover="color:#fff">NATO DIANA 2027</a>
+        <span>© 2026 DEFENCE HUB CZECHINVEST</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;#2B5CC4&quot;,&quot;options&quot;:[&quot;#2B5CC4&quot;,&quot;#6E9152&quot;,&quot;#46618F&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;deadlineNote&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Uzávěrka 3. 7. 2026 · 12:00 UTC+1&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  constructor(props){
+    super(props);
+    this.rawParts = [
+      {
+        id:'company-profile', step:'1', kicker:'Část 1', title:'Tvorba Company Profile',
+        tocLabel:'1 · Company Profile',
+        lead:'Company Profile zakládáte jednou za firmu — popisuje, kdo jste. Většina polí se „nehodnotí při evaluaci“ (slouží DIANA jen pro statistiku a kontrolu způsobilosti), takže je vyplňte pravdivě, ale nestresujte se kolem nich. Klíčové jsou závěrečná potvrzení o způsobilosti.',
+        groups:[
+          {id:'cp-core', name:'Core Organisational Data', fields:[
+            {l:'Company Name', req:true, p:'Registrovaný název firmy. Musí to být přesně ten název, pod kterým byste s DIANA uzavírali smlouvu, pokud vás v procesu vyberou.'},
+            {l:'Current Nation of Company Headquarters', req:true, p:'Stát, kde má firma sídlo — tedy hlavní kancelář, kde probíhá většina klíčových funkcí a strategických rozhodnutí. Musí odpovídat vašemu záznamu DUNS.'},
+            {l:'DUNS Availability', req:true, p:'Stav vašeho DUNS čísla (DATA Universal Numbering System). V nabídce vyberete, zda ho máte, nebo jste o něj zažádali.',
+              tip:'DUNS nemusíte mít hotové v době podání přihlášky — stačí o něj zažádat. Na webináři to DIANA potvrdila: pokud v procesu postoupíte dál, vyžádají si DUNS od vás zpětně. Klidně tedy zvolte „Have applied for DUNS but have not received“ a v žádosti pokračujte.'},
+            {l:'Current Nation of Incorporation', req:true, p:'Stát, kde je firma právně registrovaná — jurisdikce, kde je váš subjekt zapsán u příslušných úřadů.'},
+            {l:'Address · City · Postal/ZIP Code', req:true, p:'Sídlo firmy. Adresa musí odpovídat vašemu záznamu nebo žádosti v systému DUNS.'},
+            {l:'Year of Incorporation', req:true, p:'Rok založení firmy. Musí být konzistentní s vaším DUNS záznamem.'},
+            {l:'Number of FTEs', req:true, ne:true, p:'Celkový počet přepočtených úvazků (FTE) napříč firmou.',
+              tip:'Malý tým není handicap. DIANA doporučuje mít alespoň 3 lidi, ale není to povinné kritérium — vyplňte reálný stav. Neděste se, že šanci mají jen firmy o dvaceti lidech, není to tak.'},
+            {l:'Website URL', ne:true, p:'Pokud má firma web, vložte URL. Nepovinné.'},
+            {l:'Origin', req:true, ne:true, p:'Vznikla vaše firma z jiné organizace nebo na ni má vazby (sdílená technologie, duševní vlastnictví, aktiva nebo zakladatelé)? Vyberte odpověď.'}
+          ]},
+          {id:'cp-funding', name:'Financování', fields:[
+            {l:'Dilutive Funding', req:true, ne:true, p:'Získali jste dosud dilutivní financování — tedy investici výměnou za podíl (equity) ve firmě?'},
+            {l:'Non-dilutive Funding', req:true, ne:true, p:'Získali jste nedilutivní financování (granty, dotace apod.)? Vyberte všechny relevantní možnosti.'}
+          ]},
+          {id:'cp-tech', name:'Technologie a obor', fields:[
+            {l:'Technology Area (EDTs)', req:true, ne:true, p:'Vyberte NATO emerging and disruptive technologies (EDTs), které sedí na vaše technické řešení. Více informací na nato.int.',
+              tip:'Vyberte jen ty oblasti, které vaše řešení opravdu vystihují. Účelové zaškrtávání více kategorií kvůli „širšímu záběru“ se nevyplácí — působí to nedůvěryhodně, jako byste stavěli vzdušné zámky. Raději méně, ale přesně.'},
+            {l:'Primary Industry', req:true, ne:true, p:'Uveďte, zda je váš primární obor: Defence (obranný); Civilian (civilní); nebo Dual-use (obranný i civilní).',
+              tip:'I čistě obranná firma má v DIANA smysl. Nenechte se zmást dojmem, že „obranná firma podporu DIANA nepotřebuje“ — pokud přicházíte s novým civilním (dual-use) využitím své technologie, je to úplně v pořádku a relevantní.'},
+            {l:'Customers', req:true, ne:true, p:'Máte aktuálně zákaznické smlouvy, které generují tržby?'},
+            {l:'Financial Runway', req:true, ne:true, p:'Odhadovaný počet měsíců, po které firma vydrží na současném burn rate bez nového kapitálu.'}
+          ]},
+          {id:'cp-team', name:'Tým a zakladatelé', fields:[
+            {l:'Roles Other Than CEO/Founder', req:true, ne:true, p:'Které role ve firmě zajišťuje někdo jiný než CEO/zakladatel? Vyberte všechny role, které pokrývají jiné osoby. Pokud vše zastává CEO/zakladatel, zvolte „None“.'},
+            {l:'Number of Founders', req:true, ne:true, p:'Počet zakladatelů firmy.'},
+            {l:'Female Founder', req:true, ne:true, p:'Má firma zakladatelku (ženu mezi zakladateli)?'},
+            {l:'Founder Professional Background', req:true, ne:true, p:'Mají zakladatelé nebo členové vedení výraznou profesní zkušenost v sektoru obrany či národní bezpečnosti? (Předchozí zaměstnání, výzkum nebo dlouhodobá spolupráce s obrannými organizacemi, obranným průmyslem, ozbrojenými silami či bezpečnostními složkami.)'},
+            {l:'Technical Founder', req:true, ne:true, p:'Má firma zakladatele s relevantním technickým backgroundem? Tím se rozumí formální vzdělání nebo významná akademická/profesní praxe v inženýrství, informatice, aplikovaných vědách či obdobném technickém oboru souvisejícím s vaším řešením.'}
+          ]},
+          {id:'cp-history', name:'Historie a preference', fields:[
+            {l:'Applied Previously to a DIANA Challenge?', req:true, ne:true, p:'Hlásili jste se už někdy do challenge NATO DIANA?'},
+            {l:'Previous Acceleration Programmes', req:true, ne:true, p:'Prošli jste dříve jiným akceleračním programem?'},
+            {l:'Defence Industry Experience', req:true, ne:true, p:'Máte zkušenost s obranným průmyslem?'},
+            {l:'Primary & Secondary Interest in DIANA', req:true, ne:true, p:'Co je vaším hlavním a vedlejším důvodem zájmu o DIANA (např. financování, mentoring, přístup k trhu, testovací centra).'},
+            {l:'Accelerator Preference', req:true, p:'Vaše preferované místo akcelerátoru. Pozor: konkrétní přiřazení k akcelerátoru závisí na více kritériích, není to garance.'}
+          ]},
+          {id:'cp-confirm', name:'Confirmations — způsobilost', note:'Tato potvrzení jsou klíčová pro způsobilost (eligibility). Na rozdíl od většiny předchozích polí mají reálný dopad — vyplňte je pravdivě.', fields:[
+            {l:'NATO HQ Confirmation', req:true, p:'Potvrzení, že sídlo vaší firmy je registrované v členském státě NATO.'},
+            {l:'Parent Company HQ Confirmation', req:true, p:'Potvrzení, že vaše firma nemá mateřskou společnost se sídlem v nečlenském státě NATO.'},
+            {l:'Ownership Confirmation', req:true, p:'Potvrzení, že vaše firma nemá osoby z nečlenských států NATO s konečným beneficiárním vlastnictvím (UBO) přesahujícím 50 %.'},
+            {l:'Competitor Ownership Confirmation', req:true, p:'Potvrzení, že vaše firma nemá investory ani stakeholdery ze strategicky konkurenčních států — včetně Číny, Ruska, Íránu nebo Severní Koreje.',
+              tip:'Pokud některou z těchto podmínek nesplňujete (např. vlastnickou vazbu na stát mimo NATO), může to vést k diskvalifikaci — ale ne vždy automaticky. Záleží na tom, jaký vztah má daný stát k NATO, a na posouzení evaluátorů DIANA. Pokud si nejste jistí, ozvěte se nám předem.'}
+          ]}
+        ]
+      },
+      {
+        id:'challenge', step:'2', kicker:'Část 2', title:'Přihláška do challenge',
+        tocLabel:'2 · Přihláška do challenge',
+        lead:'Vlastní přihláška řešení do konkrétní challenge. Skládá se ze základních údajů, Short Form a Long Form. U textových polí hlídejte limity znaků — jsou tvrdé.',
+        warn:'Častý omyl: že se nejdřív odevzdává jen Short Form a Long Form později. Není to tak. Short Form i Long Form se odevzdávají NAJEDNOU, deadline je 3. 7. 2026. Evaluátoři si Long Form přečtou až ve 2. kole hodnocení — a to pouze tehdy, pokud váš Short Form shledají relevantním. Odevzdat ale musíte obě části společně do uzávěrky.',
+        groups:[
+          {id:'ch-basics', name:'New Draft Proposal — základní údaje', fields:[
+            {l:'Proposal Title', req:true, p:'Název technického řešení, které do challenge navrhujete.'},
+            {l:'TRL Level', req:true, p:'Vyberte Technology Readiness Level (TRL) řešení, které do challenge navrhujete.',
+              tip:'Ideál je TRL 4–7, ale neberte to jako dogma — záleží hlavně na inovativnosti a přidané hodnotě technologie. DIANA už přijala řešení s nižším i vyšším TRL. TRL je sebehodnocení: projděte si stupnici a ohodnoťte se realisticky. Výrazné nadhodnocování i podhodnocování evaluátoři poznají.'},
+            {l:'System Type', req:true, p:'Uveďte, zda je vaše řešení software, hardware, nebo kombinace obojího.'},
+            {l:'System Level', req:true, p:'Uveďte, zda je řešení samostatná platforma/systém, nebo subsystém/komponenta, která se integruje do jiného systému či platformy.'}
+          ]},
+          {id:'ch-short', name:'Short Form proposal', meta:'4 části · á 1500 znaků', note:'Krátká verze přihlášky. Každá ze čtyř částí má limit 1500 znaků — pište stručně a k věci.', fields:[
+            {l:'Part 1 — Alignment to Challenge', req:true, lim:1500, p:'Reagujte na tyto otázky:', list:['Které prvky challenge řešíte?','Jak vaše technické řešení challenge vyřeší?','Co je na vašem řešení nové nebo unikátní?','Jaké obranné a bezpečnostní potřeby vaše řešení naplňuje?']},
+            {l:'Part 2 — Technical Approach', req:true, lim:1500, p:'Popište své technické řešení. Můžete přiložit grafiku nebo obrázky, které pomohou předat váš koncept.'},
+            {l:'Part 3 — Technology Development Roadmap with Risks and Mitigations', req:true, lim:1500, p:'Reagujte na tyto otázky:', list:['Jak vám challenge funding pomůže dozrát řešení do demonstrovatelné a/nebo nasaditelné technologie?','Klíčové milníky: čeho dosáhnete za 6 měsíců a co po jednom roce?','Jaká jsou nejvýznamnější rizika spojená s dosažením těchto milníků?','Jak tato rizika navrhujete mitigovat?']},
+            {l:'Part 4 — Business Case', req:true, lim:1500, p:'Reagujte na tyto otázky:', list:['Jaké jsou aplikace vašeho řešení v obraně a bezpečnosti? Jaké cesty k adopci jste identifikovali?','Jaký je trh pro vaše řešení?','Jaká je vaše současná úroveň investic z veřejných a/nebo soukromých zdrojů?','Máte vztahy s industry primes? Plánujete partnerství se systémovým integrátorem, nebo dodáte integrované řešení?']},
+            {l:'Images', img:2, p:'Můžete nahrát maximálně 2 obrázky s grafikou. Mohou obsahovat slova označující prvky v obrázku, ale ne narativní text s vysvětlením či komentářem. Obrázky, které tím doplňují text přihlášky, mohou způsobit nezpůsobilost; obrázky s bloky textu budou zahozeny.'}
+          ]},
+          {id:'ch-long', name:'Long Form proposal', meta:'čte se až ve 2. kole', note:'Detailní verze. Evaluátoři ji čtou až ve 2. kole, pokud byl Short Form relevantní — ale odevzdává se hned spolu se Short Form. Limity znaků se u jednotlivých částí liší.', fields:[
+            {l:'Part 0 — One-Sentence Description', req:true, lim:150, p:'Shrňte řešení jednou větou podle formátu: „the goal is to [provide this capability] using [this technology], to achieve [this impact].“'},
+            {l:'Part 1 — Abstract', req:true, lim:750, p:'Krátké shrnutí řešení v jednom odstavci. Berte to jako písemný „elevator pitch“.'},
+            {l:'Part 2 — Alignment to Challenge', req:true, lim:3000, p:'Popište, které prvky challenge vaše řešení adresuje. Vysvětlete, co je na něm nového nebo unikátního.'},
+            {l:'Part 3 — Technical Solution', req:true, lim:12000, p:'Detailně popište technické řešení challenge. Popište aktuální stav vývoje a klíčové výkonové metriky. Zmiňte dokončené i plánované testovací kampaně.',
+              tip:'Nejdelší pole (12 000 znaků) — sem patří jádro vaší technologie. Vyplatí se doplnit schéma architektury nebo diagram jako obrázek (ne text jako obrázek). Buďte konkrétní a důkladní: čísla, metriky, výsledky testů.'},
+            {l:'Part 4 — Technology Use Case', req:true, lim:750, p:'Uveďte příklady, jak by se řešení dalo využít v obraně a bezpečnosti, včetně přímých vojenských use-case. Popište typy subjektů (armáda, civilní ochrana, národní bezpečnostní agentura apod.), které by řešení mohly přijmout. Nemusíte mít hlubokou znalost obranného provozu — stačí nastínit potenciální aplikace; příklady jsou v zadání challenge.'},
+            {l:'Part 5 — Business Case', req:true, lim:3000, p:'Popište potenciál adopce řešení koncovými uživateli a jak souvisí s adresovatelnými segmenty trhu a jejich využitím. Zmiňte cesty k adopci (vládní kontrakty, defence primes). Jak budete škálovat? Práva k duševnímu vlastnictví či závislosti ovlivňující komerční hodnotu? Očekávané tržby (vč. možností financování), aktuální runway a implementované otevřené standardy.'},
+            {l:'Part 6 — Technology Development Roadmap with Risks and Mitigations', req:true, lim:3000, p:'Odhadněte aktuální TRL řešení pro obranné aplikace a — pokud se liší — pro civilní. Popište, jak program DIANA umožní TRL posunout a jak může řešení směřovat k nasaditelné schopnosti. Jaká je celková roadmap k operačnímu řešení? Klíčové milníky za 6 měsíců a po roce a déle? Identifikujte rizika (technická i jiná) a jejich mitigaci.'},
+            {l:'Part 7 — Team and Resources', req:true, lim:1500, p:'Popište background a zkušenosti vašeho týmu a jak je nastavený k realizaci roadmapy a využití programu DIANA. Jak budete řešení dál rozvíjet a zároveň zvládat běžný chod firmy? Popište, jak využijete €100 000 challenge funding — všechny prostředky musí jít na cíle programu DIANA a přímo souviset s navrhovaným řešením.'},
+            {l:'Images', img:3, p:'Můžete nahrát maximálně 3 obrázky s grafikou. Stejné pravidlo jako u Short Form: mohou obsahovat popisky prvků, ale ne narativní text. Bloky textu jako obrázek budou zahozeny.'}
+          ]},
+          {id:'ch-closing', name:'Závěrečné sekce — tagy a souhlasy', fields:[
+            {l:'Emerging and Disruptive Technologies', req:true, p:'Zaškrtněte NATO EDT, které se vztahují k vašemu řešení: Artificial intelligence (AI); Quantum technologies; Biotechnology and human enhancement; Space; Hypersonic systems; Novel materials and manufacturing; Energy and propulsion; Next-generation communication networks; Autonomous systems.'},
+            {l:'Technical Tags', req:true, p:'Vyberte tagy, které vystihují vaše technické řešení. Můžete jich zvolit, kolik chcete.'},
+            {l:'Additional Tags', p:'Pokud chcete technologii popsat dalšími tagy, zadejte jednotlivé tagy do 50 znaků oddělené čárkami. Nepovinné.'},
+            {l:'Agreement to T&Cs', req:true, tog:true, p:'Potvrzení (v souladu se sekcí 7.2(a) podmínek), že jste si přečetli Terms and Conditions of Bidding v plném znění a souhlasíte s nimi.'},
+            {l:'Confirmation of Company Identity', req:true, tog:true, p:'Potvrzení, že přihlášku podává osoba pracující pro firmu, pod kterou je registrovaná, a že je to firma, která by uzavřela případnou smlouvu.'},
+            {l:'Confirmation Company Is Not a University or Non-profit', req:true, tog:true, p:'Potvrzení, že subjekt podávající přihlášku není univerzita, nezisková ani neziskově orientovaná organizace.'},
+            {l:'Personnel Agreement', req:true, tog:true, p:'Souhlas, že klíčové osoby zapojené do Step 3 — Virtual Panel Session se (pokud se k tomuto bodu dojde) budou přímo účastnit akceleračního programu a souvisejícího cestování.'},
+            {l:'Accelerator Programme Agreement', req:true, tog:true, p:'Souhlas a porozumění, že akcelerátor zahrnuje cca 6 povinných prezenčních tematických clusterů na přiřazeném místě a na akcích vyžadujících transatlantické cestování, a že je součástí povinné plnění zadaných úkolů (assignments).'},
+            {l:'Information Sharing — Bidder Identity & Documentation', p:'V souladu se sekcí 7.2(a) a 7.2(b) může DIANA sdílet vaši identitu a dokumentaci s NATO a spojeneckými stakeholdery za účelem dalších příležitostí — pokud se z takového sdílení neodhlásíte.'}
+          ]}
+        ]
+      }
+    ];
+  }
+  componentDidMount(){ document.title='Průvodce přihláškou — NATO DIANA 2027 · Defence Hub CzechInvest'; document.documentElement.lang='cs'; this.fitToc(); this._r=()=>this.fitToc(); window.addEventListener('resize',this._r); }
+  componentWillUnmount(){ window.removeEventListener('resize',this._r); }
+  fitToc(){ const wide = window.innerWidth>=1080; const t=document.getElementById('toc'); if(t){ t.style.display = wide ? 'block':'none'; } const g=document.getElementById('bodyGrid'); if(g){ g.style.gridTemplateColumns = wide ? '248px 1fr' : '1fr'; } }
+  badge(text, kind){
+    const base="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:20px;font-weight:600;white-space:nowrap;";
+    const map={
+      required:'background:rgba(224,86,75,.12);color:#B5392E',
+      notEval:'background:var(--mist);color:var(--muted)',
+      limit:'background:var(--blueSoft);color:var(--blue)',
+      images:'background:var(--greenSoft);color:var(--greenDeep)',
+      toggle:'background:#ECEFF6;color:#46618F'
+    };
+    return { text, style: base + (map[kind]||map.notEval) };
+  }
+  renderVals(){
+    const accent = this.props.accent ?? '#2B5CC4';
+    const deadlineNote = this.props.deadlineNote ?? 'Uzávěrka 3. 7. 2026 · 12:00 UTC+1';
+    const parts = this.rawParts.map(part=>({
+      id: part.id, step: part.step, kicker: part.kicker, title: part.title, lead: part.lead,
+      tocLabel: part.tocLabel,
+      hasWarn: !!part.warn, warn: part.warn||'',
+      badgeStyle: 'flex-shrink:0;width:46px;height:46px;border-radius:13px;background:'+accent+';display:flex;align-items:center;justify-content:center;font-family:\'Space Grotesk\',sans-serif;font-weight:700;font-size:22px;color:#fff',
+      groups: part.groups.map(g=>({
+        id: g.id, name: g.name,
+        hasMeta: !!g.meta, meta: g.meta||'',
+        hasNote: !!g.note, note: g.note||'',
+        fields: g.fields.map(f=>{
+          const badges=[];
+          if(f.req) badges.push(this.badge('Povinné','required'));
+                if(f.lim) badges.push(this.badge('max '+f.lim+' znaků','limit'));
+          if(f.img) badges.push(this.badge('max '+f.img+(f.img>=5?' obrázků':' obrázky'),'images'));
+          if(f.ne) badges.push(this.badge('Nehodnotí se','notEval'));
+          return {
+            label: f.l, badges,
+            prompt: f.p,
+            hasList: !!(f.list&&f.list.length), list: f.list||[],
+            hasTip: !!f.tip, tip: f.tip||''
+          };
+        })
+      }))
+    }));
+    return { parts, deadlineNote };
+  }
+}
+</script>
+</body>
+</html>
